@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card class="mx-auto section-title" outlined>
+    <v-card class="section-title my-5" outlined>
       <h1>{{ title }}</h1>
     </v-card>
   </v-container>
@@ -16,6 +16,7 @@ export default {
 .section-title {
   padding: 22px;
   text-align: center;
+  background: #eee;
   h1 {
     font-weight: 400;
     font-size: 40px;

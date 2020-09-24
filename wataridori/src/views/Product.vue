@@ -1,15 +1,18 @@
 <template>
   <div>
     <title-navigation :title="'My Products'"></title-navigation>
+    <footer-app></footer-app>
   </div>
 </template>
 
 <script>
 import TitleNavigation from '@/components/TitleNavigation.vue';
+import FooterApp from '@/components/FooterApp.vue';
 
 export default {
   components: {
-    TitleNavigation
+    TitleNavigation,
+    FooterApp
   },
   data: () => ({})
 };
