@@ -2,27 +2,36 @@
   <v-footer dark padless class="mt-10">
     <v-container>
       <v-card flat tile class="footer-card white--text text-center">
-        <v-card-text class="py-12">
-          <a
-            v-for="(icon, index) in icons"
-            :key="index"
-            :href="icon.link"
-            target="_blank"
-            class="mx-15 white--text social-link"
-          >
-            <v-icon size="32px">{{ icon.name }}</v-icon> {{ icon.title }}
-          </a>
+        <v-card-text class="py-8">
+          <v-row>
+            <v-col
+              cols="12"
+              class="col-lg-3 col-md-3 col-sm-3"
+              v-for="(icon, index) in icons"
+              :key="index"
+            >
+              <a
+                :href="icon.link"
+                target="_blank"
+                class="white--text social-link"
+              >
+                <v-icon size="32px">{{ icon.name }}</v-icon> {{ icon.title }}
+              </a>
+            </v-col>
+          </v-row>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-text class="py-7">
-          <a
-            v-for="(item, index) in items"
-            :key="index"
-            :href="item.link"
-            class="mx-4 white--text social-link"
-          >
-            <span>{{ item.title }}</span>
-          </a>
+          <div class="footer-link-nav">
+            <a
+              v-for="(item, index) in items"
+              :key="index"
+              :href="item.link"
+              class="white--text social-link"
+            >
+              <span class="title-link">{{ item.title }}</span>
+            </a>
+          </div>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-text class="white--text py-7">
@@ -87,6 +96,26 @@ export default {
         transition: 0.3s;
       }
     }
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-link-nav {
+    a {
+      margin: 0 20px;
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .footer-link-nav {
+    a {
+      margin: 0 20px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .title-link {
+    display: block;
+    line-height: 2;
   }
 }
 </style>

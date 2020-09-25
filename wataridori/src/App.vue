@@ -4,16 +4,19 @@
     <main>
       <router-view></router-view>
     </main>
+    <back-to-top></back-to-top>
   </v-app>
 </template>
 
 <script>
 import AppNavigation from '@/components/AppNavigation';
+import BackToTop from '@/components/BackToTop.vue';
 
 export default {
   name: 'App',
   components: {
-    AppNavigation
+    AppNavigation,
+    BackToTop
   },
   data: () => ({})
 };
