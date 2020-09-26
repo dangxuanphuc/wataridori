@@ -32,9 +32,9 @@ export default {
 
 <style lang="scss" scoped>
 .skill {
+  font: 1.4em 'Oswald', sans-serif;
   display: block;
-  margin-bottom: 15px;
-  font-size: 1.4em;
+  margin-bottom: 10px;
   line-height: 24px;
 }
 .loading-bar {
