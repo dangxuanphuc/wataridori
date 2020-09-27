@@ -5,6 +5,7 @@
       <tech-love></tech-love>
       <time-line></time-line>
       <skill-for-me></skill-for-me>
+      <my-hobby></my-hobby>
     </v-card>
   </v-container>
 </template>
@@ -14,13 +15,15 @@ import InforMe from './InforMe.vue';
 import TechLove from './TechLove.vue';
 import TimeLine from './TimeLine.vue';
 import SkillForMe from './SkillForMe.vue';
+import MyHobby from './MyHobby.vue';
 
 export default {
   components: {
     InforMe,
     TechLove,
     TimeLine,
-    SkillForMe
+    SkillForMe,
+    MyHobby
   }
 };
 </script>
