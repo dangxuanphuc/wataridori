@@ -134,9 +134,10 @@ export default {
 
 <style lang="scss" scoped>
 .p-30 {
+  background: #eee;
   padding: 30px 30px 20px;
   margin-bottom: 30px;
-  background: #eee;
+  border-radius: 3px;
 }
 .title-header {
   position: relative;
