@@ -8,7 +8,7 @@
 
 <script>
 import TitleNavigation from '@/components/TitleNavigation.vue';
-import AboutMe from '@/components/AboutMe.vue';
+import AboutMe from '@/components/about/AboutMe.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {

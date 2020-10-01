@@ -17,8 +17,7 @@ export default {
   components: {
     AppNavigation,
     BackToTop
-  },
-  data: () => ({})
+  }
 };
 </script>
 

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BlogDetail from '@/components/BlogDetail.vue';
+import BlogDetail from '@/components/blog/BlogDetail.vue';
 
 export default {
   components: {

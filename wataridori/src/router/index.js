@@ -4,7 +4,10 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Product from '../views/Product.vue';
 import Contact from '../views/Contact.vue';
+import Signin from '../views/Signin.vue';
+import CreateBlog from '../views/CreateBlog.vue';
 import Blog from '../views/Blog.vue';
+import AuthGuard from './auth-guard';
 
 Vue.use(VueRouter);
 
@@ -28,6 +31,17 @@ const routes = [
     path: '/contact-me',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/signin',
+    name: 'Signin',
+    component: Signin
+  },
+  {
+    path: '/blog/new',
+    name: 'CreateBlog',
+    component: CreateBlog,
+    beforeEnter: AuthGuard
   },
   {
     path: '/blog',

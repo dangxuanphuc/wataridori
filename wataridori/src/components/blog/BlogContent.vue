@@ -39,7 +39,7 @@
       <div class="text-center">
         <v-btn text outlined class="read-more">Read more</v-btn>
       </div>
-      <v-card-actions>
+      <v-card-actions class="footer-card">
         <v-btn color="gray" text class="comment-btn">
           5 comments
         </v-btn>
@@ -101,6 +101,8 @@ export default {
         color: inherit;
         text-decoration: none;
         transition: 0.3s;
+        font-size: 28px;
+        font-weight: 400;
         &:hover {
           color: #e53935;
         }
@@ -123,20 +125,20 @@ export default {
     line-height: 1.6;
     word-wrap: break-word;
   }
-  .v-card__actions {
+  .read-more {
+    color: #e53935;
+    border: 2px solid #e53935 !important;
+    margin-bottom: 10px;
+    transition: 0.5s;
+    &:hover {
+      background: #e53935;
+      color: white;
+    }
+  }
+  .footer-card {
     padding: 0;
     .tag-btn {
       display: none;
-    }
-    .read-more {
-      color: #e53935;
-      border: 2px solid #e53935 !important;
-      margin-bottom: 10px;
-      transition: 0.5s;
-      &:hover {
-        background: #e53935;
-        color: white;
-      }
     }
     .share-btn {
       border: 1px solid #1976d2 !important;
@@ -159,7 +161,7 @@ export default {
   .read-more {
     display: none;
   }
-  .v-card__actions {
+  .footer-card {
     .comment-btn {
       display: none;
     }

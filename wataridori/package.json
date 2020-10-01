@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^7.21.1",
+    "quill-emoji": "^0.1.8",
     "swiper": "^5.4.5",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.2.0",
     "vue-simplemde": "^1.1.2",
     "vuetify": "^2.2.11",

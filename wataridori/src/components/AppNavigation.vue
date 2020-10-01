@@ -23,6 +23,25 @@
           </v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
+        <v-tooltip bottom v-if="userIsAuthenticated">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              class="mx-2"
+              fab
+              dark
+              small
+              color="teal"
+              v-bind="attrs"
+              v-on="on"
+              to="/blog/new"
+            >
+              <v-icon dark>
+                mdi-pencil
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>Create Blog</span>
+        </v-tooltip>
         <v-menu
           top
           :close-on-content-click="closeOnContentClick"
@@ -127,6 +146,14 @@ export default {
   methods: {
     checkCountry() {
       console.log('test');
+    }
+  },
+  computed: {
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      );
     }
   }
 };

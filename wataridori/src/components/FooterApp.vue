@@ -34,8 +34,17 @@
           </div>
         </v-card-text>
         <v-divider></v-divider>
-        <v-card-text class="white--text py-7">
-          &copy; {{ new Date().getFullYear() }} {{ copyright }}
+        <v-card-text class="white--text py-7" v-if="!userIsAuthenticated">
+          &copy; {{ new Date().getFullYear() }}
+          <a href="/signin" class="btn-signin-logout">{{ name }}</a>
+          {{ copyright }}
+        </v-card-text>
+        <v-card-text class="white--text py-7" v-else>
+          &copy; {{ new Date().getFullYear() }}
+          <a href="/signout" class="btn-signin-logout" @click="onLogout">
+            {{ name }}
+          </a>
+          {{ copyright }}
         </v-card-text>
       </v-card>
     </v-container>
@@ -45,7 +54,8 @@
 <script>
 export default {
   data: () => ({
-    copyright: 'Dang Xuan Phuc Blog. All Rights Reserved.',
+    name: 'Dang Xuan Phuc',
+    copyright: ' Blog. All Rights Reserved.',
     icons: [
       {
         name: 'mdi-facebook',
@@ -75,7 +85,20 @@ export default {
       { title: 'Japanese', link: '/#' },
       { title: 'My Products', link: '/my-products' }
     ]
-  })
+  }),
+  computed: {
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      );
+    }
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout');
+    }
+  }
 };
 </script>
 
@@ -95,6 +118,10 @@ export default {
         color: #f4511e;
         transition: 0.3s;
       }
+    }
+    .btn-signin-logout {
+      color: #fff;
+      text-decoration: none;
     }
   }
 }

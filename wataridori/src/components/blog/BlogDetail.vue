@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import BlogContent from '@/components/BlogContent.vue';
-import SimilarPost from '@/components/SimilarPost.vue';
-import SideBar from '@/components/SideBar.vue';
+import BlogContent from './BlogContent.vue';
+import SimilarPost from '@/components/post/SimilarPost.vue';
+import SideBar from '@/components/post/SideBar.vue';
 
 export default {
   components: {
