@@ -3,9 +3,14 @@ import App from './App.vue';
 import router from './router';
 import { store } from './store';
 import vuetify from './plugins/vuetify';
-import * as firebase from 'firebase';
+
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import DateFilter from './filters/date';
 
 Vue.config.productionTip = false;
+
+Vue.filter('date', DateFilter);
 
 new Vue({
   router,
@@ -14,16 +19,17 @@ new Vue({
   render: h => h(App),
   created() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyBG_F1pBlaOjx_QnVgcUXJ9gv3SDDWUWtQ',
-      authDomain: 'wataridori-82227.firebaseapp.com',
-      databaseURL: 'https://wataridori-82227.firebaseio.com',
-      projectId: 'wataridori-82227',
-      storageBucket: 'wataridori-82227.appspot.com'
+      apiKey: 'AIzaSyCbH2nmd-wFo1gKB8klW2Bkr0H7cBCH66Q',
+      authDomain: 'wataridori-blog.firebaseapp.com',
+      databaseURL: 'https://wataridori-blog.firebaseio.com',
+      projectId: 'wataridori-blog',
+      storageBucket: 'wataridori-blog.appspot.com'
     });
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.$store.dispatch('autoSignin', user);
       }
     });
+    this.$store.dispatch('loadAllPosts');
   }
 }).$mount('#app');

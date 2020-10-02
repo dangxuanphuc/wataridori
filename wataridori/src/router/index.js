@@ -5,8 +5,8 @@ import About from '../views/About.vue';
 import Product from '../views/Product.vue';
 import Contact from '../views/Contact.vue';
 import Signin from '../views/Signin.vue';
-import CreateBlog from '../views/CreateBlog.vue';
-import Blog from '../views/Blog.vue';
+import CreatePost from '../views/CreatePost.vue';
+import Post from '../views/Post.vue';
 import AuthGuard from './auth-guard';
 
 Vue.use(VueRouter);
@@ -38,15 +38,16 @@ const routes = [
     component: Signin
   },
   {
-    path: '/blog/new',
-    name: 'CreateBlog',
-    component: CreateBlog,
+    path: '/post/new',
+    name: 'CreatePost',
+    component: CreatePost,
     beforeEnter: AuthGuard
   },
   {
-    path: '/blog',
-    name: 'Blog',
-    component: Blog
+    path: '/posts/:id',
+    name: 'Post',
+    props: true,
+    component: Post
   }
 ];
 

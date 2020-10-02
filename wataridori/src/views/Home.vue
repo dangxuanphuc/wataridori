@@ -1,23 +1,40 @@
 <template>
   <div>
-    <title-navigation :title="'My Blog - Recent posts'"></title-navigation>
-    <blog-review></blog-review>
+    <v-row>
+      <v-col xs="12" class="text-center">
+        <v-progress-circular
+          indeterminate
+          color="primary"
+          :width="7"
+          :size="70"
+          v-if="loading"
+        ></v-progress-circular>
+      </v-col>
+    </v-row>
+    <div v-if="!loading">
+      <title-navigation :title="'My Blog - Recent posts'"></title-navigation>
+      <post-review></post-review>
+    </div>
     <footer-app></footer-app>
   </div>
 </template>
 
 <script>
 import TitleNavigation from '@/components/TitleNavigation.vue';
-import BlogReview from '@/components/blog/BlogReview.vue';
+import PostReview from '@/components/post/PostReview.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {
   components: {
     TitleNavigation,
-    BlogReview,
+    PostReview,
     FooterApp
   },
-  data: () => ({})
+  computed: {
+    loading() {
+      return this.$store.getters.loading;
+    }
+  }
 };
 </script>
 

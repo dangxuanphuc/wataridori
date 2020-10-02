@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 import user from './user';
 import shared from './shared';
-import blog from './blog';
+import post from './post';
 
 Vue.use(Vuex);
 
@@ -11,6 +11,6 @@ export const store = new Vuex.Store({
   modules: {
     user: user,
     shared: shared,
-    blog: blog
+    post: post
   }
 });

@@ -7,7 +7,9 @@
         v-show="visible"
         @click="backToTop"
       >
-        <v-img src="top.png"></v-img>
+        <v-img
+          src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Ftop.png?alt=media&token=52248d93-6189-46e2-b462-0969adef9800"
+        ></v-img>
       </div>
     </transition>
   </div>

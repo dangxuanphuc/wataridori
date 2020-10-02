@@ -8,7 +8,9 @@
             class="col-lg-2 offset-lg-1 col-md-3 col-sm-4 offset-sm-1 col-xs-12"
           >
             <v-avatar size="160">
-              <v-img src="avatar.jpg"></v-img>
+              <v-img
+                src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Favatar.jpg?alt=media&token=54410cc4-806b-4278-a8b8-d97273adfa90"
+              ></v-img>
             </v-avatar>
           </v-col>
           <v-col cols="12" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
