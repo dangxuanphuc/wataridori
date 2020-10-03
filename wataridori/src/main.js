@@ -7,7 +7,9 @@ import vuetify from './plugins/vuetify';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import DateFilter from './filters/date';
+import VueMasonry from 'vue-masonry-css';
 
+Vue.use(VueMasonry);
 Vue.config.productionTip = false;
 
 Vue.filter('date', DateFilter);

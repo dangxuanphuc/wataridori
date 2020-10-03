@@ -1,21 +1,18 @@
 <template>
   <div>
-    <v-row>
-      <v-col xs="12" class="text-center">
-        <v-progress-circular
-          indeterminate
-          color="primary"
-          :width="7"
-          :size="70"
-          v-if="loading"
-        ></v-progress-circular>
-      </v-col>
-    </v-row>
-    <div v-if="!loading">
+    <div v-if="loading" class="text-center" style="margin-top: 100px">
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        :width="7"
+        :size="70"
+      ></v-progress-circular>
+    </div>
+    <div v-else>
       <title-navigation :title="'My Blog - Recent posts'"></title-navigation>
       <post-review></post-review>
+      <footer-app></footer-app>
     </div>
-    <footer-app></footer-app>
   </div>
 </template>
 

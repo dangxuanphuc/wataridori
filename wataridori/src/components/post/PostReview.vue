@@ -1,7 +1,10 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col v-for="post in posts" :key="post.id" cols="12" md="4" sm="6">
+  <div class="container">
+    <masonry
+      :cols="{ default: 3, 1262: 2, 662: 1 }"
+      :gutter="{ default: '30px', 700: '15px' }"
+    >
+      <div v-for="(post, index) in posts" :key="index">
         <v-card outlined class="review-block">
           <header>
             <v-img :src="post.imageUrl" aspect-ratio="1.8"></v-img>
@@ -17,9 +20,7 @@
               <span class="author">{{ author }}</span>
             </div>
           </div>
-          <div class="contents post-body">
-            {{ post.content }}
-          </div>
+          <div class="contents post-body" v-html="post.content"></div>
           <v-card-actions class="footer-card">
             <v-btn
               text
@@ -37,9 +38,9 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </masonry>
+  </div>
 </template>
 
 <script>
@@ -57,9 +58,10 @@ export default {
 
 <style lang="scss" scoped>
 .review-block {
-  padding: 30px 30px 15px;
-  transition: 0.3s;
   background: #eee;
+  padding: 30px 30px 15px;
+  margin-bottom: 30px;
+  transition: 0.3s;
   > header {
     margin: -30px -30px 10px;
     .v-image {
@@ -134,6 +136,9 @@ export default {
     .v-image {
       opacity: 0.8;
     }
+  }
+  &::last-child {
+    margin-bottom: 0;
   }
 }
 </style>

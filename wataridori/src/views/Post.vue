@@ -28,9 +28,7 @@
               <span class="author">{{ author }}</span>
             </div>
           </div>
-          <div class="contents post-body">
-            {{ post.content }}
-          </div>
+          <div class="contents post-body" v-html="post.content"></div>
           <v-card-actions class="footer-card">
             <div class="tag-btn">
               <a href="#" v-for="(tag, index) in post.tags" :key="index">

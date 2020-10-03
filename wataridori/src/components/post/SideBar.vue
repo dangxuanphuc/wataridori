@@ -33,64 +33,32 @@
     <section class="popular-post p-30 title-header">
       <title-side-bar :title="'Popular Posts'"></title-side-bar>
       <div class="post-list">
-        <div class="artical">
+        <div v-for="(post, index) in posts" :key="index" class="artical">
           <div class="main-image">
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-              class="img"
-            ></v-img>
+            <v-img :src="post.imageUrl" class="img"></v-img>
           </div>
           <div class="post-info">
             <h1 class="title-post">
-              Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-              lai?
+              {{ post.title }}
             </h1>
-            <div class="post-date">December 12, 2016</div>
+            <div class="post-date">
+              {{ post.date | date }}
+            </div>
           </div>
-          <a href="#" class="link"></a>
-        </div>
-        <div class="artical">
-          <div class="main-image">
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-              class="img"
-            ></v-img>
-          </div>
-          <div class="post-info">
-            <h1 class="title-post">
-              Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-              lai?
-            </h1>
-            <div class="post-date">December 12, 2016</div>
-          </div>
-          <a href="#" class="link"></a>
-        </div>
-        <div class="artical">
-          <div class="main-image">
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-              class="img"
-            ></v-img>
-          </div>
-          <div class="post-info">
-            <h1 class="title-post">
-              Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-              lai?
-            </h1>
-            <div class="post-date">December 12, 2016</div>
-          </div>
-          <a href="#" class="link"></a>
+          <a :href="post.id" class="link"></a>
         </div>
       </div>
     </section>
     <section class="tag-box p-30 title-header">
       <title-side-bar :title="'Tags'"></title-side-bar>
       <div class="tag-content">
-        <a href="#" class="tag-link">japanese</a>
-        <a href="#" class="tag-link">tag</a>
-        <a href="#" class="tag-link">hello</a>
-        <a href="#" class="tag-link">việt nam</a>
-        <a href="#" class="tag-link">thiên văn</a>
+        <a
+          v-for="(tag, index) in tags"
+          :key="index"
+          href="#"
+          class="tag-link"
+          >{{ tag }}</a
+        >
       </div>
     </section>
   </div>
@@ -130,7 +98,15 @@ export default {
         color: '#000'
       }
     ]
-  })
+  }),
+  computed: {
+    posts() {
+      return this.$store.getters.popularPosts;
+    },
+    tags() {
+      return this.$store.getters.loadTags;
+    }
+  }
 };
 </script>
 

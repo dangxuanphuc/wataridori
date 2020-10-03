@@ -1,78 +1,19 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <swiper-slide>
+    <swiper-slide v-for="(post, index) in posts" :key="index">
       <div class="artical">
         <div class="main-image">
-          <v-img
-            src="https://picsum.photos/500/300?image=10"
-            class="img"
-          ></v-img>
+          <v-img :src="post.imageUrl" class="img"></v-img>
         </div>
         <div class="post-info">
           <h1 class="title-post">
-            Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-            lai?
+            {{ post.title }}
           </h1>
-          <div class="post-date">December 12, 2016</div>
+          <div class="post-date">{{ post.date | date }}</div>
         </div>
-        <a href="#" class="link"></a>
+        <a :href="post.id" class="link"></a>
       </div>
     </swiper-slide>
-    <swiper-slide>
-      <div class="artical">
-        <div class="main-image">
-          <v-img
-            src="https://picsum.photos/500/300?image=30"
-            class="img"
-          ></v-img>
-        </div>
-        <div class="post-info">
-          <h1 class="title-post">
-            Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-            lai?
-          </h1>
-          <div class="post-date">December 12, 2016</div>
-        </div>
-        <a href="#" class="link"></a>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="artical">
-        <div class="main-image">
-          <v-img
-            src="https://picsum.photos/500/300?image=50"
-            class="img"
-          ></v-img>
-        </div>
-        <div class="post-info">
-          <h1 class="title-post">
-            Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-            lai?
-          </h1>
-          <div class="post-date">December 12, 2016</div>
-        </div>
-        <a href="#" class="link"></a>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="artical">
-        <div class="main-image">
-          <v-img
-            src="https://picsum.photos/500/300?image=10"
-            class="img"
-          ></v-img>
-        </div>
-        <div class="post-info">
-          <h1 class="title-post">
-            Siêu tân tinh sao lùn đen có thể khiến vũ trụ 'chết' trong tương
-            lai?
-          </h1>
-          <div class="post-date">December 12, 2016</div>
-        </div>
-        <a href="#" class="link"></a>
-      </div>
-    </swiper-slide>
-    <!-- <div class="swiper-pagination" slot="pagination"></div> -->
   </swiper>
 </template>
 
@@ -87,26 +28,24 @@ export default {
     Swiper,
     SwiperSlide
   },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        },
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true
-        // },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
+  data: () => ({
+    swiperOption: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      autoplay: {
+        delay: 2500
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
       }
-    };
+    }
+  }),
+  computed: {
+    posts() {
+      return this.$store.getters.loadAllPosts;
+    }
   }
 };
 </script>

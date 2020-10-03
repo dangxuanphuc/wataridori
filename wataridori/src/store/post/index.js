@@ -100,6 +100,18 @@ export default {
           return post.id === postId;
         });
       };
+    },
+    popularPosts(state, getters) {
+      return getters.loadAllPosts.slice(0, 3);
+    },
+    loadTags(state) {
+      const tagArr = [];
+      const postNumber = state.loadAllPosts.length;
+      for (let i = 0; i < postNumber; i++) {
+        tagArr.push(...state.loadAllPosts[i].tags);
+      }
+      const tags = Array.from(new Set(tagArr));
+      return tags;
     }
   }
 };

@@ -114,6 +114,7 @@ export default {
     time: new Date(),
     image: null,
     editorOption: {
+      placeholder: 'Type your post...',
       modules: {
         'emoji-toolbar': true,
         'emoji-shortname': true,
