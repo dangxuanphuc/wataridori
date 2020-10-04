@@ -32,10 +32,43 @@
               Read more
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn text outlined small class="share-btn">
-              <v-icon small>mdi-export-variant</v-icon>
-              Share
-            </v-btn>
+            <v-menu
+              top
+              :close-on-content-click="closeOnContentClick"
+              :close-on-click="closeOnClick"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  depressed
+                  text
+                  small
+                  v-bind="attrs"
+                  v-on="on"
+                  class="share-btn"
+                >
+                  <v-icon small>mdi-export-variant</v-icon>
+                  Share
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(social, index) in socials"
+                  :key="index"
+                  @click="shareSocial"
+                >
+                  <share-network
+                    :network="social.name"
+                    title=""
+                    :url="'facebook.com/posts/' + post.id"
+                  >
+                    <v-icon :color="social.color" class="mr-2">
+                      {{ social.icon }}
+                    </v-icon>
+                    <span class="text-capitalize">{{ social.name }}</span>
+                  </share-network>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-card-actions>
         </v-card>
       </div>
@@ -45,9 +78,21 @@
 
 <script>
 export default {
+  props: ['title'],
   data: () => ({
-    author: 'by Dang Xuan Phuc'
+    author: 'by Dang Xuan Phuc',
+    closeOnClick: true,
+    closeOnContentClick: true,
+    socials: [
+      { name: 'facebook', icon: 'mdi-facebook', color: 'rgb(59, 89, 152)' },
+      { name: 'twitter', icon: 'mdi-twitter', color: 'rgb(29, 161, 242)' }
+    ]
   }),
+  methods: {
+    shareSocial() {
+      console.log('Share social button');
+    }
+  },
   computed: {
     posts() {
       return this.$store.getters.loadAllPosts;

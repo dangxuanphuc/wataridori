@@ -10,7 +10,7 @@
 
 <script>
 import AppNavigation from '@/components/AppNavigation';
-import BackToTop from '@/components/BackToTop.vue';
+import BackToTop from '@/components/shared/BackToTop.vue';
 
 export default {
   name: 'App',

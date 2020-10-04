@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="loading" class="text-center" style="margin-top: 100px">
+    <div v-if="loading" class="text-center" style="margin-top: 20px">
       <v-progress-circular
         indeterminate
         color="primary"
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TitleNavigation from '@/components/TitleNavigation.vue';
+import TitleNavigation from '@/components/shared/TitleNavigation.vue';
 import PostReview from '@/components/post/PostReview.vue';
 import FooterApp from '@/components/FooterApp.vue';
 

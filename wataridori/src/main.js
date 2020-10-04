@@ -8,8 +8,10 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import DateFilter from './filters/date';
 import VueMasonry from 'vue-masonry-css';
+import VueSocialSharing from 'vue-social-sharing';
 
 Vue.use(VueMasonry);
+Vue.use(VueSocialSharing);
 Vue.config.productionTip = false;
 
 Vue.filter('date', DateFilter);

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TitleNavigation from '@/components/TitleNavigation.vue';
+import TitleNavigation from '@/components/shared/TitleNavigation.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {

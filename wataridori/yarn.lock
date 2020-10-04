@@ -8959,6 +8959,11 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-masonry-css@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-masonry-css/-/vue-masonry-css-1.0.3.tgz#a5e7bb248570eeedcd358637d3f1f4fc7f0c5f86"
+  integrity sha512-viecHQiHVLez7HlYUQsv1wJb2MT/RDSzkDp6m3In41vPrk6OsBmT2qRE8LZqYIA4daIwrnx/Xm8h4fjOpuE3hw==
+
 vue-quill-editor@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/vue-quill-editor/-/vue-quill-editor-3.0.6.tgz#1f85646211d68a31a80a72cb7f45bb2f119bc8fb"
@@ -8979,6 +8984,11 @@ vue-simplemde@^1.1.2:
   dependencies:
     marked "*"
     simplemde "*"
+
+vue-social-sharing@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/vue-social-sharing/-/vue-social-sharing-3.0.0.tgz#e87d346e09360403830f5166119b16afc1d0f40a"
+  integrity sha512-lUIzS7wqLnxRaKCRyyfyWQcUlGFEZkT2aIdcndv3hApUA4JOV95sk/ubk9vNwVrY1bpqxnltaZGxsl9ikMlNFQ==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"

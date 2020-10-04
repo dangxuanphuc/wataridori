@@ -7,10 +7,7 @@
           src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Favatar.jpg?alt=media&token=54410cc4-806b-4278-a8b8-d97273adfa90"
         />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem in
-        rem culpa reprehenderit amet.
-      </p>
+      <p>{{ description }}</p>
       <div class="text-center">
         <v-btn text outlined class="read-more">Read more</v-btn>
       </div>
@@ -72,6 +69,8 @@ export default {
     TitleSideBar
   },
   data: () => ({
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem in rem culpa reprehenderit amet.',
     socials: [
       {
         title: 'Facebook',

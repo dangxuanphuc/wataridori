@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TitleNavigation from '@/components/TitleNavigation.vue';
+import TitleNavigation from '@/components/shared/TitleNavigation.vue';
 import AboutMe from '@/components/about/AboutMe.vue';
 import FooterApp from '@/components/FooterApp.vue';
 

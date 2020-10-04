@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="popular-post p-30 title-header">
-      <title-side-bar :title="'You might also like'"></title-side-bar>
+      <title-side-bar :title="titleSideBar"></title-side-bar>
       <slide-similar-post></slide-similar-post>
     </section>
   </div>
@@ -12,6 +12,9 @@ import TitleSideBar from './TitleSideBar.vue';
 import SlideSimilarPost from './SlideSimilarPost.vue';
 
 export default {
+  data: () => ({
+    titleSideBar: 'You might also like'
+  }),
   components: {
     TitleSideBar,
     SlideSimilarPost

@@ -3,9 +3,7 @@
     <title-about :title="'Favorites'"></title-about>
     <v-card outlined class="card-hobby px-16">
       <v-tabs centered background-color="#eee">
-        <v-tab>Japanese Music</v-tab>
-        <v-tab>Japanese Singers</v-tab>
-        <v-tab>Other</v-tab>
+        <v-tab v-for="(tab, index) in tabs" :key="index">{{ tab }}</v-tab>
         <v-tab-item v-for="(n, index) in 3" :key="index">
           <v-container>
             <v-row justify="center">
@@ -46,6 +44,7 @@ export default {
     TitleAbout
   },
   data: () => ({
+    tabs: ['Japanese Music', 'Japanese Singers', 'Other'],
     musics: [
       {
         name: 'あわい',
