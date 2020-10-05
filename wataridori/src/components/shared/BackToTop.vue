@@ -8,7 +8,7 @@
         @click="backToTop"
       >
         <v-img
-          src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Ftop.png?alt=media&token=52248d93-6189-46e2-b462-0969adef9800"
+          src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Ftop.png?alt=media&token=6fda7a97-efc7-423e-b5f0-edccad55d8e7"
         ></v-img>
       </div>
     </transition>

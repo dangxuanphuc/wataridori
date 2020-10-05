@@ -84,8 +84,8 @@ export default {
     closeOnClick: true,
     closeOnContentClick: true,
     socials: [
-      { name: 'facebook', icon: 'mdi-facebook', color: 'rgb(59, 89, 152)' },
-      { name: 'twitter', icon: 'mdi-twitter', color: 'rgb(29, 161, 242)' }
+      { name: 'facebook', icon: 'mdi-facebook', color: '#01579b' },
+      { name: 'twitter', icon: 'mdi-twitter', color: '#1da1f2' }
     ]
   }),
   methods: {
@@ -103,7 +103,7 @@ export default {
 
 <style lang="scss" scoped>
 .review-block {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   padding: 30px 30px 15px;
   margin-bottom: 30px;
   transition: 0.3s;
@@ -127,6 +127,7 @@ export default {
       text-transform: none;
       line-height: 1.1;
       margin-bottom: 5px;
+      color: var(--v-titlePost-base);
       a {
         color: inherit;
         text-decoration: none;
@@ -134,12 +135,12 @@ export default {
         font-size: 28px;
         font-weight: 400;
         &:hover {
-          color: #e53935;
+          color: var(--v-titlePostHover-base);
         }
       }
     }
     .date-author {
-      color: #777;
+      color: var(--v-dateColor-base);
       * {
         font-size: 13px;
         margin: 0 5px;
@@ -151,28 +152,28 @@ export default {
   }
   .post-body {
     font-family: 'Noto Serif';
-    color: #333;
+    color: var(--v-postTextColor-base);
     font-size: 16px;
     line-height: 1.6;
-    word-wrap: break-word;
   }
   .footer-card {
     padding: 0;
     .read-more {
-      color: #e53935;
-      border: 2px solid #e53935 !important;
-      transition: 0.5s;
+      color: var(--v-readmoreColor-base);
+      border: 1px solid var(--v-readmoreColor-base) !important;
+      transition: 0.3s;
       &:hover {
-        background: #e53935;
-        color: white;
+        background: var(--v-readmoreColor-base);
+        color: #fff;
       }
     }
     .share-btn {
-      border: 1px solid #1976d2 !important;
-      color: #1976d2;
+      border: 1px solid var(--v-shareBtnColor-base) !important;
+      color: var(--v-shareBtnColor-base);
+      transition: 0.3s;
       &:hover {
-        background: #1976d2;
-        color: white;
+        background: var(--v-shareBtnColor-base);
+        color: #fff;
       }
     }
   }

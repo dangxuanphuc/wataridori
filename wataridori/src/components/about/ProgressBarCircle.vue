@@ -4,7 +4,7 @@
       :percent="percentNumber"
       :bar-color="' #f4645f'"
       :track-color="'#5f5f5f'"
-      :scale-color="'#eee'"
+      :scale-color="false"
       :line-cap="'square'"
       :line-width="18"
       :scale-length="18"

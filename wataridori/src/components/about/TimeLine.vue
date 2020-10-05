@@ -58,7 +58,7 @@ export default {
       },
       {
         title: '将来',
-        color: 'pink',
+        color: 'instagramColor',
         year: '08/2020 - Present',
         image:
           'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fjapan.jpeg?alt=media&token=d9901d27-e979-4132-9659-7f14a9438c57',

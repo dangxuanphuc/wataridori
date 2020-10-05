@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .p-30 {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   padding: 30px;
   margin: 30px 0;
   border-radius: 3px;

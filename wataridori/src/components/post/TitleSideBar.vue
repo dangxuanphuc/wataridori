@@ -23,12 +23,12 @@ export default {
     width: 100%;
     z-index: 3;
     > span {
+      background: var(--v-backgroundFooter-base);
+      color: #fff;
       position: relative;
       display: inline-block;
       font-size: 18px;
       font-weight: normal;
-      background: #1a171b;
-      color: #fff;
       padding: 0 15px;
       line-height: 30px;
       &::before {
@@ -36,7 +36,7 @@ export default {
         left: -15px;
         right: auto;
         top: 50%;
-        border: 15px solid #1a171b;
+        border: 15px solid var(--v-backgroundFooter-base);
         content: '';
         height: 0;
         width: 0;
@@ -48,7 +48,7 @@ export default {
         position: absolute;
         right: -15px;
         top: 50%;
-        border: 15px solid #1a171b;
+        border: 15px solid var(--v-backgroundFooter-base);
         content: '';
         height: 0;
         width: 0;

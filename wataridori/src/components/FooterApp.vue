@@ -1,7 +1,7 @@
 <template>
   <v-footer dark padless class="mt-10">
     <v-container>
-      <v-card flat tile class="footer-card white--text text-center">
+      <v-card flat tile class="footer-card text-center">
         <v-card-text class="py-8">
           <v-row>
             <v-col
@@ -10,11 +10,7 @@
               v-for="(icon, index) in icons"
               :key="index"
             >
-              <a
-                :href="icon.link"
-                target="_blank"
-                class="white--text social-link"
-              >
+              <a :href="icon.link" target="_blank" class="social-link">
                 <v-icon size="32px">{{ icon.name }}</v-icon> {{ icon.title }}
               </a>
             </v-col>
@@ -27,19 +23,19 @@
               v-for="(item, index) in items"
               :key="index"
               :href="item.link"
-              class="white--text social-link"
+              class="social-link"
             >
               <span class="title-link">{{ item.title }}</span>
             </a>
           </div>
         </v-card-text>
         <v-divider></v-divider>
-        <v-card-text class="white--text py-7" v-if="!userIsAuthenticated">
+        <v-card-text class="py-7" v-if="!userIsAuthenticated">
           &copy; {{ new Date().getFullYear() }}
           <a href="/signin" class="btn-signin-logout">{{ name }}</a>
           {{ copyright }}
         </v-card-text>
-        <v-card-text class="white--text py-7" v-else>
+        <v-card-text class="footer-end py-7" v-else>
           &copy; {{ new Date().getFullYear() }}
           <a href="/signout" class="btn-signin-logout" @click="onLogout">
             {{ name }}
@@ -104,10 +100,12 @@ export default {
 
 <style lang="scss" scoped>
 .v-footer {
-  background: #1a171b !important;
+  background: var(--v-backgroundFooter-base) !important;
+  color: #fff !important;
   .footer-card {
-    background: #1a171b !important;
+    background: var(--v-backgroundFooter-base) !important;
     .social-link {
+      color: #fff;
       text-decoration: none;
       text-transform: uppercase;
       &:hover {
@@ -115,12 +113,15 @@ export default {
         transition: 0.3s;
       }
       span:hover {
-        color: #f4511e;
+        opacity: 0.75;
         transition: 0.3s;
       }
     }
+    .footer-end {
+      color: var(--v-footerend-base);
+    }
     .btn-signin-logout {
-      color: #fff;
+      color: var(--v-white-base);
       text-decoration: none;
     }
   }

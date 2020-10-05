@@ -2,7 +2,11 @@
   <div>
     <title-about :title="'Favorites'"></title-about>
     <v-card outlined class="card-hobby px-16">
-      <v-tabs centered background-color="#eee">
+      <v-tabs
+        centered
+        background-color="var(--v-backgroundCard-base)"
+        color="var(--v-tabHobby-base)"
+      >
         <v-tab v-for="(tab, index) in tabs" :key="index">{{ tab }}</v-tab>
         <v-tab-item v-for="(n, index) in 3" :key="index">
           <v-container>
@@ -15,10 +19,7 @@
                 sm="6"
               >
                 <v-img :src="item.url" :aspect-ratio="20 / 17">
-                  <v-row
-                    align="end"
-                    class="thumbnail-row lightbox white--text fill-height"
-                  >
+                  <v-row align="end" class="thumbnail-row lightbox fill-height">
                     <v-col class="thumbnail">
                       <div class="thumbnail-detail text-center">
                         {{ item.name }}
@@ -168,12 +169,12 @@ export default {
 
 <style lang="scss" scoped>
 .card-hobby {
+  background: var(--v-backgroundCard-base);
   border: none;
-  background: #eee;
   .v-tabs {
     font-family: 'Oswald', sans-serif;
     .v-window-item.v-window-item--active {
-      background: #eee !important;
+      background: var(--v-backgroundCard-base) !important;
     }
     .thumbnail-row {
       .thumbnail {
@@ -183,6 +184,7 @@ export default {
         .thumbnail-detail {
           position: absolute;
           background: rgba(0, 0, 0, 0.5);
+          color: #fff;
           padding: 10px 25px;
           font-size: 24px;
           font-weight: 200;

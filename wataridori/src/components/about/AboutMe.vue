@@ -30,6 +30,6 @@ export default {
 
 <style lang="scss" scoped>
 .card-info {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
 }
 </style>

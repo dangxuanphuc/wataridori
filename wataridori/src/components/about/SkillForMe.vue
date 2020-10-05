@@ -42,15 +42,15 @@ import ProgressBarCircle from './ProgressBarCircle.vue';
 export default {
   data: () => ({
     languages: [
-      { name: 'Vietnamese', percent: '100' },
-      { name: 'Japanese', percent: '30' },
-      { name: 'English', percent: '60' }
+      { name: 'Vietnamese', percent: 100 },
+      { name: 'Japanese', percent: 30 },
+      { name: 'English', percent: 60 }
     ],
     skills: [
-      { name: 'CSS', percent: '85' },
-      { name: 'VueJS', percent: '35' },
-      { name: 'ReactJS', percent: '20' },
-      { name: 'Ruby', percent: '55' }
+      { name: 'CSS', percent: 85 },
+      { name: 'VueJS', percent: 35 },
+      { name: 'ReactJS', percent: 20 },
+      { name: 'Ruby', percent: 55 }
     ]
   }),
   components: {

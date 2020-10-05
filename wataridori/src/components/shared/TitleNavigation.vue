@@ -16,11 +16,11 @@ export default {
 .section-title {
   padding: 22px;
   text-align: center;
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   h1 {
     font-weight: 400;
     font-size: 40px;
-    color: #31708f;
+    color: var(--v-titleNavColor-base);
   }
 }
 </style>

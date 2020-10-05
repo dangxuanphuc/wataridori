@@ -3,7 +3,7 @@
     <div v-if="loading" class="text-center" style="margin-top: 20px">
       <v-progress-circular
         indeterminate
-        color="primary"
+        color="#00897b"
         :width="7"
         :size="70"
       ></v-progress-circular>

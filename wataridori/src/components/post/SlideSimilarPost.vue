@@ -71,7 +71,7 @@ export default {
     text-align: left;
     text-transform: uppercase;
     > .title-post {
-      color: #000;
+      color: var(--v-titlePost-base);
       font-size: 16px;
       font-weight: 400;
       margin-bottom: 5px;
@@ -80,7 +80,7 @@ export default {
       text-overflow: ellipsis;
     }
     .post-date {
-      color: #333;
+      color: var(--v-dateColor-base);
       font-size: 12px;
       display: block;
     }
@@ -106,7 +106,7 @@ export default {
     margin-bottom: 0;
   }
   &:hover {
-    opacity: 0.65;
+    opacity: 0.7;
   }
 }
 </style>

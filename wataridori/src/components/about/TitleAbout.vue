@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .title-name {
-  color: #31708f;
+  color: var(--v-titleNavColor-base);
   text-transform: uppercase;
   font-size: 34px;
   font-weight: 500;

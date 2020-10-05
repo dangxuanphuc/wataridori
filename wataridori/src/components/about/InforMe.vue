@@ -43,25 +43,25 @@ export default {
         title: 'Facebook',
         icon: 'mdi-facebook',
         link: 'https://facebook.com/wataridori.natsumi/',
-        color: '#3b5998'
+        color: 'var(--v-facebookColor-base)'
       },
       {
         title: 'Instagram',
         icon: 'mdi-instagram',
         link: 'https://www.instagram.com/wataridori.natsumi/',
-        color: '#833ab4'
+        color: 'var(--v-instagramColor-base)'
       },
       {
         title: 'Twitter',
         icon: 'mdi-twitter',
         link: 'https://twitter.com/phucdx98/',
-        color: '#1da1f2'
+        color: 'var(--v-twitterColor-base)'
       },
       {
         title: 'Github',
         icon: 'mdi-github',
         link: 'https://github.com/dangxuanphuc/',
-        color: '#000'
+        color: 'var(--v-githubColor-base)'
       }
     ]
   })
@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .admin-name {
-  color: #31708f;
+  color: var(--v-titleNavColor-base);
   font-size: 28px;
   font-weight: 400;
 }

@@ -38,12 +38,13 @@ export default {
   line-height: 24px;
 }
 .loading-bar {
+  background-color: #5f5f5f;
   position: relative;
   height: 15px;
   border-radius: 3px;
   overflow: hidden;
-  background-color: #5f5f5f;
   .percentage {
+    background-color: #f4645f;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -51,7 +52,6 @@ export default {
     display: block;
     height: 100%;
     border-radius: 3px;
-    background-color: #f4645f;
   }
 }
 @keyframes animate-stripes {

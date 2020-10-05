@@ -76,25 +76,25 @@ export default {
         title: 'Facebook',
         icon: 'mdi-facebook',
         link: 'https://facebook.com/wataridori.natsumi/',
-        color: '#3b5998'
+        color: 'var(--v-facebookColor-base)'
       },
       {
         title: 'Instagram',
         icon: 'mdi-instagram',
         link: 'https://www.instagram.com/wataridori.natsumi/',
-        color: '#833ab4'
+        color: 'var(--v-instagramColor-base)'
       },
       {
         title: 'Twitter',
         icon: 'mdi-twitter',
         link: 'https://twitter.com/phucdx98/',
-        color: '#1da1f2'
+        color: 'var(--v-twitterColor-base)'
       },
       {
         title: 'Github',
         icon: 'mdi-github',
         link: 'https://github.com/dangxuanphuc/',
-        color: '#000'
+        color: 'var(--v-githubColor-base)'
       }
     ]
   }),
@@ -111,7 +111,7 @@ export default {
 
 <style lang="scss" scoped>
 .p-30 {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   padding: 30px 30px 20px;
   margin-bottom: 30px;
   border-radius: 3px;
@@ -127,13 +127,13 @@ export default {
     border-radius: 50%;
   }
   .read-more {
-    color: #e53935;
-    border: 2px solid #e53935 !important;
+    color: var(--v-readmoreColor-base);
+    border: 1px solid var(--v-readmoreColor-base) !important;
     margin-bottom: 10px;
     transition: 0.5s;
     &:hover {
-      background: #e53935;
-      color: white;
+      background: var(--v-readmoreColor-base);
+      color: #fff;
     }
   }
 }
@@ -153,6 +153,7 @@ export default {
         }
       }
       .post-info {
+        color: #fff;
         position: absolute;
         top: 50%;
         left: 0;
@@ -162,7 +163,6 @@ export default {
         padding: 0 15px;
         text-align: center;
         text-transform: uppercase;
-        color: #fff;
         > .title-post {
           font-size: 18px;
           font-weight: 400;
@@ -198,7 +198,7 @@ export default {
         left: 0;
         content: '';
         z-index: 1;
-        background: #000;
+        background-color: #000;
         opacity: 0.5;
         filter: alpha(opacity=50);
         transition: 0.3s;
@@ -208,31 +208,32 @@ export default {
       }
       &:hover {
         &::before {
-          opacity: 0.35;
-          filter: alpha(opacity=35);
+          opacity: 0.15;
+          filter: alpha(opacity=15);
         }
       }
     }
   }
 }
 .tag-box {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   .tag-content {
     margin: -5px;
     > a {
       display: inline-block;
       padding: 5px 10px;
-      border: 1px solid #1c1c1c;
+      border: 1px solid var(--v-tagColor-base);
       margin: 5px;
       background: transparent;
-      color: #1c1c1c;
+      color: var(--v-tagColor-base);
       font-weight: normal;
       text-transform: capitalize;
       font-size: 14px !important;
       text-decoration: none;
+      transition: 0.5s;
       &:hover {
-        background: #e53935;
-        color: white;
+        background: #26a69a;
+        color: #fff;
       }
     }
   }

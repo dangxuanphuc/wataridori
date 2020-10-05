@@ -25,10 +25,10 @@
               ></v-textarea>
             </v-col>
           </v-row>
-          <v-btn dark color="green darken-2" class="mr-4">
+          <v-btn dark color="teal darken-1" class="mr-4">
             Submit
           </v-btn>
-          <v-btn color="grey lighten-1">Clear</v-btn>
+          <v-btn dark color="grey darken-1">Clear</v-btn>
         </v-container>
       </v-form>
     </v-card>
@@ -41,7 +41,7 @@ export default {};
 
 <style lang="scss" scoped>
 .form-contact {
-  background: #eee;
+  background: var(--v-backgroundCard-base);
   padding: 30px;
   .text-in-form {
     margin-bottom: 15px;

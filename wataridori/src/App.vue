@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <app-navigation></app-navigation>
-    <main>
+    <main class="mt-16">
       <router-view></router-view>
     </main>
     <back-to-top></back-to-top>
@@ -24,5 +24,6 @@ export default {
 <style lang="scss" scoped>
 .v-application {
   font-family: 'Noto Serif', sans-serif;
+  background-color: var(--v-backgroundApp-base) !important;
 }
 </style>

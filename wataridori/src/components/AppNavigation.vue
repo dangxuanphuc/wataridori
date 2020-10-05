@@ -1,7 +1,12 @@
 <template>
   <div>
     <v-card>
-      <v-app-bar flat class="container-app p-0" color="white">
+      <v-app-bar
+        flat
+        fixed
+        class="container-app"
+        color="var(--v-navBackground-base)"
+      >
         <v-app-bar-nav-icon
           @click="sideNav = true"
           class="hidden-md-and-up"
@@ -23,25 +28,17 @@
           </v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
-        <v-tooltip bottom v-if="userIsAuthenticated">
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              class="mx-2"
-              fab
-              dark
-              small
-              color="teal"
-              v-bind="attrs"
-              v-on="on"
-              to="/post/new"
-            >
-              <v-icon dark>
-                mdi-pencil
-              </v-icon>
-            </v-btn>
-          </template>
-          <span>Create Post</span>
-        </v-tooltip>
+        <v-btn
+          v-if="userIsAuthenticated"
+          depressed
+          class="text-capitalize mr-2 hidden-xs-only"
+          to="/post/new"
+        >
+          <v-icon dark small class="mr-1">
+            mdi-pencil
+          </v-icon>
+          Create Post
+        </v-btn>
         <v-menu
           top
           :close-on-content-click="closeOnContentClick"
@@ -70,31 +67,66 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        <v-switch
-          v-model="$vuetify.theme.dark"
-          hide-details
-          inset
-          label="Dark"
-          class="ml-2 hidden-xs-only"
-        ></v-switch>
+        <button
+          class="toggle-btn hidden-xs-only"
+          @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+        >
+          <span v-if="$vuetify.theme.dark">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/night.png?alt=media&token=cc3a7ba6-4416-4d21-b1e5-490146a73903"
+              class="button-nightmode"
+            />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/moon.png?alt=media&token=d694897a-80db-4b9b-bf56-e687acb245aa"
+              class="night"
+            />
+          </span>
+          <span v-else>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/day.png?alt=media&token=d106f474-1a3a-4922-a13a-eb9ff24bcba1"
+              class="button-daymode"
+            />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/sun.png?alt=media&token=b026b9c2-0033-4ef5-ab90-7bbf4e35b2c8"
+              class="day"
+            />
+          </span>
+        </button>
       </v-app-bar>
     </v-card>
     <v-navigation-drawer v-model="sideNav" absolute temporary>
       <v-list nav dense>
-        <v-list-item-group active-class="deep-purple--text text--accent-4">
+        <v-list-item-group active-class="drawer-text">
           <v-list-item v-for="(item, index) in menuItems" :key="index">
             <v-list-item-title :to="item.link">
               {{ item.title }}
             </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
+        <v-btn
+          v-if="userIsAuthenticated"
+          depressed
+          class="text-capitalize mr-2"
+          to="/post/new"
+        >
+          <v-icon dark small class="mr-1">
+            mdi-pencil
+          </v-icon>
+          Create Post
+        </v-btn>
+        <br />
         <v-menu
           top
           :close-on-content-click="closeOnContentClick"
           :close-on-click="closeOnClick"
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-btn depressed v-bind="attrs" v-on="on" class="text-capitalize">
+            <v-btn
+              depressed
+              v-bind="attrs"
+              v-on="on"
+              class="text-capitalize my-2"
+            >
               English
             </v-btn>
           </template>
@@ -111,13 +143,32 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        <v-switch
-          v-model="$vuetify.theme.dark"
-          hide-details
-          inset
-          label="Dark"
-          class="ml-2"
-        ></v-switch>
+        <br />
+        <button
+          class="toggle-btn"
+          @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+        >
+          <span v-if="$vuetify.theme.dark">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/night.png?alt=media&token=cc3a7ba6-4416-4d21-b1e5-490146a73903"
+              class="button-nightmode"
+            />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/moon.png?alt=media&token=d694897a-80db-4b9b-bf56-e687acb245aa"
+              class="night"
+            />
+          </span>
+          <span v-else>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/day.png?alt=media&token=d106f474-1a3a-4922-a13a-eb9ff24bcba1"
+              class="button-daymode"
+            />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/sun.png?alt=media&token=b026b9c2-0033-4ef5-ab90-7bbf4e35b2c8"
+              class="day"
+            />
+          </span>
+        </button>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -126,7 +177,7 @@
 <script>
 export default {
   data: () => ({
-    apptitle: 'Dang Xuan Phuc Blog',
+    apptitle: 'Wataridori Blog',
     sideNav: false,
     closeOnClick: true,
     closeOnContentClick: true,
@@ -173,7 +224,9 @@ export default {
 
 <style lang="scss" scoped>
 .container-app {
-  margin: 0 48px;
+  padding: 0 48px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
   .nav-brand {
     font-size: 27px;
     padding-left: 0 !important;
@@ -184,9 +237,40 @@ export default {
     font-size: 12px;
   }
 }
-@media screen and (max-width: 670px) {
+.toggle-btn {
+  position: relative;
+  margin-left: 4px;
+  outline: none;
+  .button-nightmode {
+    background-color: #2754a5;
+    height: 35px;
+    margin-top: 5px;
+    border-radius: 20px;
+  }
+  .night {
+    position: absolute;
+    height: 24px;
+    top: 10px;
+    left: 5px;
+  }
+  .button-daymode {
+    height: 35px;
+    margin-top: 5px;
+  }
+  .day {
+    position: absolute;
+    height: 24px;
+    top: 10px;
+    right: 5px;
+  }
+}
+.drawer-text {
+  background-color: #f1f1f1;
+}
+@media screen and (max-width: 960px) {
   .container-app {
     margin: 0;
+    padding: 0 !important;
   }
 }
 </style>
