@@ -155,6 +155,11 @@ export default {
     color: var(--v-postTextColor-base);
     font-size: 16px;
     line-height: 1.6;
+    &::v-deep {
+      img {
+        width: 100%;
+      }
+    }
   }
   .footer-card {
     padding: 0;
@@ -178,13 +183,10 @@ export default {
     }
   }
   &:hover {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 0 var(--v-postShadow-base);
     .v-image {
       opacity: 0.8;
     }
-  }
-  &::last-child {
-    margin-bottom: 0;
   }
 }
 </style>

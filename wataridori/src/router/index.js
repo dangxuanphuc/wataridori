@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Product from '../views/Product.vue';
-import Contact from '../views/Contact.vue';
+import Music from '../views/Music.vue';
 import Signin from '../views/Signin.vue';
 import CreatePost from '../views/CreatePost.vue';
 import Post from '../views/Post.vue';
@@ -28,9 +28,9 @@ const routes = [
     component: Product
   },
   {
-    path: '/contact-me',
-    name: 'Contact',
-    component: Contact
+    path: '/favorite-songs',
+    name: 'Music',
+    component: Music
   },
   {
     path: '/signin',

@@ -39,59 +39,16 @@
           </v-icon>
           Create Post
         </v-btn>
-        <v-menu
-          top
-          :close-on-content-click="closeOnContentClick"
-          :close-on-click="closeOnClick"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              depressed
-              v-bind="attrs"
-              v-on="on"
-              class="text-capitalize hidden-xs-only"
-            >
-              English
-            </v-btn>
-          </template>
-          <v-list class="hidden-xs-only">
-            <v-list-item
-              v-for="(country, index) in countries"
-              :key="index"
-              @click="checkCountry"
-            >
-              <v-list-item-avatar width="20" height="20" min-width="20">
-                <v-img :src="country.flag"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-title>{{ country.name }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <button
-          class="toggle-btn hidden-xs-only"
+        <v-btn
+          fab
+          small
+          depressed
+          class="ml-2 hidden-xs-only"
           @click="$vuetify.theme.dark = !$vuetify.theme.dark"
         >
-          <span v-if="$vuetify.theme.dark">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/night.png?alt=media&token=cc3a7ba6-4416-4d21-b1e5-490146a73903"
-              class="button-nightmode"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/moon.png?alt=media&token=d694897a-80db-4b9b-bf56-e687acb245aa"
-              class="night"
-            />
-          </span>
-          <span v-else>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/day.png?alt=media&token=d106f474-1a3a-4922-a13a-eb9ff24bcba1"
-              class="button-daymode"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/sun.png?alt=media&token=b026b9c2-0033-4ef5-ab90-7bbf4e35b2c8"
-              class="day"
-            />
-          </span>
-        </button>
+          <v-icon v-if="!$vuetify.theme.dark">mdi-brightness-4</v-icon>
+          <v-icon v-else>mdi-white-balance-sunny</v-icon>
+        </v-btn>
       </v-app-bar>
     </v-card>
     <v-navigation-drawer v-model="sideNav" absolute temporary>
@@ -115,60 +72,15 @@
           Create Post
         </v-btn>
         <br />
-        <v-menu
-          top
-          :close-on-content-click="closeOnContentClick"
-          :close-on-click="closeOnClick"
-        >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              depressed
-              v-bind="attrs"
-              v-on="on"
-              class="text-capitalize my-2"
-            >
-              English
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              v-for="(country, index) in countries"
-              :key="index"
-              @click="checkCountry"
-            >
-              <v-list-item-avatar width="20" height="20" min-width="20">
-                <v-img :src="country.flag"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-title>{{ country.name }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <br />
-        <button
-          class="toggle-btn"
+        <v-btn
+          fab
+          small
+          depressed
           @click="$vuetify.theme.dark = !$vuetify.theme.dark"
         >
-          <span v-if="$vuetify.theme.dark">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/night.png?alt=media&token=cc3a7ba6-4416-4d21-b1e5-490146a73903"
-              class="button-nightmode"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/moon.png?alt=media&token=d694897a-80db-4b9b-bf56-e687acb245aa"
-              class="night"
-            />
-          </span>
-          <span v-else>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/day.png?alt=media&token=d106f474-1a3a-4922-a13a-eb9ff24bcba1"
-              class="button-daymode"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/sun.png?alt=media&token=b026b9c2-0033-4ef5-ab90-7bbf4e35b2c8"
-              class="day"
-            />
-          </span>
-        </button>
+          <v-icon v-if="!$vuetify.theme.dark">mdi-brightness-4</v-icon>
+          <v-icon v-else>mdi-white-balance-sunny</v-icon>
+        </v-btn>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -185,7 +97,7 @@ export default {
       { title: 'Home', link: '/' },
       { title: 'About Me', link: '/about-me' },
       { title: 'My Products', link: '/my-products' },
-      { title: 'Contact Me', link: '/contact-me' }
+      { title: 'Favorite Songs', link: '/favorite-songs' }
     ],
     countries: [
       {
@@ -235,33 +147,6 @@ export default {
   }
   .nav-item {
     font-size: 12px;
-  }
-}
-.toggle-btn {
-  position: relative;
-  margin-left: 4px;
-  outline: none;
-  .button-nightmode {
-    background-color: #2754a5;
-    height: 35px;
-    margin-top: 5px;
-    border-radius: 20px;
-  }
-  .night {
-    position: absolute;
-    height: 24px;
-    top: 10px;
-    left: 5px;
-  }
-  .button-daymode {
-    height: 35px;
-    margin-top: 5px;
-  }
-  .day {
-    position: absolute;
-    height: 24px;
-    top: 10px;
-    right: 5px;
   }
 }
 .drawer-text {

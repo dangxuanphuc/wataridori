@@ -77,6 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 .box-detail {
+  margin-top: 10px;
   .detail-block {
     padding: 30px 30px 15px;
     transition: 0.3s;
