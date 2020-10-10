@@ -43,7 +43,7 @@ export default {
         color: 'green',
         year: '09/2013 - 06/2016',
         image:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Ftuky.png?alt=media&token=a72a38a9-2bf4-438e-a57d-cd7798e9add1',
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/tuky.png',
         description:
           'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
       },
@@ -52,7 +52,7 @@ export default {
         color: 'blue',
         year: '09/2016 - 07/2020',
         image:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fkhtn.jpg?alt=media&token=eba90c6c-77be-4d01-b011-140a5540a6cb',
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/khtn.jpg',
         description:
           'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
       },
@@ -61,7 +61,7 @@ export default {
         color: 'instagramColor',
         year: '08/2020 - Present',
         image:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fjapan.jpeg?alt=media&token=d9901d27-e979-4132-9659-7f14a9438c57',
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/japan.jpg',
         description:
           'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
       }

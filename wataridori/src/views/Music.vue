@@ -1,18 +1,15 @@
 <template>
   <div>
-    <title-navigation :title="'Listen to music playlists'"></title-navigation>
-    <footer-app></footer-app>
+    <music-page></music-page>
   </div>
 </template>
 
 <script>
-import TitleNavigation from '@/components/shared/TitleNavigation.vue';
-import FooterApp from '@/components/FooterApp.vue';
+import MusicPage from '@/components/music/MusicPage.vue';
 
 export default {
   components: {
-    TitleNavigation,
-    FooterApp
+    MusicPage
   }
 };
 </script>

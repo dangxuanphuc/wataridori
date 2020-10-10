@@ -26,9 +26,9 @@ export default {
   },
   data: () => ({
     images: [
-      'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fvue.png?alt=media&token=be32b742-7ce1-4aee-819a-b59454b66e69',
-      'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Flinux.png?alt=media&token=86bce2c3-cdbf-4c0c-a425-7eb9408bbff1',
-      'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fdocker.png?alt=media&token=de9fbbf9-c3e8-454e-b1e2-929e4950d5ee'
+      'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/vue.png',
+      'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/linux.png',
+      'https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/docker.png'
     ]
   })
 };

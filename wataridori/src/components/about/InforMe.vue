@@ -9,7 +9,7 @@
           >
             <v-avatar size="160">
               <v-img
-                src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Favatar.jpg?alt=media&token=54410cc4-806b-4278-a8b8-d97273adfa90"
+                src="https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/avatar.jpg"
               ></v-img>
             </v-avatar>
           </v-col>

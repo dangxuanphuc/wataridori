@@ -50,106 +50,106 @@ export default {
       {
         name: 'あわい',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fawai.jpeg?alt=media&token=c114fca7-00c5-4d36-a684-48e4033ae715'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212640/wataridori/images/awai.jpg'
       },
       {
         name: 'なごり雪',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fnagori-yuki.jpg?alt=media&token=8ce534de-e7ae-4948-b431-6f8066b39e31'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602251930/wataridori/images/nagoriyuki.jpg'
       },
       {
         name: 'オレンジ',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Forange.jpg?alt=media&token=cd43ac76-8875-4350-95d2-62eb32d0a94e'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/orange.jpg'
       },
       {
         name: 'Sparkle',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fyour-name.jpg?alt=media&token=d9193b7c-2852-4fd7-b90f-c740b04df04d'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/your-name.jpg'
       },
       {
         name: 'ひらり',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fhirari.jpg?alt=media&token=7c5565f3-bc7b-404f-8175-136306332449'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602245131/wataridori/images/hirari-sakurako-ohara.jpg'
       },
       {
         name: 'Mirai',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fmirai.jpg?alt=media&token=dfc49a71-40a9-4c59-832e-90e96dab0299'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212638/wataridori/images/mirai.jpg'
       },
       {
         name: '雪の華',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fyuki-no-hana.jpeg?alt=media&token=cf20c2ce-43b5-4126-ac39-11adfee3e923'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212638/wataridori/images/yuki-no-hana.jpg'
       },
       {
         name: '叶わない恋でも',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/songs%2Fkanawanai-koi-demo.jpg?alt=media&token=4f055c9e-8e62-43b5-b3a8-10ac55238675'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/kanawanai-koi-demo.jpg'
       }
     ],
     singers: [
       {
         name: 'Anri Kumaki',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fanri-kumaki.jpeg?alt=media&token=caaa86ae-bb46-4ef4-9b3c-125cede0c4ab'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/anri-kumaki.jpg'
       },
       {
         name: 'Aoi Teshima',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Faoi-teshima.jpeg?alt=media&token=aefcd479-83d4-4cfe-af48-3ff133322991'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/aoi-teshima.jpg'
       },
       {
         name: 'Inori Minase',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Finori-minase.jpeg?alt=media&token=fd5be79f-9a73-49dc-be13-432c26ec7258'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212640/wataridori/images/inori-minase.jpg'
       },
       {
         name: 'Maiko Fujita',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fmaiko-fujita.jpeg?alt=media&token=5382c43e-b120-42f1-99d1-1d8d157ed316'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/maiko-fujita.jpg'
       },
       {
         name: 'Noriko Sakai',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fnoriko-sakai.jpeg?alt=media&token=03c50ab6-9a98-418d-85f9-0ce40dca2c93'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602251604/wataridori/images/norico-sakai.jpg'
       },
       {
         name: 'Radwimps',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fradwimps.jpeg?alt=media&token=05bd2300-b610-4eb6-b22d-c875b467b233'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/radwimps.jpg'
       },
       {
         name: 'Shakurako Ohara',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fshakurako-ohara.jpeg?alt=media&token=7dc09643-610b-4a69-bf59-db9e7cf462e7'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212640/wataridori/images/shakurako-ohara.jpg'
       },
       {
         name: 'Mika Nakashima',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/singers%2Fmika-nakashima.jpg?alt=media&token=c2ed94de-8851-465a-aae0-94ddedeed53a'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212640/wataridori/images/mika-nakashima.jpg'
       }
     ],
     others: [
       {
         name: 'ドラえもん',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/others%2Fdoraemon.jpg?alt=media&token=755e27cf-1794-4944-822e-c295fa2de6ae'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/doraemon.jpg'
       },
       {
         name: 'Thiên văn học',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/others%2Fthien-van-hoc.jpg?alt=media&token=c1b2c4d1-c698-4fa1-a82b-867d2e67285a'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/thien-van-hoc.jpg'
       },
       {
         name: 'Stephen Curry',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/others%2Fstephencurry.jpg?alt=media&token=e4cc9fd0-20d5-4738-8930-82fe562fd492'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/stephencurry.jpg'
       },
       {
         name: 'iOS Jailbreaking',
         url:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/others%2FiOS.jpg?alt=media&token=074ccb47-d553-466d-95f1-2cfcc35c1970'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/iOS.jpg'
       }
     ]
   }),

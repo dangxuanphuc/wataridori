@@ -77,9 +77,8 @@ export default {
     items: [
       { title: 'About me', link: '/about-me' },
       { title: 'Favorite songs', link: '/favorite-songs' },
-      { title: 'IT', link: '/#' },
       { title: 'Japanese', link: '/#' },
-      { title: 'My Products', link: '/my-products' }
+      { title: 'IT', link: '/#' }
     ]
   }),
   computed: {

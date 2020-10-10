@@ -96,27 +96,8 @@ export default {
     menuItems: [
       { title: 'Home', link: '/' },
       { title: 'About Me', link: '/about-me' },
-      { title: 'My Products', link: '/my-products' },
       { title: 'Favorite Songs', link: '/favorite-songs' }
-    ],
-    countries: [
-      {
-        flag:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fvietnam.png?alt=media&token=9caa26e3-4307-459a-9b3a-e892e4bfc703',
-        name: 'Tiếng Việt'
-      },
-      {
-        flag:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Funited-kingdom.png?alt=media&token=a274acc5-cbe1-42a1-8854-f824049284fd',
-        name: 'English'
-      },
-      {
-        flag:
-          'https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/about%2Fjapan.png?alt=media&token=e4b88259-5f9e-4ee3-8390-e8aa8799db23',
-        name: '日本語'
-      }
-    ],
-    themes: [{ name: 'Light' }, { name: 'Dark' }]
+    ]
   }),
   methods: {
     checkCountry() {
