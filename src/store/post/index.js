@@ -12,8 +12,24 @@ export default {
     },
     createPost(state, payload) {
       state.loadAllPosts.push(payload);
+    },
+    updatePost(state, payload) {
+      const post = state.loadAllPosts.find(post => {
+        return post.id === payload.id;
+      });
+      if (payload.title) {
+        post.title = payload.title;
+      }
+      if (payload.tags) {
+        post.tags = payload.tags;
+      }
+      if (payload.content) {
+        post.content = payload.content;
+      }
+      if (payload.date) {
+        post.date = payload.date;
+      }
     }
-    // updatePost(state, payload) {}
   },
   actions: {
     loadAllPosts({ commit }) {
@@ -85,6 +101,35 @@ export default {
         })
         .catch(error => {
           console.log(error);
+        });
+    },
+    updatePostData({ commit }, payload) {
+      commit('setLoading', true);
+      const updateObj = {};
+      if (payload.title) {
+        updateObj.title = payload.title;
+      }
+      if (payload.tags) {
+        updateObj.tags = payload.tags;
+      }
+      if (payload.content) {
+        updateObj.content = payload.content;
+      }
+      if (payload.date) {
+        updateObj.date = payload.date;
+      }
+      firebase
+        .database()
+        .ref('/posts/')
+        .child(payload.id)
+        .update(updateObj)
+        .then(() => {
+          commit('setLoading', false);
+          commit('updatePost', payload);
+        })
+        .catch(error => {
+          console.log(error);
+          commit('setLoading', true);
         });
     }
   },

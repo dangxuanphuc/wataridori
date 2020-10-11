@@ -19,6 +19,7 @@ const vuetify = new Vuetify({
         readmoreColor: '#00796b',
         backgroundFooter: '#1a171b',
         shareBtnColor: '#1976d2',
+        editBtnColor: '#1976d2',
         titleNavColor: '#00897b',
         tabHobby: '#00b8d4',
         postShadow: '#9e9ea9',
@@ -32,7 +33,7 @@ const vuetify = new Vuetify({
         colorArtist: '#333',
         shadowImg: '#eaeaea',
         boxShadowStatus: '#00bfa5',
-        colorTextTimer: ' #333',
+        colorTextTimer: '#333',
         colorIcon: '#666'
       },
       dark: {
@@ -47,6 +48,7 @@ const vuetify = new Vuetify({
         readmoreColor: '#26a69a',
         backgroundFooter: '#27293d',
         shareBtnColor: '#26a69a',
+        editBtnColor: '#26a69a',
         titleNavColor: '#18ffff',
         tabHobby: '#00b8d4',
         postShadow: '#4a4848',
@@ -60,7 +62,7 @@ const vuetify = new Vuetify({
         colorArtist: '#828282',
         shadowImg: '#181717',
         boxShadowStatus: '#000',
-        colorTextTimer: ' #fff',
+        colorTextTimer: '#fff',
         colorIcon: '#fff'
       }
     }

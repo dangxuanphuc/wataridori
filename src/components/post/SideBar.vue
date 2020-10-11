@@ -9,7 +9,7 @@
       </div>
       <p>{{ description }}</p>
       <div class="text-center">
-        <v-btn text outlined class="read-more">Read more</v-btn>
+        <v-btn text outlined class="read-more" to="/about-me">Read more</v-btn>
       </div>
     </section>
     <section class="follow-me p-30 title-header">

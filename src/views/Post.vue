@@ -31,10 +31,15 @@
                   </a>
                 </div>
                 <v-spacer></v-spacer>
-                <v-btn text outlined small class="share-btn">
-                  <v-icon small>mdi-export-variant</v-icon>
-                  Share
-                </v-btn>
+                <template v-if="!userIsAuthenticated">
+                  <v-btn text outlined small class="share-btn mr-2">
+                    <v-icon small>mdi-export-variant</v-icon>
+                    Share
+                  </v-btn>
+                </template>
+                <template v-else>
+                  <edit-post :post="post"></edit-post>
+                </template>
               </v-card-actions>
             </v-card>
             <similar-post></similar-post>
@@ -52,6 +57,7 @@
 <script>
 import SimilarPost from '@/components/post/SimilarPost.vue';
 import SideBar from '@/components/post/SideBar.vue';
+import EditPost from '@/components/post/EditPost.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {
@@ -59,12 +65,19 @@ export default {
   components: {
     SimilarPost,
     SideBar,
+    EditPost,
     FooterApp
   },
   data: () => ({
     author: 'by Dang Xuan Phuc'
   }),
   computed: {
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      );
+    },
     post() {
       return this.$store.getters.loadPost(this.id);
     },
