@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'assets/scrollbar.css';
 .v-application {
   font-family: 'Noto Serif', sans-serif;
   background-color: var(--v-backgroundApp-base) !important;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <title-about :title="'I love'"></title-about>
     <v-card outlined class="card-img">
       <v-container>

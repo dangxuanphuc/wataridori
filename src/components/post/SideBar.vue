@@ -46,7 +46,12 @@
         </div>
       </div>
     </section>
-    <section class="tag-box p-30 title-header">
+    <section
+      class="tag-box p-30 title-header"
+      data-aos="fade-up"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+    >
       <title-side-bar :title="'Tags'"></title-side-bar>
       <div class="tag-content">
         <a

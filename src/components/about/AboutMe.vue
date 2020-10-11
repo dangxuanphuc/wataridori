@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card outlined class="card-info py-5">
+    <v-card outlined class="card-info py-5 mb-6">
       <infor-me></infor-me>
       <tech-love></tech-love>
       <time-line></time-line>

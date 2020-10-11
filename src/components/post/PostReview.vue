@@ -5,7 +5,13 @@
       :gutter="{ default: '30px', 700: '15px' }"
     >
       <div v-for="(post, index) in posts" :key="index">
-        <v-card outlined class="review-block">
+        <v-card
+          outlined
+          class="review-block"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
           <header>
             <v-img :src="post.imageUrl" aspect-ratio="1.8"></v-img>
           </header>

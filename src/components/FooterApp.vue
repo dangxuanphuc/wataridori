@@ -1,50 +1,52 @@
 <template>
-  <v-footer dark padless class="mt-10">
-    <v-container>
-      <v-card flat tile class="footer-card text-center">
-        <v-card-text class="py-8">
-          <v-row>
-            <v-col
-              cols="12"
-              class="col-lg-3 col-md-3 col-sm-3"
-              v-for="(icon, index) in icons"
-              :key="index"
-            >
-              <a :href="icon.link" target="_blank" class="social-link">
-                <v-icon size="32px">{{ icon.name }}</v-icon> {{ icon.title }}
+  <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+    <v-footer dark padless>
+      <v-container>
+        <v-card flat tile class="footer-card text-center">
+          <v-card-text class="py-8">
+            <v-row>
+              <v-col
+                cols="12"
+                class="col-lg-3 col-md-3 col-sm-3"
+                v-for="(icon, index) in icons"
+                :key="index"
+              >
+                <a :href="icon.link" target="_blank" class="social-link">
+                  <v-icon size="32px">{{ icon.name }}</v-icon> {{ icon.title }}
+                </a>
+              </v-col>
+            </v-row>
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-text class="py-7">
+            <div class="footer-link-nav">
+              <a
+                v-for="(item, index) in items"
+                :key="index"
+                :href="item.link"
+                class="social-link"
+              >
+                <span class="title-link">{{ item.title }}</span>
               </a>
-            </v-col>
-          </v-row>
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-text class="py-7">
-          <div class="footer-link-nav">
-            <a
-              v-for="(item, index) in items"
-              :key="index"
-              :href="item.link"
-              class="social-link"
-            >
-              <span class="title-link">{{ item.title }}</span>
+            </div>
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-text class="py-7" v-if="!userIsAuthenticated">
+            &copy; {{ new Date().getFullYear() }}
+            <a href="/signin" class="btn-signin-logout">{{ name }}</a>
+            {{ copyright }}
+          </v-card-text>
+          <v-card-text class="footer-end py-7" v-else>
+            &copy; {{ new Date().getFullYear() }}
+            <a href="/signout" class="btn-signin-logout" @click="onLogout">
+              {{ name }}
             </a>
-          </div>
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-text class="py-7" v-if="!userIsAuthenticated">
-          &copy; {{ new Date().getFullYear() }}
-          <a href="/signin" class="btn-signin-logout">{{ name }}</a>
-          {{ copyright }}
-        </v-card-text>
-        <v-card-text class="footer-end py-7" v-else>
-          &copy; {{ new Date().getFullYear() }}
-          <a href="/signout" class="btn-signin-logout" @click="onLogout">
-            {{ name }}
-          </a>
-          {{ copyright }}
-        </v-card-text>
-      </v-card>
-    </v-container>
-  </v-footer>
+            {{ copyright }}
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-footer>
+  </div>
 </template>
 
 <script>

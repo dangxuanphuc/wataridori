@@ -89,6 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scrollbar.css';
 .box-detail {
   margin-top: 10px;
   .detail-block {

@@ -9,6 +9,8 @@ import 'firebase/auth';
 import DateFilter from './filters/date';
 import VueMasonry from 'vue-masonry-css';
 import VueSocialSharing from 'vue-social-sharing';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 Vue.use(VueMasonry);
 Vue.use(VueSocialSharing);
@@ -35,5 +37,6 @@ new Vue({
       }
     });
     this.$store.dispatch('loadAllPosts');
+    AOS.init({ disable: 'phone' });
   }
 }).$mount('#app');

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <title-about :title="'Favorites'"></title-about>
     <v-card outlined class="card-hobby px-16">
       <v-tabs

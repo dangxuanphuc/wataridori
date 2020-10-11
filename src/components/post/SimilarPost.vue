@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <section class="popular-post p-30 title-header">
       <title-side-bar :title="titleSideBar"></title-side-bar>
       <slide-similar-post></slide-similar-post>
