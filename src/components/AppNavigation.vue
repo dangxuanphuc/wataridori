@@ -54,8 +54,12 @@
     <v-navigation-drawer v-model="sideNav" absolute temporary>
       <v-list nav dense>
         <v-list-item-group active-class="drawer-text">
-          <v-list-item v-for="(item, index) in menuItems" :key="index">
-            <v-list-item-title :to="item.link">
+          <v-list-item
+            v-for="(item, index) in menuItems"
+            :key="index"
+            :href="item.link"
+          >
+            <v-list-item-title>
               {{ item.title }}
             </v-list-item-title>
           </v-list-item>

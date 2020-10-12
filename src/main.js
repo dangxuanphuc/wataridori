@@ -37,6 +37,6 @@ new Vue({
       }
     });
     this.$store.dispatch('loadAllPosts');
-    AOS.init({ disable: 'phone' });
+    AOS.init();
   }
 }).$mount('#app');

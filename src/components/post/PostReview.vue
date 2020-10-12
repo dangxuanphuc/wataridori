@@ -26,7 +26,10 @@
               <span class="author">{{ author }}</span>
             </div>
           </div>
-          <div class="contents post-body" v-html="post.content"></div>
+          <div
+            class="contents post-body"
+            :inner-html.prop="post.content | truncate(700, '...')"
+          ></div>
           <v-card-actions class="footer-card">
             <v-btn
               text
@@ -94,6 +97,11 @@ export default {
       { name: 'twitter', icon: 'mdi-twitter', color: '#1da1f2' }
     ]
   }),
+  filters: {
+    truncate: function(text, length, suffix) {
+      return text.substring(0, length) + suffix;
+    }
+  },
   methods: {
     shareSocial() {
       console.log('Share social button');
@@ -162,6 +170,29 @@ export default {
     font-size: 16px;
     line-height: 1.6;
     &::v-deep {
+      span,
+      strong {
+        color: var(--v-postTextColor-base) !important;
+      }
+      code {
+        background-color: transparent !important;
+      }
+      pre {
+        background-color: #e4e4e4;
+        border: 1px solid #bfbfbf;
+        overflow-y: hidden;
+        overflow: visible;
+        overflow-x: auto;
+        padding: 0 10px;
+        border-radius: 4px;
+        &::-webkit-scrollbar {
+          height: 7px;
+        }
+      }
+      a {
+        color: #26c6da;
+        text-decoration: none;
+      }
       img {
         width: 100%;
       }

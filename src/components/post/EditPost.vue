@@ -65,11 +65,13 @@
         <v-divider></v-divider>
         <v-row>
           <v-col xs="12">
-            <v-spacer></v-spacer>
-            <v-btn class="blue--text darken-1" @click="editDialog = false"
+            <v-btn
+              outlined
+              class="cyan lighten-5 mr-2"
+              @click="editDialog = false"
               >Close</v-btn
             >
-            <v-btn class="blue--text darken-1" @click="onSaveChanges"
+            <v-btn outlined class="cyan accent-2" @click="onSaveChanges"
               >Save</v-btn
             >
           </v-col>

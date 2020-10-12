@@ -136,7 +136,7 @@ export default {
   getters: {
     loadAllPosts(state) {
       return state.loadAllPosts.sort((postA, postB) => {
-        return postA.date > postB.date;
+        return new Date(postB.date) - new Date(postA.date);
       });
     },
     loadPost(state) {

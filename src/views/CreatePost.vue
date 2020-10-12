@@ -85,7 +85,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <footer-app></footer-app>
   </div>
 </template>
 
@@ -98,12 +97,10 @@ import 'quill-emoji/dist/quill-emoji.css';
 import 'highlight.js/styles/tomorrow.css';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
-import FooterApp from '@/components/FooterApp.vue';
 
 export default {
   components: {
-    quillEditor,
-    FooterApp
+    quillEditor
   },
   data: () => ({
     title: '',

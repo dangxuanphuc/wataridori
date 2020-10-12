@@ -101,7 +101,6 @@ export default {
       margin: -30px -30px 10px;
       .v-image {
         width: 100%;
-        transition: 0.3s;
       }
     }
     .subtitle {
@@ -134,6 +133,34 @@ export default {
       font-size: 16px;
       line-height: 1.6;
       word-wrap: break-word;
+      &::v-deep {
+        span,
+        strong {
+          color: var(--v-postTextColor-base) !important;
+        }
+        code {
+          background-color: transparent !important;
+        }
+        pre {
+          background-color: #e4e4e4;
+          border: 1px solid #bfbfbf;
+          overflow-y: hidden;
+          overflow: visible;
+          overflow-x: auto;
+          padding: 0 10px;
+          border-radius: 4px;
+          &::-webkit-scrollbar {
+            height: 7px;
+          }
+        }
+        a {
+          color: #26c6da;
+          text-decoration: none;
+        }
+        img {
+          width: 100%;
+        }
+      }
     }
     .footer-card {
       padding: 0;
