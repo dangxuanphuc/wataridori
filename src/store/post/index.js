@@ -26,6 +26,9 @@ export default {
       if (payload.content) {
         post.content = payload.content;
       }
+      if (payload.contentMD) {
+        post.contentMD = payload.contentMD;
+      }
       if (payload.date) {
         post.date = payload.date;
       }
@@ -48,6 +51,7 @@ export default {
               tags: obj[key].tags,
               imageUrl: obj[key].imageUrl,
               content: obj[key].content,
+              contentMD: obj[key].contentMD,
               date: obj[key].date
             });
           }
@@ -64,6 +68,7 @@ export default {
         title: payload.title,
         tags: payload.tags,
         content: payload.content,
+        contentMD: payload.contentMD,
         date: payload.date.toISOString()
       };
       let imageUrl, key;

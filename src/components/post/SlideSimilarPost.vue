@@ -30,8 +30,6 @@ export default {
   },
   data: () => ({
     swiperOption: {
-      slidesPerView: 3,
-      spaceBetween: 30,
       freeMode: true,
       autoplay: {
         delay: 2500
@@ -39,6 +37,16 @@ export default {
       pagination: {
         el: '.swiper-pagination',
         clickable: true
+      },
+      breakpoints: {
+        380: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        620: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
       }
     }
   }),
@@ -62,6 +70,7 @@ export default {
     overflow: hidden;
     > .img {
       width: 100%;
+      height: 120px;
       opacity: 1;
       display: block;
     }

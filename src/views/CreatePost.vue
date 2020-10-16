@@ -64,11 +64,11 @@
               </v-col>
             </v-row>
             <div class="markdown-editor">
-              <quill-editor
-                class="editor"
-                ref="myTextEditor"
-                :options="editorOption"
-                @change="onEditorChange"
+              <mavon-editor
+                :toolbars="markdownOption"
+                :language="'en'"
+                :placeholder="'Type your content...'"
+                @change="change"
                 v-model="content"
               />
             </div>
@@ -89,57 +89,50 @@
 </template>
 
 <script>
-import hljs from 'highlight.js';
-import debounce from 'lodash/debounce';
-import { quillEditor } from 'vue-quill-editor';
-import { quillEmoji } from 'quill-emoji';
-import 'quill-emoji/dist/quill-emoji.css';
-import 'highlight.js/styles/tomorrow.css';
-import 'quill/dist/quill.core.css';
-import 'quill/dist/quill.snow.css';
-
 export default {
-  components: {
-    quillEditor
-  },
-  data: () => ({
-    title: '',
-    tags: '',
-    imageUrl: '',
-    content: '',
-    date: new Date().toISOString().substr(0, 10),
-    time: new Date(),
-    image: null,
-    editorOption: {
-      placeholder: 'Type your post...',
-      modules: {
-        'emoji-toolbar': true,
-        'emoji-shortname': true,
-        toolbar: {
-          container: [
-            ['bold', 'italic', 'underline', 'strike'],
-            ['blockquote', 'code-block'],
-            [{ header: 1 }, { header: 2 }],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            [{ script: 'sub' }, { script: 'super' }],
-            [{ indent: '-1' }, { indent: '+1' }],
-            [{ direction: 'rtl' }],
-            [{ color: [] }, { background: [] }],
-            [{ align: [] }],
-            ['link', 'image', 'emoji']
-          ],
-          handlers: {
-            image: function() {
-              quillEmoji.emit(this.quill.id);
-            }
-          }
-        },
-        syntax: {
-          highlight: text => hljs.highlightAuto(text).value
-        }
+  data() {
+    return {
+      title: '',
+      tags: '',
+      imageUrl: '',
+      content: '',
+      contentMD: '',
+      html: '',
+      date: new Date().toISOString().substr(0, 10),
+      time: new Date(),
+      image: null,
+      markdownOption: {
+        bold: true,
+        italic: true,
+        header: true,
+        underline: true,
+        strikethrough: true,
+        superscript: true,
+        subscript: true,
+        quote: true,
+        ol: true,
+        ul: true,
+        link: true,
+        imagelink: true,
+        code: true,
+        table: true,
+        fullscreen: true,
+        readmodel: true,
+        htmlcode: true,
+        help: true,
+        undo: true,
+        redo: true,
+        trash: true,
+        save: true,
+        navigation: true,
+        alignleft: true,
+        aligncenter: true,
+        alignright: true,
+        subfield: true,
+        preview: true
       }
-    }
-  }),
+    };
+  },
   methods: {
     onCreatePost() {
       if (!this.formIsValid) {
@@ -152,7 +145,8 @@ export default {
         title: this.title,
         tags: this.tags,
         image: this.image,
-        content: this.content,
+        content: this.html,
+        contentMD: this.content,
         date: this.submittableDateTime
       };
       this.$store.dispatch('createPost', postData);
@@ -174,9 +168,9 @@ export default {
       fileReader.readAsDataURL(files[0]);
       this.image = files[0];
     },
-    onEditorChange: debounce(function(value) {
-      this.content = value.html;
-    }, 466)
+    change(value, render) {
+      this.html = render;
+    }
   },
   computed: {
     formIsValid() {
@@ -199,12 +193,6 @@ export default {
         date.setMinutes(this.time.getMinutes());
       }
       return date;
-    },
-    editor() {
-      return this.$refs.myTextEditor.quill;
-    },
-    contentCode() {
-      return hljs.highlightAuto(this.content).value;
     }
   }
 };
@@ -216,14 +204,13 @@ export default {
     height: 75px;
   }
   .markdown-editor {
-    display: flex;
-    height: 20rem;
+    width: 100%;
+    height: 100%;
     margin-top: 15px;
-    $toolbar-height: 42px;
-    .editor {
-      width: 100%;
-      height: 100%;
-      padding-bottom: $toolbar-height;
+    .markdown-body {
+      box-shadow: none !important;
+      border: 1px solid #9b9b9b;
+      z-index: 0;
     }
   }
 }

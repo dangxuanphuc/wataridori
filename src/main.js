@@ -11,9 +11,12 @@ import VueMasonry from 'vue-masonry-css';
 import VueSocialSharing from 'vue-social-sharing';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css';
 
 Vue.use(VueMasonry);
 Vue.use(VueSocialSharing);
+Vue.use(mavonEditor);
 Vue.config.productionTip = false;
 
 Vue.filter('date', DateFilter);

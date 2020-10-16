@@ -170,15 +170,19 @@ export default {
     font-size: 16px;
     line-height: 1.6;
     &::v-deep {
-      span,
-      strong {
-        color: var(--v-postTextColor-base) !important;
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #969696;
+        padding: 4px;
       }
       code {
         background-color: transparent !important;
       }
       pre {
-        background-color: #e4e4e4;
         border: 1px solid #bfbfbf;
         overflow-y: hidden;
         overflow: visible;

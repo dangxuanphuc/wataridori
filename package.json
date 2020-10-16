@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "firebase": "^7.21.1",
     "k-progress": "^1.5.0",
+    "mavon-editor": "^2.9.0",
     "quill-emoji": "^0.1.8",
     "swiper": "^5.4.5",
     "vue": "^2.6.11",

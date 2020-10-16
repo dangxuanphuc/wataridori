@@ -45,11 +45,11 @@
           </v-col>
         </v-row>
         <div class="markdown-editor">
-          <quill-editor
-            class="editor"
-            ref="myTextEditor"
-            :options="editorOption"
-            @change="onEditorChange"
+          <mavon-editor
+            :toolbars="markdownOption"
+            :language="'en'"
+            :placeholder="'Type your content...'"
+            @change="change"
             v-model="editContent"
           />
         </div>
@@ -82,63 +82,50 @@
 </template>
 
 <script>
-import hljs from 'highlight.js';
-import debounce from 'lodash/debounce';
-import { quillEditor } from 'vue-quill-editor';
-import { quillEmoji } from 'quill-emoji';
-import 'quill-emoji/dist/quill-emoji.css';
-import 'highlight.js/styles/tomorrow.css';
-import 'quill/dist/quill.core.css';
-import 'quill/dist/quill.snow.css';
-
 export default {
   props: ['post'],
-  components: {
-    quillEditor
-  },
   data() {
     return {
       editDialog: false,
       editTitle: this.post.title,
       editTags: this.post.tags,
-      editContent: this.post.content,
+      editContent: this.post.contentMD,
+      editHtml: '',
       editDate: new Date().toISOString().substr(0, 10),
       editTime: new Date(),
-      editorOption: {
-        placeholder: 'Type your post...',
-        modules: {
-          'emoji-toolbar': true,
-          'emoji-shortname': true,
-          toolbar: {
-            container: [
-              ['bold', 'italic', 'underline', 'strike'],
-              ['blockquote', 'code-block'],
-              [{ header: 1 }, { header: 2 }],
-              [{ list: 'ordered' }, { list: 'bullet' }],
-              [{ script: 'sub' }, { script: 'super' }],
-              [{ indent: '-1' }, { indent: '+1' }],
-              [{ direction: 'rtl' }],
-              [{ color: [] }, { background: [] }],
-              [{ align: [] }],
-              ['link', 'image', 'emoji']
-            ],
-            handlers: {
-              image: function() {
-                quillEmoji.emit(this.quill.id);
-              }
-            }
-          },
-          syntax: {
-            highlight: text => hljs.highlightAuto(text).value
-          }
-        }
+      markdownOption: {
+        bold: true,
+        italic: true,
+        header: true,
+        underline: true,
+        strikethrough: true,
+        superscript: true,
+        subscript: true,
+        quote: true,
+        ol: true,
+        ul: true,
+        link: true,
+        imagelink: true,
+        code: true,
+        table: true,
+        fullscreen: true,
+        readmodel: true,
+        htmlcode: true,
+        help: true,
+        undo: true,
+        redo: true,
+        trash: true,
+        save: true,
+        navigation: true,
+        alignleft: true,
+        aligncenter: true,
+        alignright: true,
+        subfield: true,
+        preview: true
       }
     };
   },
   methods: {
-    onEditorChange: debounce(function(value) {
-      this.content = value.html;
-    }, 466),
     onSaveChanges() {
       if (this.editTitle.trim() === '' || this.editContent.trim() === '') {
         return;
@@ -148,9 +135,13 @@ export default {
         id: this.post.id,
         title: this.editTitle,
         tags: this.editTags,
-        content: this.editContent,
+        content: this.editHtml,
+        contentMD: this.editContent,
         date: this.editDateTime
       });
+    },
+    change(value, render) {
+      this.editHtml = render;
     }
   },
   computed: {
@@ -178,6 +169,16 @@ export default {
   &:hover {
     background: var(--v-editBtnColor-base);
     color: #fff;
+  }
+}
+.markdown-editor {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  .markdown-body {
+    box-shadow: none !important;
+    border: 1px solid #9b9b9b;
+    z-index: 0;
   }
 }
 </style>

@@ -154,6 +154,7 @@ export default {
         overflow: hidden;
         > .img {
           width: 100%;
+          height: 150px;
           opacity: 1;
         }
       }
@@ -215,6 +216,19 @@ export default {
         &::before {
           opacity: 0.15;
           filter: alpha(opacity=15);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .popular-post {
+    .post-list {
+      > .artical {
+        .main-image {
+          > .img {
+            height: 150px !important;
+          }
         }
       }
     }
