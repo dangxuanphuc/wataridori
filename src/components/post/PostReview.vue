@@ -200,6 +200,14 @@ export default {
       img {
         width: 100%;
       }
+      img.emoticon {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        vertical-align: middle;
+      }
     }
   }
   .footer-card {

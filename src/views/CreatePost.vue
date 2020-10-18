@@ -89,6 +89,8 @@
 </template>
 
 <script>
+import emojson from '@/assets/emoticon.json';
+
 export default {
   data() {
     return {
@@ -98,6 +100,7 @@ export default {
       content: '',
       contentMD: '',
       html: '',
+      emoticons: emojson,
       date: new Date().toISOString().substr(0, 10),
       time: new Date(),
       image: null,
@@ -134,6 +137,46 @@ export default {
     };
   },
   methods: {
+    getKeyEmoji(postContent) {
+      const regExp = /\(.*?\)/g;
+      const matches = postContent.match(regExp);
+      return matches;
+    },
+    replaceToEmoticon(postContent) {
+      var emojiArray = JSON.parse(JSON.stringify(this.emoticons));
+      var newContent = postContent;
+      var keyArr = this.getKeyEmoji(postContent);
+      var arr = [];
+      for (let i in emojiArray) {
+        arr.push(emojiArray[i]['key']);
+      }
+      var keyNotOverlap = keyArr.filter(function(el) {
+        return arr.includes(el);
+      });
+      var srcArr = keyArr.filter(function(el) {
+        return arr.includes(el);
+      });
+      for (let i in emojiArray) {
+        for (let j in keyNotOverlap) {
+          if (keyNotOverlap[j] === emojiArray[i]['key']) {
+            srcArr[j] = emojiArray[i]['src'];
+          }
+        }
+      }
+      for (let i in keyNotOverlap) {
+        newContent = newContent.replace(
+          keyNotOverlap[i],
+          "<img src='" +
+            srcArr[i] +
+            "' title='" +
+            keyNotOverlap[i] +
+            "' alt='" +
+            keyNotOverlap[i] +
+            "' class='emoticon' />"
+        );
+      }
+      return newContent;
+    },
     onCreatePost() {
       if (!this.formIsValid) {
         return;
@@ -145,7 +188,7 @@ export default {
         title: this.title,
         tags: this.tags,
         image: this.image,
-        content: this.html,
+        content: this.replaceToEmoticon(this.html),
         contentMD: this.content,
         date: this.submittableDateTime
       };

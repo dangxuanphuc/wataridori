@@ -26,6 +26,9 @@
           >
             <span class="nav-item">{{ item.title }}</span>
           </v-btn>
+          <v-btn text depressed to="/emoticons" v-if="userIsAuthenticated">
+            <span class="nav-item">Emoticons</span>
+          </v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-btn
@@ -103,11 +106,6 @@ export default {
       { title: 'Favorite Songs', link: '/favorite-songs' }
     ]
   }),
-  methods: {
-    checkCountry() {
-      console.log('test');
-    }
-  },
   computed: {
     userIsAuthenticated() {
       return (

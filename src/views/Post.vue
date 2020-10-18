@@ -71,6 +71,16 @@ export default {
   data: () => ({
     author: 'by Dang Xuan Phuc'
   }),
+  methods: {
+    getKeyEmoji(postContent) {
+      const regExp = /\(.*?\)/g;
+      const matches = postContent.match(regExp);
+      return matches;
+    },
+    replaceToEmoticon(emoji, postContent) {
+      return postContent.replace(emoji['key'], "<img :src='emoji['src']' />");
+    }
+  },
   computed: {
     userIsAuthenticated() {
       return (
@@ -163,6 +173,14 @@ export default {
         }
         img {
           width: 100%;
+        }
+        img.emoticon {
+          object-fit: contain;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          vertical-align: middle;
         }
       }
     }

@@ -82,6 +82,8 @@
 </template>
 
 <script>
+import emojson from '@/assets/emoticon.json';
+
 export default {
   props: ['post'],
   data() {
@@ -91,6 +93,7 @@ export default {
       editTags: this.post.tags,
       editContent: this.post.contentMD,
       editHtml: '',
+      emoticons: emojson,
       editDate: new Date().toISOString().substr(0, 10),
       editTime: new Date(),
       markdownOption: {
@@ -126,6 +129,46 @@ export default {
     };
   },
   methods: {
+    getKeyEmoji(postContent) {
+      const regExp = /\(.*?\)/g;
+      const matches = postContent.match(regExp);
+      return matches;
+    },
+    replaceToEmoticon(postContent) {
+      var emojiArray = JSON.parse(JSON.stringify(this.emoticons));
+      var newContent = postContent;
+      var keyArr = this.getKeyEmoji(postContent);
+      var arr = [];
+      for (let i in emojiArray) {
+        arr.push(emojiArray[i]['key']);
+      }
+      var keyNotOverlap = keyArr.filter(function(el) {
+        return arr.includes(el);
+      });
+      var srcArr = keyArr.filter(function(el) {
+        return arr.includes(el);
+      });
+      for (let i in emojiArray) {
+        for (let j in keyNotOverlap) {
+          if (keyNotOverlap[j] === emojiArray[i]['key']) {
+            srcArr[j] = emojiArray[i]['src'];
+          }
+        }
+      }
+      for (let i in keyNotOverlap) {
+        newContent = newContent.replace(
+          keyNotOverlap[i],
+          "<img src='" +
+            srcArr[i] +
+            "' title='" +
+            keyNotOverlap[i] +
+            "' alt='" +
+            keyNotOverlap[i] +
+            "' class='emoticon' />"
+        );
+      }
+      return newContent;
+    },
     onSaveChanges() {
       if (this.editTitle.trim() === '' || this.editContent.trim() === '') {
         return;
@@ -135,7 +178,7 @@ export default {
         id: this.post.id,
         title: this.editTitle,
         tags: this.editTags,
-        content: this.editHtml,
+        content: this.replaceToEmoticon(this.editHtml),
         contentMD: this.editContent,
         date: this.editDateTime
       });

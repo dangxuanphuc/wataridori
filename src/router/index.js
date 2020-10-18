@@ -6,6 +6,7 @@ import Music from '../views/Music.vue';
 import Signin from '../views/Signin.vue';
 import CreatePost from '../views/CreatePost.vue';
 import Post from '../views/Post.vue';
+import Emoticons from '@/components/Emoticons.vue';
 import AuthGuard from './auth-guard';
 
 Vue.use(VueRouter);
@@ -42,6 +43,11 @@ const routes = [
     name: 'Post',
     props: true,
     component: Post
+  },
+  {
+    path: '/emoticons',
+    name: 'Emoticons',
+    component: Emoticons
   }
 ];
 
