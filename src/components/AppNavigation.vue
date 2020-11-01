@@ -12,7 +12,7 @@
           class="hidden-md-and-up"
         ></v-app-bar-nav-icon>
         <v-toolbar-title class="nav-brand mr-3">
-          <router-link to="/" tag="span">
+          <router-link to="/" tag="span" v-once>
             {{ apptitle }}
           </router-link>
         </v-toolbar-title>

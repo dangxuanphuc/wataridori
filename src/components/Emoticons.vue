@@ -14,7 +14,7 @@
         :gutter="{ default: '30px', 700: '15px' }"
       >
         <v-card
-          class="mb-3"
+          class="my-3 card-info"
           max-width="350"
           v-for="emoji in emoticons"
           :key="emoji.index"
@@ -53,5 +53,8 @@ export default {
   width: 27px !important;
   height: 17px !important;
   min-width: 30px !important;
+}
+.card-info {
+  background: var(--v-backgroundCard-base);
 }
 </style>

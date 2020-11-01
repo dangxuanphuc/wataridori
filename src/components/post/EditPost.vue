@@ -53,15 +53,6 @@
             v-model="editContent"
           />
         </div>
-        <v-date-picker
-          v-model="editDate"
-          style="display: none;"
-        ></v-date-picker>
-        <v-time-picker
-          v-model="editTime"
-          format="24hr"
-          style="display: none;"
-        ></v-time-picker>
         <v-divider></v-divider>
         <v-row>
           <v-col xs="12">
@@ -94,8 +85,6 @@ export default {
       editContent: this.post.contentMD,
       editHtml: '',
       emoticons: emojson,
-      editDate: new Date().toISOString().substr(0, 10),
-      editTime: new Date(),
       markdownOption: {
         bold: true,
         italic: true,
@@ -179,27 +168,11 @@ export default {
         title: this.editTitle,
         tags: this.editTags,
         content: this.replaceToEmoticon(this.editHtml),
-        contentMD: this.editContent,
-        date: this.editDateTime
+        contentMD: this.editContent
       });
     },
     change(value, render) {
       this.editHtml = render;
-    }
-  },
-  computed: {
-    editDateTime() {
-      const date = new Date(this.editDate);
-      if (typeof this.editTime === 'string') {
-        const hours = this.time.match(/^(\d+)/)[1];
-        const minutes = this.time.match(/:(\d+)/)[1];
-        date.setHours(hours);
-        date.setMinutes(minutes);
-      } else {
-        date.setHours(this.editTime.getHours());
-        date.setMinutes(this.editTime.getMinutes());
-      }
-      return date;
     }
   }
 };

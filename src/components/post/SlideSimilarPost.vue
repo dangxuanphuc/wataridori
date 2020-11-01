@@ -11,7 +11,7 @@
           </h1>
           <div class="post-date">{{ post.date | date }}</div>
         </div>
-        <a :href="post.id" class="link"></a>
+        <router-link :to="post.id" class="link"></router-link>
       </div>
     </swiper-slide>
   </swiper>

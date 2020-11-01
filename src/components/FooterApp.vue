@@ -19,27 +19,33 @@
         <v-divider></v-divider>
         <v-card-text class="py-7">
           <div class="footer-link-nav">
-            <a
+            <router-link
               v-for="(item, index) in items"
               :key="index"
-              :href="item.link"
+              :to="item.link"
               class="social-link"
             >
               <span class="title-link">{{ item.title }}</span>
-            </a>
+            </router-link>
           </div>
         </v-card-text>
         <v-divider></v-divider>
-        <v-card-text class="py-7" v-if="!userIsAuthenticated">
+        <v-card-text class="py-7" v-if="!userIsAuthenticated" v-once>
           &copy; {{ new Date().getFullYear() }}
-          <a href="/signin" class="btn-signin-logout">{{ name }}</a>
+          <router-link to="/signin" class="btn-signin-logout">
+            {{ name }}
+          </router-link>
           {{ copyright }}
         </v-card-text>
-        <v-card-text class="footer-end py-7" v-else>
+        <v-card-text class="footer-end py-7" v-else v-once>
           &copy; {{ new Date().getFullYear() }}
-          <a href="/signout" class="btn-signin-logout" @click="onLogout">
+          <router-link
+            to="/signout"
+            class="btn-signin-logout"
+            @click="onLogout"
+          >
             {{ name }}
-          </a>
+          </router-link>
           {{ copyright }}
         </v-card-text>
       </v-card>

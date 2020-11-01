@@ -20,7 +20,7 @@
                 <h1>{{ post.title }}</h1>
                 <div class="date-author">
                   <span class="date-submit">{{ post.date | date }}</span>
-                  <span class="author">{{ author }}</span>
+                  <span class="author" v-once>{{ author }}</span>
                 </div>
               </div>
               <div class="contents post-body" v-html="post.content"></div>
@@ -144,14 +144,48 @@ export default {
       line-height: 1.6;
       word-wrap: break-word;
       &::v-deep {
+        blockquote,
+        dl,
+        ol,
+        p,
+        pre,
+        table,
+        ul {
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin-top: 24px;
+          margin-bottom: 6px;
+          font-weight: 600;
+          line-height: 1.25;
+        }
+        strong {
+          font-weight: 600;
+        }
+        h2 {
+          padding-bottom: 0.3em;
+          font-size: 1.5em;
+        }
         table {
           border-collapse: collapse;
-        }
-        table,
-        th,
-        td {
-          border: 1px solid #969696;
-          padding: 4px;
+          tr {
+            background-color: var(--v-bgtrtable-base);
+            border-top: 1px solid #c6cbd1;
+            &:nth-child(2n) {
+              background-color: var(--v-bgtrtable-base);
+            }
+            th,
+            td {
+              border: 1px solid #dfe2e5;
+              padding: 6px 13px;
+            }
+          }
         }
         code {
           background-color: transparent !important;

@@ -12,7 +12,7 @@ const vuetify = new Vuetify({
         titlePostHover: '#00796b',
         navBackground: '#fff',
         backgroundApp: '#fff',
-        backgroundCard: '#eee',
+        backgroundCard: '#f7f7f7',
         postTextColor: '#333',
         dateColor: '#777',
         tagColor: '#1c1c1c',
@@ -34,7 +34,9 @@ const vuetify = new Vuetify({
         shadowImg: '#eaeaea',
         boxShadowStatus: '#00bfa5',
         colorTextTimer: '#333',
-        colorIcon: '#666'
+        colorIcon: '#666',
+        bgtrtable: '#fff',
+        bgtrchild: '#f6f8fa'
       },
       dark: {
         titlePost: '#fff',
@@ -63,7 +65,9 @@ const vuetify = new Vuetify({
         shadowImg: '#181717',
         boxShadowStatus: '#000',
         colorTextTimer: '#fff',
-        colorIcon: '#fff'
+        colorIcon: '#fff',
+        bgtrtable: '#27293d',
+        bgtrchild: '#27293d'
       }
     }
   }

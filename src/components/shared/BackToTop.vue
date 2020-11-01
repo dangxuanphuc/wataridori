@@ -8,7 +8,7 @@
         @click="backToTop"
       >
         <v-img
-          src="https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/top.png"
+          src="https://res.cloudinary.com/phucdx/image/upload/v1604675788/wataridori/images/backtotop.png"
         ></v-img>
       </div>
     </transition>

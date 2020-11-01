@@ -5,25 +5,19 @@
       :gutter="{ default: '30px', 700: '15px' }"
     >
       <div v-for="(post, index) in posts" :key="index">
-        <v-card
-          outlined
-          class="review-block"
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
-        >
+        <v-card outlined class="review-block">
           <header>
             <v-img :src="post.imageUrl" aspect-ratio="1.8"></v-img>
           </header>
           <div class="subtitle">
             <h1>
-              <a :href="'posts/' + post.id">
+              <router-link :to="'posts/' + post.id">
                 {{ post.title }}
-              </a>
+              </router-link>
             </h1>
             <div class="date-author">
               <span class="date-submit">{{ post.date | date }}</span>
-              <span class="author">{{ author }}</span>
+              <span class="author" v-once>{{ author }}</span>
             </div>
           </div>
           <div

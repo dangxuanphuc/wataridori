@@ -7,7 +7,7 @@
           src="https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/avatar.jpg"
         />
       </div>
-      <p>{{ description }}</p>
+      <p v-once>{{ description }}</p>
       <div class="text-center">
         <v-btn text outlined class="read-more" to="/about-me">Read more</v-btn>
       </div>
@@ -42,16 +42,11 @@
               {{ post.date | date }}
             </div>
           </div>
-          <a :href="post.id" class="link"></a>
+          <router-link :to="post.id" class="link"></router-link>
         </div>
       </div>
     </section>
-    <section
-      class="tag-box p-30 title-header"
-      data-aos="fade-up"
-      data-aos-easing="linear"
-      data-aos-duration="1000"
-    >
+    <section class="tag-box p-30 title-header">
       <title-side-bar :title="'Tags'"></title-side-bar>
       <div class="tag-content">
         <a

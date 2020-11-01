@@ -107,7 +107,7 @@ export default {
       {
         name: 'Maiko Fujita',
         url:
-          'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/maiko-fujita.jpg'
+          'https://res.cloudinary.com/phucdx/image/upload/v1602292216/wataridori/images/fujita-maiko.jpg'
       },
       {
         name: 'Noriko Sakai',

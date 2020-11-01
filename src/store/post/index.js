@@ -29,9 +29,6 @@ export default {
       if (payload.contentMD) {
         post.contentMD = payload.contentMD;
       }
-      if (payload.date) {
-        post.date = payload.date;
-      }
     }
   },
   actions: {
@@ -119,9 +116,6 @@ export default {
       }
       if (payload.content) {
         updateObj.content = payload.content;
-      }
-      if (payload.date) {
-        updateObj.date = payload.date;
       }
       firebase
         .database()

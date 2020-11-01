@@ -14,7 +14,7 @@
             </v-avatar>
           </v-col>
           <v-col cols="12" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-            <h3 class="admin-name mb-2">{{ phucdx }}</h3>
+            <h3 class="admin-name mb-2" v-once>{{ phucdx }}</h3>
             <p>{{ description }}</p>
             <v-btn
               v-for="(social, index) in socials"
