@@ -2,7 +2,6 @@ const songs = [
   {
     title: 'キセキ',
     artist: 'GReeeeN',
-    seconds: 272,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602247960/wataridori/songs/cover/kiseki-greeeen.jpg',
     src:
@@ -11,7 +10,6 @@ const songs = [
   {
     title: 'なごり雪',
     artist: 'Ayaka Hirahara',
-    seconds: 230,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602251930/wataridori/images/nagoriyuki.jpg',
     src:
@@ -20,7 +18,6 @@ const songs = [
   {
     title: 'Sparkle',
     artist: 'RADWIMPS',
-    seconds: 408,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/your-name.jpg',
     src:
@@ -29,7 +26,6 @@ const songs = [
   {
     title: '君だったら',
     artist: 'Happy Birthday',
-    seconds: 320,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602255073/wataridori/songs/cover/kimidattara.jpg',
     src:
@@ -38,7 +34,6 @@ const songs = [
   {
     title: 'オレンジ',
     artist: '7!!',
-    seconds: 350,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/orange.jpg',
     src:
@@ -47,7 +42,6 @@ const songs = [
   {
     title: 'ひらり',
     artist: 'Sakurako Ohara',
-    seconds: 295,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245131/wataridori/images/hirari-sakurako-ohara.jpg',
     src:
@@ -56,7 +50,6 @@ const songs = [
   {
     title: '夢と葉桜',
     artist: 'Hatsune Miku',
-    seconds: 254,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602253418/wataridori/songs/cover/Yume_to_Hazakura.png',
     src:
@@ -65,7 +58,6 @@ const songs = [
   {
     title: 'Hai Triệu Năm',
     artist: 'Đen, Biên',
-    seconds: 216,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/2trieunam.jpg',
     src:
@@ -74,7 +66,6 @@ const songs = [
   {
     title: 'Hello Goodbye & Hello',
     artist: 'Anri Kumaki',
-    seconds: 273,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602253806/wataridori/songs/cover/hellogoodbye.jpg',
     src:
@@ -83,7 +74,6 @@ const songs = [
   {
     title: 'Bài Này Chill Phết',
     artist: 'Đen, Min',
-    seconds: 276,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/chillphet.jpg',
     src:
@@ -92,7 +82,6 @@ const songs = [
   {
     title: 'ありがとう',
     artist: 'Kokia',
-    seconds: 370,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/arigatou.jpg',
     src:
@@ -101,7 +90,6 @@ const songs = [
   {
     title: 'ひらり、ひらり',
     artist: 'Hatsune Miku',
-    seconds: 210,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602253985/wataridori/songs/cover/HirariHirari.jpg',
     src:
@@ -110,7 +98,6 @@ const songs = [
   {
     title: '未来',
     artist: 'Garnidelia',
-    seconds: 343,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602212638/wataridori/images/mirai.jpg',
     src:
@@ -119,7 +106,6 @@ const songs = [
   {
     title: 'Tokyo Bon 2020',
     artist: 'Namewee',
-    seconds: 299,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602255674/wataridori/songs/cover/TokyoBon2020.jpg',
     src:
@@ -128,7 +114,6 @@ const songs = [
   {
     title: 'Wishing',
     artist: 'Minase Inori',
-    seconds: 360,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602252277/wataridori/songs/cover/wishing.jpg',
     src:
@@ -137,7 +122,6 @@ const songs = [
   {
     title: '雪の華',
     artist: 'Mika Nakashima',
-    seconds: 335,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602254425/wataridori/images/yuki-no-hana.jpg',
     src:
@@ -146,7 +130,6 @@ const songs = [
   {
     title: '桜色舞うころ',
     artist: 'Mika Nakashima',
-    seconds: 296,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/SakuraIroMauKoro.jpg',
     src:
@@ -155,7 +138,6 @@ const songs = [
   {
     title: 'Ý Em Sao',
     artist: 'Kay Trần, Lăng LD',
-    seconds: 141,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245739/wataridori/songs/cover/YEmSao.jpg',
     src:
@@ -164,7 +146,6 @@ const songs = [
   {
     title: '私の声',
     artist: 'Minase Inori',
-    seconds: 164,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602253186/wataridori/songs/cover/WatashiNoKoe-minase.jpg',
     src:
@@ -173,7 +154,6 @@ const songs = [
   {
     title: '花のあとさき',
     artist: 'MAO',
-    seconds: 227,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/HanaNoAtosaki.jpg',
     src:
@@ -182,7 +162,6 @@ const songs = [
   {
     title: '1年2ヶ月20日',
     artist: 'BRIGHT',
-    seconds: 315,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602255004/wataridori/songs/cover/ichinen.jpg',
     src:
@@ -191,7 +170,6 @@ const songs = [
   {
     title: ' 碧いうさぎ',
     artist: 'Noriko Sakai',
-    seconds: 227,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602251604/wataridori/images/norico-sakai.jpg',
     src:
@@ -200,7 +178,6 @@ const songs = [
   {
     title: 'さよならの夏',
     artist: 'Aoi Teshima',
-    seconds: 323,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245741/wataridori/songs/cover/SayonaraNoNatsu.jpg',
     src:
@@ -209,7 +186,6 @@ const songs = [
   {
     title: 'Thằng Điên',
     artist: 'JustaTee, Phương Ly',
-    seconds: 286,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602254084/wataridori/songs/cover/thangdien.jpg',
     src:
@@ -218,7 +194,6 @@ const songs = [
   {
     title: '叶わない恋でも',
     artist: 'KG, Yumi Shizukusa',
-    seconds: 312,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/kanawanai-koi-demo.jpg',
     src:
@@ -227,7 +202,6 @@ const songs = [
   {
     title: 'アンブレラ',
     artist: 'Itou Kashitarou',
-    seconds: 260,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602255300/wataridori/songs/cover/umbrella.jpg',
     src:
@@ -236,7 +210,6 @@ const songs = [
   {
     title: '水風船',
     artist: 'Fujita Maiko',
-    seconds: 267,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602292216/wataridori/images/fujita-maiko.jpg',
     src:
@@ -245,7 +218,6 @@ const songs = [
   {
     title: 'Hôm Nay Tôi Buồn',
     artist: 'Phùng Khánh Linh',
-    seconds: 275,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245740/wataridori/songs/cover/HomNayToiBuon.jpg',
     src:
@@ -254,7 +226,6 @@ const songs = [
   {
     title: '明日、僕は君に会いに行く。',
     artist: 'ワカバ',
-    seconds: 250,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245739/wataridori/songs/cover/ashitaainiiku.jpg',
     src:
@@ -263,7 +234,6 @@ const songs = [
   {
     title: '大きな古時計',
     artist: 'Noriko Mitose',
-    seconds: 287,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602251481/wataridori/songs/cover/tokei.jpg',
     src:
@@ -272,7 +242,6 @@ const songs = [
   {
     title: '風の記憶',
     artist: 'Anri Kumaki',
-    seconds: 227,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602245738/wataridori/songs/cover/kazenokyoku.jpg',
     src:
@@ -281,7 +250,6 @@ const songs = [
   {
     title: '百恋歌',
     artist: 'Satomi Takasugi',
-    seconds: 282,
     cover:
       'https://res.cloudinary.com/phucdx/image/upload/v1602255512/wataridori/songs/cover/hyaku-renka.jpg',
     src:
