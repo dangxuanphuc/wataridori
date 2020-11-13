@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'BackToTop',
   props: {
     visibleoffset: {
       type: [String, Number],

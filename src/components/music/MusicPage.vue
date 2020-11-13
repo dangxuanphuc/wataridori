@@ -110,6 +110,7 @@ import { shuffleArray } from '@/helpers/utils';
 import songs from '@/mocks/songs';
 
 export default {
+  name: 'MusicPage',
   data: () => ({
     audio: null,
     circleLeft: null,

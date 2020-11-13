@@ -35,6 +35,7 @@
 
 <script>
 export default {
+  name: 'InforMe',
   data: () => ({
     phucdx: 'Đặng Xuân Phúc',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',

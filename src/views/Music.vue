@@ -8,6 +8,7 @@
 import MusicPage from '@/components/music/MusicPage.vue';
 
 export default {
+  name: 'Music',
   components: {
     MusicPage
   }

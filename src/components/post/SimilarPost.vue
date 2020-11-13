@@ -12,6 +12,7 @@ import TitleSideBar from './TitleSideBar.vue';
 import SlideSimilarPost from './SlideSimilarPost.vue';
 
 export default {
+  name: 'SimilarPost',
   data: () => ({
     titleSideBar: 'You might also like'
   }),

@@ -22,7 +22,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
 export default {
-  name: 'swiper-example-multiple-slides-per-biew',
+  name: 'SlideSimilarPost',
   title: 'Multiple slides per view',
   components: {
     Swiper,

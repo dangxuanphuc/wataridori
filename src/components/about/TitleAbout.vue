@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'TitleAbout',
   props: ['title']
 };
 </script>

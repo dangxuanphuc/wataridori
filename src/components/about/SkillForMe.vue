@@ -40,6 +40,7 @@ import ProgressBar from './ProgressBar.vue';
 import ProgressBarCircle from './ProgressBarCircle.vue';
 
 export default {
+  name: 'SkillForMe',
   data: () => ({
     languages: [
       { name: 'Vietnamese', percent: 100 },

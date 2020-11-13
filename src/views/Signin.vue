@@ -84,6 +84,7 @@
 import AppAlert from '@/components/shared/Alert.vue';
 
 export default {
+  name: 'Signin',
   components: {
     AppAlert
   },

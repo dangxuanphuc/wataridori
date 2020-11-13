@@ -93,6 +93,7 @@
 
 <script>
 export default {
+  name: 'PostReview',
   props: ['title'],
   data: () => ({
     author: 'by Dang Xuan Phuc',

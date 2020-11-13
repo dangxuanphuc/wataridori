@@ -55,6 +55,7 @@
 
 <script>
 export default {
+  name: 'FooterApp',
   data: () => ({
     name: 'Dang Xuan Phuc',
     copyright: ' Blog. All Rights Reserved.',

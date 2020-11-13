@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'TitleSideBar',
   props: ['title']
 };
 </script>

@@ -33,6 +33,7 @@
 import TitleAbout from './TitleAbout.vue';
 
 export default {
+  name: 'TimeLine',
   components: {
     TitleAbout
   },

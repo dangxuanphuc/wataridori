@@ -20,6 +20,7 @@ import VueEasyPieChart from 'vue-easy-pie-chart';
 import 'vue-easy-pie-chart/dist/vue-easy-pie-chart.css';
 
 export default {
+  name: 'ProgressBarCircle',
   props: ['skill', 'percentNumber'],
   components: {
     VueEasyPieChart

@@ -92,6 +92,7 @@
 import emojson from '@/assets/emoticon.json';
 
 export default {
+  name: 'CreatePost',
   data() {
     return {
       title: '',

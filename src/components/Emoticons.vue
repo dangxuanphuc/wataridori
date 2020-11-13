@@ -37,6 +37,7 @@
 import emojiArray from '@/assets/emoticon.json';
 
 export default {
+  name: 'Emoticons',
   data: () => ({
     emoticons: emojiArray
   }),

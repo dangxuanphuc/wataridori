@@ -132,6 +132,7 @@
 
 <script>
 export default {
+  name: 'AppNavigation',
   data: () => ({
     apptitle: 'Wataridori Blog',
     sideNav: false,

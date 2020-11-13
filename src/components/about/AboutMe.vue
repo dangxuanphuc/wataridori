@@ -18,6 +18,7 @@ import SkillForMe from './SkillForMe.vue';
 import MyHobby from './MyHobby.vue';
 
 export default {
+  name: 'AboutMe',
   components: {
     InforMe,
     TechLove,

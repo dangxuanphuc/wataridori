@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: 'ProgressBar',
   props: ['skill', 'percentNumber'],
   data: () => ({
     percentage: 0

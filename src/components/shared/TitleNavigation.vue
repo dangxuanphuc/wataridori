@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'TitleNavigation',
   props: ['title']
 };
 </script>

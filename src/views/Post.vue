@@ -73,6 +73,7 @@ import EditPost from '@/components/post/EditPost.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {
+  name: 'Post',
   props: ['id'],
   components: {
     SimilarPost,

@@ -22,6 +22,7 @@ import PostReview from '@/components/post/PostReview.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {
+  name: 'Home',
   components: {
     TitleNavigation,
     PostReview,

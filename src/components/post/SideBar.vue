@@ -65,6 +65,7 @@
 import TitleSideBar from './TitleSideBar.vue';
 
 export default {
+  name: 'SideBar',
   components: {
     TitleSideBar
   },

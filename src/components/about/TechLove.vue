@@ -21,6 +21,7 @@
 import TitleAbout from './TitleAbout.vue';
 
 export default {
+  name: 'TechLove',
   components: {
     TitleAbout
   },

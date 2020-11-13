@@ -40,6 +40,7 @@
 import TitleAbout from './TitleAbout.vue';
 
 export default {
+  name: 'MyHobby',
   props: ['objects'],
   components: {
     TitleAbout

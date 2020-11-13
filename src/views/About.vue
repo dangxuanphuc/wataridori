@@ -22,6 +22,7 @@ import AboutMe from '@/components/about/AboutMe.vue';
 import FooterApp from '@/components/FooterApp.vue';
 
 export default {
+  name: 'About',
   components: {
     TitleNavigation,
     AboutMe,
