@@ -1,6 +1,4 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/storage';
+import fb from '@/firebase.js';
 
 export default {
   state: {
@@ -34,24 +32,23 @@ export default {
   actions: {
     loadAllPosts({ commit }) {
       commit('setLoading', true);
-      firebase
-        .database()
-        .ref('posts')
-        .once('value')
-        .then(data => {
+      fb.firestore()
+        .collection('posts')
+        .get()
+        .then(querySnapshot => {
           const posts = [];
-          const obj = data.val();
-          for (let key in obj) {
+          querySnapshot.forEach(doc => {
+            const data = doc.data();
             posts.push({
-              id: key,
-              title: obj[key].title,
-              tags: obj[key].tags,
-              imageUrl: obj[key].imageUrl,
-              content: obj[key].content,
-              contentMD: obj[key].contentMD,
-              date: obj[key].date
+              id: doc.id,
+              title: data.title,
+              tags: data.tags,
+              imageUrl: data.imageUrl,
+              content: data.content,
+              contentMD: data.contentMD,
+              date: data.date
             });
-          }
+          });
           commit('setLoadPosts', posts);
           commit('setLoading', false);
         })
@@ -66,38 +63,20 @@ export default {
         tags: payload.tags,
         content: payload.content,
         contentMD: payload.contentMD,
+        imageUrl: payload.imageUrl,
         date: payload.date.toISOString()
       };
-      let imageUrl, key;
-      firebase
-        .database()
-        .ref('posts')
-        .push(post)
+      let key;
+      fb.firestore()
+        .collection('posts')
+        .add(post)
         .then(data => {
-          key = data.key;
+          key = data.id;
           return key;
-        })
-        .then(key => {
-          const filename = payload.image.name;
-          const ext = filename.slice(filename.lastIndexOf('.'));
-          return firebase
-            .storage()
-            .ref('posts/' + key + '.' + ext)
-            .put(payload.image);
-        })
-        .then(fileData => {
-          return fileData.ref.getDownloadURL().then(imageUrl => {
-            return firebase
-              .database()
-              .ref('posts')
-              .child(key)
-              .update({ imageUrl: imageUrl });
-          });
         })
         .then(() => {
           commit('createPost', {
             ...post,
-            imageUrl: imageUrl,
             id: key
           });
         })
@@ -117,10 +96,9 @@ export default {
       if (payload.content) {
         updateObj.content = payload.content;
       }
-      firebase
-        .database()
-        .ref('/posts/')
-        .child(payload.id)
+      fb.firestore()
+        .collection('posts')
+        .doc(payload.id)
         .update(updateObj)
         .then(() => {
           commit('setLoading', false);

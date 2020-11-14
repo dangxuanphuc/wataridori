@@ -1,5 +1,16 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import fb from '@/firebase.js';
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  didOpen: toast => {
+    toast.addEventListener('mouseenter', Swal.stopTimer);
+    toast.addEventListener('mouseleave', Swal.resumeTimer);
+  }
+});
 
 export default {
   state: {
@@ -13,28 +24,44 @@ export default {
   actions: {
     userSignIn({ commit }, payload) {
       commit('setLoading', true);
-      commit('clearError');
-      firebase
-        .auth()
+      fb.auth()
         .signInWithEmailAndPassword(payload.email, payload.password)
         .then(user => {
           commit('setLoading', false);
           const newUser = {
-            id: user.uid,
-            fbKeys: {}
+            id: user.uid
           };
           commit('setUser', newUser);
+          Toast.fire({
+            icon: 'success',
+            title: 'Welcome Back to Wataridori Blog!'
+          });
         })
         .catch(error => {
           commit('setLoading', false);
-          commit('setError', error);
+          console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Sorry! You are not allowed login to this website!'
+          });
         });
     },
-    autoSignin({ commit }, payload) {
-      commit('setUser', { id: payload.uid, fbKeys: {} });
+    autoSignIn({ commit }, payload) {
+      commit('setUser', { id: payload.uid });
     },
     logout({ commit }, payload) {
-      firebase.auth().signOut();
+      fb.auth()
+        .signOut()
+        .then(() => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Logout successfully!'
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
       commit('setUser', payload);
     }
   },

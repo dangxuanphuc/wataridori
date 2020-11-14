@@ -39,6 +39,7 @@
               top
               :close-on-content-click="closeOnContentClick"
               :close-on-click="closeOnClick"
+              v-if="!userIsAuthenticated"
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -74,7 +75,7 @@
                   <share-network
                     :network="social.name"
                     title=""
-                    :url="'facebook.com/posts/' + post.id"
+                    :url="'https://dangxuanphuc.netlify.app/posts/' + post.id"
                   >
                     <v-icon :color="social.color" class="mr-2">
                       {{ social.icon }}
@@ -84,6 +85,9 @@
                 </v-list-item>
               </v-list>
             </v-menu>
+            <template v-else>
+              <delete-post :post="post"></delete-post>
+            </template>
           </v-card-actions>
         </v-card>
       </div>
@@ -92,9 +96,14 @@
 </template>
 
 <script>
+import DeletePost from '@/components/post/DeletePost.vue';
+
 export default {
   name: 'PostReview',
   props: ['title'],
+  components: {
+    DeletePost
+  },
   data: () => ({
     author: 'by Dang Xuan Phuc',
     closeOnClick: true,
@@ -117,6 +126,12 @@ export default {
   computed: {
     posts() {
       return this.$store.getters.loadAllPosts;
+    },
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      );
     }
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <v-dialog persistent v-model="editDialog">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn depressed outlined small v-on="on" v-bind="attrs" class="editBtn">
+      <v-btn depressed outlined small v-on="on" v-bind="attrs" class="edit-btn">
         <svg
           width="1.6em"
           height="1.6em"
@@ -89,6 +89,18 @@
 
 <script>
 import emojson from '@/assets/emoticon.json';
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  didOpen: toast => {
+    toast.addEventListener('mouseenter', Swal.stopTimer);
+    toast.addEventListener('mouseleave', Swal.resumeTimer);
+  }
+});
 
 export default {
   name: 'EditPost',
@@ -186,6 +198,10 @@ export default {
         content: this.replaceToEmoticon(this.editHtml),
         contentMD: this.editContent
       });
+      Toast.fire({
+        icon: 'success',
+        title: 'Post updated successfully!'
+      });
     },
     change(value, render) {
       this.editHtml = render;
@@ -195,7 +211,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.editBtn {
+.edit-btn {
   border: 1px solid var(--v-editBtnColor-base) !important;
   color: var(--v-editBtnColor-base);
   &:hover {

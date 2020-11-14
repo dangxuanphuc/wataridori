@@ -32,20 +32,14 @@
         <v-divider></v-divider>
         <v-card-text class="py-7" v-if="!userIsAuthenticated" v-once>
           &copy; {{ new Date().getFullYear() }}
-          <router-link to="/signin" class="btn-signin-logout">
-            {{ name }}
-          </router-link>
+          <Login :text-login="name" />
           {{ copyright }}
         </v-card-text>
         <v-card-text class="footer-end py-7" v-else v-once>
           &copy; {{ new Date().getFullYear() }}
-          <router-link
-            to="/signout"
-            class="btn-signin-logout"
-            @click="onLogout"
-          >
+          <a class="btn-signin-logout" @click="onLogout">
             {{ name }}
-          </router-link>
+          </a>
           {{ copyright }}
         </v-card-text>
       </v-card>
@@ -54,10 +48,16 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+import Login from '@/views/Login';
+
 export default {
   name: 'FooterApp',
+  components: {
+    Login
+  },
   data: () => ({
-    name: 'Dang Xuan Phuc',
+    name: 'Wataridori',
     copyright: ' Blog. All Rights Reserved.',
     icons: [
       {
@@ -88,17 +88,29 @@ export default {
       { title: 'IT', link: '/#' }
     ]
   }),
+  methods: {
+    onLogout() {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'さようなら、遊びをお楽しみください！',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Goodbye'
+      }).then(result => {
+        if (result.isConfirmed) {
+          this.$store.dispatch('logout');
+        }
+      });
+    }
+  },
   computed: {
     userIsAuthenticated() {
       return (
         this.$store.getters.user !== null &&
         this.$store.getters.user !== undefined
       );
-    }
-  },
-  methods: {
-    onLogout() {
-      this.$store.dispatch('logout');
     }
   }
 };

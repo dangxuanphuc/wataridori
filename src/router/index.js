@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Music from '../views/Music.vue';
-import Signin from '../views/Signin.vue';
 import CreatePost from '../views/CreatePost.vue';
 import Post from '../views/Post.vue';
 import Emoticons from '@/components/Emoticons.vue';
@@ -26,11 +25,6 @@ const routes = [
     path: '/favorite-songs',
     name: 'Music',
     component: Music
-  },
-  {
-    path: '/signin',
-    name: 'Signin',
-    component: Signin
   },
   {
     path: '/post/new',

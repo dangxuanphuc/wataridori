@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import fb from '@/firebase.js';
 import emojson from '@/assets/emoticon.json';
 
 export default {
@@ -104,7 +105,6 @@ export default {
       emoticons: emojson,
       date: new Date().toISOString().substr(0, 10),
       time: new Date(),
-      image: null,
       markdownOption: {
         bold: true,
         italic: true,
@@ -151,10 +151,10 @@ export default {
       for (let i in emojiArray) {
         arr.push(emojiArray[i]['key']);
       }
-      var keyNotOverlap = keyArr.filter(function(el) {
+      var keyNotOverlap = keyArr.filter(el => {
         return arr.includes(el);
       });
-      var srcArr = keyArr.filter(function(el) {
+      var srcArr = keyArr.filter(el => {
         return arr.includes(el);
       });
       for (let i in emojiArray) {
@@ -182,13 +182,10 @@ export default {
       if (!this.formIsValid) {
         return;
       }
-      if (!this.image) {
-        return;
-      }
       const postData = {
         title: this.title,
         tags: this.tags,
-        image: this.image,
+        imageUrl: this.imageUrl,
         content: this.replaceToEmoticon(this.html),
         contentMD: this.content,
         date: this.submittableDateTime
@@ -199,18 +196,28 @@ export default {
     onPickFile() {
       this.$refs.fileInput.click();
     },
-    onFilePicked(event) {
-      const files = event.target.files;
-      let filename = files[0].name;
-      if (filename.lastIndexOf('.') <= 0) {
-        return alert('Please add a valid file');
+    onFilePicked(e) {
+      if (e.target.files[0]) {
+        let file = e.target.files[0];
+        var storageRef = fb
+          .storage()
+          .ref('posts/' + Math.random() + '_' + file.name);
+        let uploadTask = storageRef.put(file);
+        uploadTask.on(
+          'state_changed',
+          snapshot => {
+            console.log(snapshot);
+          },
+          error => {
+            console.log(error);
+          },
+          () => {
+            uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+              this.imageUrl = downloadURL;
+            });
+          }
+        );
       }
-      const fileReader = new FileReader();
-      fileReader.addEventListener('load', () => {
-        this.imageUrl = fileReader.result;
-      });
-      fileReader.readAsDataURL(files[0]);
-      this.image = files[0];
     },
     change(value, render) {
       this.html = render;
