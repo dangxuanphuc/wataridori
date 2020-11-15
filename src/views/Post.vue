@@ -19,8 +19,11 @@
               <div class="subtitle">
                 <h1>{{ post.title }}</h1>
                 <div class="date-author">
-                  <span class="date-submit">{{ post.date | date }}</span>
+                  <span class="date-submit">
+                    {{ post.date | moment('LLL') }}
+                  </span>
                   <span class="author" v-once>{{ author }}</span>
+                  <reading-time :content="post.content"></reading-time>
                 </div>
               </div>
               <div class="contents post-body" v-html="post.content"></div>
@@ -67,6 +70,7 @@
 </template>
 
 <script>
+import ReadingTime from '@/components/post/ReadingTime.vue';
 import SimilarPost from '@/components/post/SimilarPost.vue';
 import SideBar from '@/components/post/SideBar.vue';
 import EditPost from '@/components/post/EditPost.vue';
@@ -76,6 +80,7 @@ export default {
   name: 'Post',
   props: ['id'],
   components: {
+    ReadingTime,
     SimilarPost,
     SideBar,
     EditPost,
@@ -243,7 +248,6 @@ export default {
           background: transparent;
           color: var(--v-tagColor-base);
           font-weight: normal;
-          text-transform: capitalize;
           font-size: 14px !important;
           text-decoration: none;
           transition: 0.5s;

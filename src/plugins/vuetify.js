@@ -37,7 +37,13 @@ const vuetify = new Vuetify({
         colorTextTimer: '#333',
         colorIcon: '#666',
         bgtrtable: '#fff',
-        bgtrchild: '#f6f8fa'
+        bgtrchild: '#f6f8fa',
+        colorForm: '#fafafa',
+        colorField: '#00796b',
+        closeBtn: '#c8e6c9',
+        saveBtn: '#26a69a',
+        playBtnFilter: '#ecdbdb',
+        btnHover: '#efefef'
       },
       dark: {
         titlePost: '#fff',
@@ -69,7 +75,13 @@ const vuetify = new Vuetify({
         colorTextTimer: '#fff',
         colorIcon: '#fff',
         bgtrtable: '#27293d',
-        bgtrchild: '#27293d'
+        bgtrchild: '#27293d',
+        colorForm: '#27293d',
+        colorField: '#00bfa5',
+        closeBtn: '#737373',
+        saveBtn: '#005d50',
+        playBtnFilter: '#1e1e2f',
+        btnHover: '#1e1e2f'
       }
     }
   }

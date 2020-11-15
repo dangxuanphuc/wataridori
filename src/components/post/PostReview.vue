@@ -16,7 +16,9 @@
               </router-link>
             </h1>
             <div class="date-author">
-              <span class="date-submit">{{ post.date | date }}</span>
+              <span class="date-submit">
+                {{ post.date | moment('LL') }}
+              </span>
               <span class="author" v-once>{{ author }}</span>
             </div>
           </div>
@@ -74,8 +76,8 @@
                 >
                   <share-network
                     :network="social.name"
-                    title=""
                     :url="'https://dangxuanphuc.netlify.app/posts/' + post.id"
+                    hashtags="ワタリドリ"
                   >
                     <v-icon :color="social.color" class="mr-2">
                       {{ social.icon }}

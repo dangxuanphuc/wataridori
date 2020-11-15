@@ -355,7 +355,7 @@ export default {
         &.playBtn {
           margin-bottom: 0;
           font-size: 95px;
-          filter: drop-shadow(0 11px 6px rgba(172, 184, 204, 0.45));
+          filter: drop-shadow(0 11px 6px var(--v-playBtnFilter-base));
           color: #4db6ac;
           width: 80px;
           height: 80px;
@@ -363,7 +363,7 @@ export default {
         }
         &.prevNext:hover {
           border-radius: 50%;
-          background: #fff;
+          background: var(--v-btnHover-base);
           transform: scale(1.1);
           box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
           transition: all 0.3s ease-in-out;

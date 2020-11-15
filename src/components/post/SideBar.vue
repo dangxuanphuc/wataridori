@@ -39,7 +39,7 @@
               {{ post.title }}
             </h1>
             <div class="post-date">
-              {{ post.date | date }}
+              {{ post.date | moment('ll') }}
             </div>
           </div>
           <router-link :to="post.id" class="link"></router-link>
@@ -242,7 +242,6 @@ export default {
       background: transparent;
       color: var(--v-tagColor-base);
       font-weight: normal;
-      text-transform: capitalize;
       font-size: 14px !important;
       text-decoration: none;
       transition: 0.5s;

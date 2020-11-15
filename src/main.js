@@ -5,20 +5,19 @@ import { store } from './store';
 import vuetify from './plugins/vuetify';
 
 import fb from './firebase.js';
-import DateFilter from './filters/date';
 import VueMasonry from 'vue-masonry-css';
 import VueSocialSharing from 'vue-social-sharing';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import mavonEditor from 'mavon-editor';
 import 'mavon-editor/dist/css/index.css';
+import VueMoment from 'vue-moment';
 
+Vue.use(VueMoment);
 Vue.use(VueMasonry);
 Vue.use(VueSocialSharing);
 Vue.use(mavonEditor);
 Vue.config.productionTip = false;
-
-Vue.filter('date', DateFilter);
 
 new Vue({
   router,

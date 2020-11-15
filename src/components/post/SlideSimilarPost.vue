@@ -9,7 +9,7 @@
           <h1 class="title-post">
             {{ post.title }}
           </h1>
-          <div class="post-date">{{ post.date | date }}</div>
+          <div class="post-date">{{ post.date | moment('LL') }}</div>
         </div>
         <router-link :to="post.id" class="link"></router-link>
       </div>
@@ -81,7 +81,7 @@ export default {
     text-transform: uppercase;
     > .title-post {
       color: var(--v-titlePost-base);
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 400;
       margin-bottom: 5px;
       white-space: nowrap;
@@ -90,7 +90,7 @@ export default {
     }
     .post-date {
       color: var(--v-dateColor-base);
-      font-size: 12px;
+      font-size: 14px;
       display: block;
     }
   }

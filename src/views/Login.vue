@@ -5,7 +5,7 @@
         {{ textLogin }}
       </span>
     </template>
-    <v-card>
+    <v-card color="var(--v-colorForm-base)">
       <h1 class="text-center py-5">Sign In</h1>
       <v-card-text>
         <v-container>
@@ -17,7 +17,7 @@
                 label="Email"
                 prepend-inner-icon="mdi-email"
                 outlined
-                color="teal darken-2"
+                color="var(--v-colorField-base)"
                 v-model="email"
               ></v-text-field>
             </v-col>
@@ -28,7 +28,7 @@
                 label="Password"
                 prepend-inner-icon="mdi-lock"
                 outlined
-                color="teal darken-2"
+                color="var(--v-colorField-base)"
                 v-model="password"
                 @keyup.enter="login"
               ></v-text-field>
@@ -36,12 +36,12 @@
             <v-col cols="12">
               <v-btn
                 class="mr-2"
-                color="grey lighten-1"
+                color="var(--v-closeBtn-base)"
                 @click="dialog = false"
               >
                 Close
               </v-btn>
-              <v-btn dark color="teal darken-2" @click="login">
+              <v-btn dark color="var(--v-saveBtn-base)" @click="login">
                 Save
               </v-btn>
             </v-col>
