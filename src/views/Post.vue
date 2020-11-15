@@ -34,24 +34,58 @@
                   </a>
                 </div>
                 <v-spacer></v-spacer>
-                <template v-if="!userIsAuthenticated">
-                  <v-btn text outlined small class="share-btn mr-2">
-                    <svg
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      class="bi bi-share-fill mr-1"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
+                <v-menu
+                  top
+                  :close-on-content-click="closeOnContentClick"
+                  :close-on-click="closeOnClick"
+                  v-if="!userIsAuthenticated"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                      depressed
+                      text
+                      small
+                      v-bind="attrs"
+                      v-on="on"
+                      class="share-btn"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"
-                      />
-                    </svg>
-                    Share
-                  </v-btn>
-                </template>
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        class="bi bi-share-fill mr-1"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"
+                        />
+                      </svg>
+                      Share
+                    </v-btn>
+                  </template>
+                  <v-list>
+                    <v-list-item
+                      v-for="(social, index) in socials"
+                      :key="index"
+                      @click="shareSocial"
+                    >
+                      <share-network
+                        :network="social.name"
+                        :url="
+                          'https://dangxuanphuc.netlify.app/posts/' + post.id
+                        "
+                        hashtags="ワタリドリ"
+                      >
+                        <v-icon :color="social.color" class="mr-2">
+                          {{ social.icon }}
+                        </v-icon>
+                        <span class="text-capitalize">{{ social.name }}</span>
+                      </share-network>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
                 <template v-else>
                   <edit-post :post="post"></edit-post>
                 </template>
@@ -87,7 +121,13 @@ export default {
     FooterApp
   },
   data: () => ({
-    author: 'by Dang Xuan Phuc'
+    author: 'by Dang Xuan Phuc',
+    closeOnClick: true,
+    closeOnContentClick: true,
+    socials: [
+      { name: 'facebook', icon: 'mdi-facebook', color: '#01579b' },
+      { name: 'twitter', icon: 'mdi-twitter', color: '#1da1f2' }
+    ]
   }),
   methods: {
     getKeyEmoji(postContent) {
@@ -97,6 +137,9 @@ export default {
     },
     replaceToEmoticon(emoji, postContent) {
       return postContent.replace(emoji['key'], "<img :src='emoji['src']' />");
+    },
+    shareSocial() {
+      console.log('Share social button');
     }
   },
   computed: {
@@ -117,7 +160,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scrollbar.css';
+@import '../assets/vender/scrollbar.css';
 .box-detail {
   margin-top: 10px;
   .detail-block {

@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import emojson from '@/assets/emoticon.json';
+import emojson from '@/assets/vender/emoticon.json';
 import Swal from 'sweetalert2';
 
 const Toast = Swal.mixin({

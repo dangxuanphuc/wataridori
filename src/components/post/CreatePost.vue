@@ -90,7 +90,7 @@
 
 <script>
 import fb from '@/firebase.js';
-import emojson from '@/assets/emoticon.json';
+import emojson from '@/assets/vender/emoticon.json';
 
 export default {
   name: 'CreatePost',

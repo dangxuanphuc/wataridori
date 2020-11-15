@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import emojiArray from '@/assets/emoticon.json';
+import emojiArray from '@/assets/vender/emoticon.json';
 
 export default {
   name: 'Emoticons',
