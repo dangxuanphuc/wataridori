@@ -232,6 +232,11 @@ export default {
         height: auto;
         vertical-align: middle;
       }
+      blockquote {
+        padding: 0 1.2em;
+        color: #4d4f50;
+        border-left: 0.4em solid #b1b2b3;
+      }
     }
   }
   .footer-card {
