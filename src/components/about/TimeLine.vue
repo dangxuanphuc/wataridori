@@ -40,31 +40,40 @@ export default {
   data: () => ({
     items: [
       {
-        title: 'Trường THPT Tứ Kỳ - Hải Dương',
+        title: 'Tu Ky High School - Hai Duong',
         color: 'green',
         year: '09/2013 - 06/2016',
         image:
           'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/tuky.png',
         description:
-          'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar, eros ac placerat egestas, dolor urna pulvinar enim, non pretium metus justo at augue.'
       },
       {
-        title: 'Trường Đại học Khoa học Tự nhiên, ĐHQGHN',
+        title: 'VNU University of Science',
         color: 'blue',
-        year: '09/2016 - 07/2020',
+        year: '09/2016 - 09/2020',
         image:
           'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/khtn.jpg',
         description:
-          'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
+          'Phasellus vitae arcu commodo, pulvinar velit ut, vulputate neque. Ut at nunc id libero faucibus facilisis. Nunc facilisis purus augue, id faucibus lacus euismod in. Vestibulum porta eleifend ornare.'
       },
       {
-        title: '将来',
-        color: 'instagramColor',
-        year: '08/2020 - Present',
+        title: 'Identity Vietnam',
+        color: 'idenColor',
+        year: '12/2020 - Present',
         image:
-          'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/japan.jpg',
+          'https://res.cloudinary.com/phucdx/image/upload/v1615003162/wataridori/images/identity.jpg',
         description:
-          'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas vero facilis ipsam esse sit cumque, sed possimus debitis ipsum alias at optio provident nihil reiciendis architecto laudantium a? Id laudantium eius nihil molestiae!'
+          'Nulla nec metus sem. Sed dictum semper ipsum vel cursus. Nunc elementum pretium est, quis tempor nisl. Aenean vestibulum hendrerit euismod.'
+      },
+      {
+        title: 'Come to Japan',
+        color: 'instagramColor',
+        year: '202?',
+        image:
+          'https://res.cloudinary.com/phucdx/image/upload/v1615003346/wataridori/images/japan_j8myiu.png',
+        description:
+          'Aliquam vel tincidunt arcu, semper hendrerit mauris. Sed sollicitudin nisi ante, quis viverra odio porttitor vel. Morbi vitae lorem sit amet diam sollicitudin porttitor.'
       }
     ]
   })

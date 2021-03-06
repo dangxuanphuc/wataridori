@@ -4,7 +4,7 @@
       <title-side-bar :title="'About me'"></title-side-bar>
       <div class="text-center">
         <img
-          src="https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/avatar.jpg"
+          src="https://res.cloudinary.com/phucdx/image/upload/v1615006143/wataridori/images/avatar_yvycdo.jpg"
         />
       </div>
       <p v-once>{{ description }}</p>

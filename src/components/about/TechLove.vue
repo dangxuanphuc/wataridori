@@ -27,9 +27,9 @@ export default {
   },
   data: () => ({
     images: [
+      'https://res.cloudinary.com/phucdx/image/upload/v1615003949/wataridori/images/rails_rnksqt.png',
       'https://res.cloudinary.com/phucdx/image/upload/v1602212641/wataridori/images/vue.png',
-      'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/linux.png',
-      'https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/docker.png'
+      'https://res.cloudinary.com/phucdx/image/upload/v1602212642/wataridori/images/linux.png'
     ]
   })
 };

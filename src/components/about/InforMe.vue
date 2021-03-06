@@ -9,7 +9,7 @@
           >
             <v-avatar size="160">
               <v-img
-                src="https://res.cloudinary.com/phucdx/image/upload/v1602212643/wataridori/images/avatar.jpg"
+                src="https://res.cloudinary.com/phucdx/image/upload/v1615006143/wataridori/images/avatar_yvycdo.jpg"
               ></v-img>
             </v-avatar>
           </v-col>

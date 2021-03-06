@@ -31,12 +31,12 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-card-text class="py-7" v-if="!userIsAuthenticated" v-once>
-          &copy; {{ new Date().getFullYear() }}
+          &copy; 2020
           <Login :text-login="name" />
           {{ copyright }}
         </v-card-text>
         <v-card-text class="footer-end py-7" v-else v-once>
-          &copy; {{ new Date().getFullYear() }}
+          &copy; 2020
           <a class="btn-signin-logout" @click="onLogout">
             {{ name }}
           </a>

@@ -48,10 +48,10 @@ export default {
       { name: 'English', percent: 60 }
     ],
     skills: [
-      { name: 'CSS', percent: 85 },
+      { name: 'Ruby', percent: 55 },
       { name: 'VueJS', percent: 35 },
-      { name: 'ReactJS', percent: 20 },
-      { name: 'Ruby', percent: 55 }
+      { name: 'CSS', percent: 85 },
+      { name: 'ReactJS', percent: 20 }
     ]
   }),
   components: {
