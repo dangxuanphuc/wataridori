@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+    <%= link_to "Wataridori Blog", root_path,
+      class: "d-flex align-items-center navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <%= link_to "Home", root_path,
+            class: "d-flex align-items-center nav-link #{active_class("index")}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About me", about_me_path,
+            class: "d-flex align-items-center nav-link #{active_class("about")}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Favorite songs", favorite_songs_path,
+            class: "d-flex align-items-center nav-link #{active_class("song")}" %>
+        </li>
+        <li class="nav-item">
+          <a class="d-flex align-items-center nav-link" href="#">Emoticons</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <button class="create__post"><i class="fas fa-pencil-alt"></i> Create Post</button>
+        <button class="btn btn-light rounded-circle ms-2 switch__theme">
+          <i class="fas fa-moon"></i>
+          <%# <i class="fas fa-sun"></i> %>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
