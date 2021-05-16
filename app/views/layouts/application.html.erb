@@ -17,5 +17,6 @@
     <div class="container">
       <%= yield %>
     </div>
+    <%= render "layouts/footer" unless params[:action] == "song" %>
   </body>
 </html>
