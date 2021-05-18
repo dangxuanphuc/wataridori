@@ -24,7 +24,9 @@
         </li>
       </ul>
       <div class="d-flex">
-        <button class="create__post"><i class="fas fa-pencil-alt"></i> Create Post</button>
+        <%= link_to new_post_path, class: "btn d-flex align-items-center create__post" do %>
+          <i class="fas fa-pencil-alt"></i> Create Post
+        <% end %>
         <button class="btn btn-light rounded-circle ms-2 switch__theme">
           <i class="fas fa-moon"></i>
           <%# <i class="fas fa-sun"></i> %>

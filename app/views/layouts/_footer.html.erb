@@ -1,29 +1,29 @@
 <div class="footer__card text-center">
   <div class="container">
     <div class="footer__start d-flex justify-content-evenly">
-      <a href="#" class="social__link">
+      <a href="https://www.facebook.com/wataridori.natsumi/" class="social__link d-flex align-items-center justify-content-center">
         <i class="fab fa-facebook"></i> Facebook
       </a>
-      <a href="#" class="social__link">
+      <a href="https://www.instagram.com/wataridori.natsumi/" class="social__link d-flex align-items-center justify-content-center">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="#" class="social__link">
+      <a href="https://twitter.com/phucdx98/" class="social__link d-flex align-items-center justify-content-center">
         <i class="fab fa-twitter"></i> Twitter
       </a>
-      <a href="#" class="social__link">
+      <a href="https://github.com/dangxuanphuc/" class="social__link d-flex align-items-center justify-content-center">
         <i class="fab fa-github"></i> Github
       </a>
     </div>
     <hr>
     <div class="footer__between d-flex justify-content-center">
-      <a href="#">About me</a>
-      <a href="#">Favorite songs</a>
-      <a href="#">Japanese</a>
-      <a href="#">IT</a>
+      <%= link_to "About me", about_me_path %>
+      <%= link_to "Favorite songs", favorite_songs_path %>
+      <%= link_to "Japanese", root_path %>
+      <%= link_to "IT", root_path %>
     </div>
     <hr>
     <div class="footer__end">
-      &copy; 2021 <a href="#">Wataridori Blog</a>. All Rights Reserved.
+      &copy; 2021 <%= link_to "Wataridori Blog", new_user_session_path %>. All Rights Reserved.
     </div>
   </div>
 </div>

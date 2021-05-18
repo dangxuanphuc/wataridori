@@ -1254,6 +1254,14 @@ nav {
   }
 }
 
+// .CodeMirror, .CodeMirror-scroll {
+// 	min-height: 200px;
+// }
+
+// .CodeMirror-fullscreen, .editor-preview-side {
+//   top: 64px;
+// }
+
 .footer__card {
   background-color: #1a171b;
   color: #fff;
@@ -1276,6 +1284,11 @@ nav {
 
     .social__link {
       width: 25%;
+
+      .fab {
+        font-size: 30px;
+        margin-right: 3px;
+      }
     }
   }
 

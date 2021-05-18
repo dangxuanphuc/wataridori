@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function() {
         margin: 15
       },
       1440: {
-        items: 4,
+        items: 3,
         margin: 15
       }
     }

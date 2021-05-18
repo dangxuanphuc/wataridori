@@ -1,0 +1,19 @@
+<% provide :title, "Create new post" %>
+
+<h2 class="text-center">Create new post</h2>
+
+<div class="new_post mt-5">
+  <%= form_with model: @post, url: posts_path, method: :patch do |f| %>
+    <div class="mb-4">
+      <input type="text" class="form-control" id="titlePost" placeholder="Title">
+    </div>
+    <div class="mb-4 d-flex">
+      <input type="text" class="form-control flex-grow-1" id="tagsPost" placeholder="Tags">
+      <button class="btn btn-primary mx-3">Cover image</button>
+      <button class="btn btn-primary">Publish</button>
+    </div>
+    <div class="mb-4">
+      <%= f.text_area :content, id: "editor", class: "form-control" %>
+    </div>
+  <% end %>
+</div>
