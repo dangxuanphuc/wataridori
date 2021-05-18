@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "about-me", to: "static_pages#about"
   get "favorite-songs", to: "static_pages#song"
 
-  resources :posts, only: :show
+  resources :posts
 end
