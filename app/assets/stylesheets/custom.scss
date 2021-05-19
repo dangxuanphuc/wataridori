@@ -1254,6 +1254,34 @@ nav {
   }
 }
 
+// .CodeMirror, .CodeMirror-scroll {
+// 	min-height: 200px;
+// }
+
+// .CodeMirror-fullscreen, .editor-preview-side {
+//   top: 64px;
+// }
+
+.btn__action {
+  padding-left: 0;
+
+  button {
+    text-transform: uppercase;
+    padding: 0 27px;
+
+    &.cover__image {
+      background-color: #6d8794;
+      border-color: #6d8794;
+      transition: .3s;
+
+      &:hover {
+        background-color: #566b75;
+        border-color: #566b75;
+      }
+    }
+  }
+}
+
 .footer__card {
   background-color: #1a171b;
   color: #fff;
@@ -1276,6 +1304,11 @@ nav {
 
     .social__link {
       width: 25%;
+
+      .fab {
+        font-size: 30px;
+        margin-right: 3px;
+      }
     }
   }
 
