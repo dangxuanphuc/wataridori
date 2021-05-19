@@ -13,6 +13,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "packs/progress"
 import "packs/related_post"
+import "packs/posts"
 
 Rails.start()
 Turbolinks.start()
