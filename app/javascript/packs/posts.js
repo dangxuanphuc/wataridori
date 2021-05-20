@@ -8,4 +8,13 @@ $(document).on('turbolinks:load', function() {
   };
 
   new SimpleMDE(editorOptions);
+
+  $('#post-submit').attr('disabled', true);
+  $(document).on('keyup', '#form-new-post', function() {
+    if($('#title-post').val() != '' && $('#tags-post').val() != '') {
+      $('#post-submit').attr('disabled', false);
+    } else {
+      $('#post-submit').attr('disabled', true);
+    }
+  })
 })

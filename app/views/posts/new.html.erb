@@ -3,21 +3,25 @@
 <h1 class="text-center">Create new post</h1>
 
 <div class="new_post mt-4">
-  <%= form_with model: @post, url: posts_path, method: :patch do |f| %>
+  <%= form_with model: @post, url: posts_path, method: :post, id: "form-new-post" do |f| %>
     <div class="mb-4">
-      <input type="text" class="form-control" id="titlePost" placeholder="Title">
+      <%= f.text_field :title, id: "title-post", class: "form-control", placeholder: "Title" %>
     </div>
     <div class="mb-4 row">
-      <div class="col-md-9">
-        <input type="text" class="form-control flex-grow-1" id="tagsPost" placeholder="Tags">
+      <div class="col-md-9 pe-0">
+        <%= f.text_field :tag_list, id: "tags-post", class: "form-control", placeholder: "Tags" %>
       </div>
       <div class="col-md-3 d-flex justify-content-between btn__action">
-        <button class="btn btn-primary cover__image">Cover image</button>
-        <button class="btn btn-primary">Publish</button>
+        <%= f.hidden_field :image_cache %>
+        <%= f.file_field :image, id: "image_post", class: "post_image", accept: Settings.image.accept_types %><br>
+        <label for="image_post" class="btn btn-primary cover__image">Cover image</label>
+        <%= f.submit "Publish", class: "btn btn-primary", id: "post-submit" %>
       </div>
     </div>
     <div class="mb-4">
-      <%= f.text_area :content, id: "editor", class: "form-control" %>
+      <div class="editor-markdown">
+        <%= f.text_area :content, id: "editor", class: "form-control" %>
+      </div>
     </div>
   <% end %>
 </div>

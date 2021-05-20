@@ -99,16 +99,19 @@ nav {
 
 .card__top {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   padding-bottom: 30px;
 
   .card__review {
     background-color: #f7f7f7;
     max-width: 32%;
-    margin: 25px 0 0;
+    margin: 25px 24px 0 0;
     line-height: 1.5;
     transition: 0.3s;
+
+    &:nth-child(3n) {
+      margin-right: 0 !important;
+    }
 
     .sub__title {
       text-align: center;
@@ -122,8 +125,12 @@ nav {
         font-size: 32px;
         text-transform: none;
         line-height: 1.1;
-        margin-bottom: 5px;
-        color: #000;
+        margin-bottom: 10px;
+
+        a {
+          color: #000;
+          text-decoration: none;
+        }
       }
 
       .stats {
@@ -1254,13 +1261,53 @@ nav {
   }
 }
 
-// .CodeMirror, .CodeMirror-scroll {
-// 	min-height: 200px;
-// }
+.editor-toolbar.fullscreen {
+  top: 65px;
+}
 
-// .CodeMirror-fullscreen, .editor-preview-side {
-//   top: 64px;
-// }
+.CodeMirror-fullscreen {
+  top: 115px;
+}
+
+.editor-preview-side {
+  top: 115px;
+}
+
+.btn__action {
+  padding-left: 0;
+
+  .post_image {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .post_image + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    padding: 6px 22px;
+
+    &.cover__image {
+      background-color: #6d8794;
+      border-color: #6d8794;
+      transition: .3s;
+
+      &:hover {
+        background-color: #566b75;
+        border-color: #566b75;
+      }
+    }
+  }
+}
 
 .btn__action {
   padding-left: 0;
