@@ -1,30 +1,31 @@
 <div class="post__image">
-  <img src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/posts%2F0.9317072468258389_b.png?alt=media&token=8d3c1f71-ed2a-485d-8bdc-acd4b6ee3791" alt="">
+  <%= cl_image_tag(post.image.url) %>
 </div>
 <div class="post__subtitle">
-  <h1>Hướng dẫn Jailbreak cho người mới bắt đầu</h1>
+  <h1><%= post.title %></h1>
   <div class="post__author d-flex justify-content-evenly">
     <span class="post__info">
-      <span class="post__submit">October 15, 2020 10:42 PM</span>
+      <span class="post__submit"><%= post.created_at.strftime("%B %d, %Y %I:%M %p") %></span>
       <span class="author"> ・ by Dang Xuan Phuc</span>
-      <span class="mr-3">・</span>
-      <span>10 min read</span>
     </span>
     <span class="post__react">
-      <i class="fas fa-eye"></i> 100
-      <i class="fas fa-heart"></i> 100
+      <span>10 min read</span>
+      <span class="mr-3">・</span>
+      <span title="Likes"><i class="fas fa-eye"></i> <%= post.likes_count %></span>
+      <span title="Views"><i class="fas fa-heart"></i> <%= post.views_count %></span>
     </span>
   </div>
 </div>
 <div class="post__body">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quos quam eligendi cumque adipisci ex obcaecati labore corporis officiis quisquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquid quae ea odit aliquam sunt alias aut perferendis, vel accusantium quas delectus! Fuga dolore dolorum recusandae error! Ipsa eum placeat ea, vitae ipsum necessitatibus voluptates animi voluptatem fugit facere nam a quo illum. Ad sequi ullam laudantium recusandae beatae assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cumque adipisci nam veniam. Vel saepe hic illum alias error totam quas eius itaque iste, optio culpa ullam modi aliquam! Soluta tenetur illo reprehenderit dignissimos, nulla nisi quod beatae obcaecati aut necessitatibus repudiandae nihil odit inventore, iusto quibusdam labore iure sapiente! Rem, incidunt recusandae odio iure qui veniam quidem quisquam facere assumenda architecto. Voluptates iusto nihil mollitia blanditiis? Iure quidem quos veritatis rem nam eos. Tempore quod repellendus ipsa dolore reprehenderit voluptatum, officia non! Quos hic libero laudantium aspernatur voluptas quisquam asperiores neque excepturi maiores autem magnam quaerat placeat commodi itaque cupiditate unde eaque temporibus possimus, aliquid consectetur enim nobis? Inventore exercitationem vel eius obcaecati dolorum eveniet veritatis dicta quis corporis? Doloremque eum natus dolorum ab nostrum dicta! Facere beatae voluptatem earum eligendi iste consequatur incidunt, unde eum quidem ipsam repellendus tempora, necessitatibus minima exercitationem rerum et commodi omnis porro? Itaque eveniet ipsam minima ex quis tempora mollitia, earum dolorem saepe perspiciatis voluptatibus doloribus dicta commodi quae ratione omnis corrupti inventore magnam exercitationem reiciendis nostrum repellat minus. Modi, tempore temporibus! Placeat fuga culpa laudantium, dignissimos accusamus unde temporibus suscipit nisi aliquam iste pariatur non odit sunt possimus laboriosam quo earum voluptatum?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate perspiciatis dolore necessitatibus facilis quasi laborum quos earum obcaecati illo odio!
+  <%= markdown(post.content).html_safe %>
 </div>
 <div class="footer__post d-flex justify-content-between">
   <div class="tags-btn">
-    <a href="#"> Jailbreak </a>
-    <a href="#"> iOS </a>
+    <% post.tags.each do |tag| %>
+      <%= link_to tag.name, "#" %>
+    <% end %>
   </div>
-  <a href="#" class="edit__post">
+  <%= link_to edit_post_path, class: "edit__post" do %>
     <i class="fas fa-pencil-alt"></i> Edit post
-  </a>
+  <% end %>
 </div>

@@ -1,24 +1,24 @@
 <div class="card__top">
-  <% 5.times do |n| %>
+  <% @posts.each do |post| %>
     <div class="card card__review">
-      <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/posts%2F0.9317072468258389_b.png?alt=media&token=8d3c1f71-ed2a-485d-8bdc-acd4b6ee3791" alt="Card image cap">
+      <%= cl_image_tag(post.image.url, class: "card-img-top") %>
       <div class="sub__title">
-        <h1>Hướng dẫn Jailbreak cho người mới bắt đầu</h1>
+        <h1><%= link_to post.title, post %></h1>
         <div class="stats">
           <span class="date__author">
-            <span class="date">December 4, 2020</span> by Dang Xuan Phuc
+            <span class="date"><%= post.created_at.to_date.to_formatted_s(:long) %></span> by Dang Xuan Phuc
           </span>
           <span class="post__reaction">
-            <i class="fas fa-eye"></i> 100
-            <i class="fas fa-heart"></i> 100
+            <span title="Likes"><i class="fas fa-eye"></i> <%= post.likes_count %></span>
+            <span title="Views"><i class="fas fa-heart"></i> <%= post.views_count %></span>
           </span>
         </div>
       </div>
       <div class="post-body contents">
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolor aspernatur pariatur deleniti! Error deleniti iste quos aperiam ad, culpa consectetur dignissimos nam rem quidem nobis officia autem, provident harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sint repellendus mollitia iure quidem odio. Asperiores magnam perferendis architecto, et quam obcaecati odit ea voluptates aperiam eos aspernatur corrupti itaque voluptatibus illo nam voluptatem doloremque aliquam? Numquam corporis, possimus consequatur aliquam natus modi, corrupti vitae quos aperiam sequi eum nisi odio doloremque.</p>
+        <%= markdown(truncate(post.content, length: 700)).html_safe %>
       </div>
       <div class="card__actions d-flex justify-content-between">
-        <a href="#" class="read__more">Read more</a>
+        <%= link_to "Read more", post, class: "read__more" %>
         <button class="delete__btn"><i class="fas fa-trash-alt"></i></button>
       </div>
     </div>

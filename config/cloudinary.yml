@@ -1,0 +1,12 @@
+development:
+  cloud_name: phucdx
+  api_key: '955232597963417'
+  api_secret: vG_dJ9EK0htMWT82rR9xhRLOV7Y
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: phucdx
+  api_key: '955232597963417'
+  api_secret: vG_dJ9EK0htMWT82rR9xhRLOV7Y
+  enhance_image_tag: true
+  static_file_support: true
