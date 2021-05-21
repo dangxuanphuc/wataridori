@@ -5,14 +5,14 @@
   <h1><%= post.title %></h1>
   <div class="post__author d-flex justify-content-evenly">
     <span class="post__info">
-      <span class="post__submit">October 15, 2020 10:42 PM</span>
+      <span class="post__submit"><%= post.created_at.strftime("%B %d, %Y %I:%M %p") %></span>
       <span class="author"> ・ by Dang Xuan Phuc</span>
-      <span class="mr-3">・</span>
-      <span>10 min read</span>
     </span>
     <span class="post__react">
-      <i class="fas fa-eye"></i> <%= post.likes_count %>
-      <i class="fas fa-heart"></i> <%= post.views_count %>
+      <span>10 min read</span>
+      <span class="mr-3">・</span>
+      <span title="Likes"><i class="fas fa-eye"></i> <%= post.likes_count %></span>
+      <span title="Views"><i class="fas fa-heart"></i> <%= post.views_count %></span>
     </span>
   </div>
 </div>

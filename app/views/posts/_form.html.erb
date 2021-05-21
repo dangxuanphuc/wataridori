@@ -1,0 +1,21 @@
+<%= form_with model: post, url: posts_path, method: :post, id: "form-new-post" do |f| %>
+  <div class="mb-4">
+    <%= f.text_field :title, id: "title-post", class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="mb-4 row">
+    <div class="col-md-9 pe-0">
+      <%= f.text_field :tag_list, id: "tags-post", class: "form-control", placeholder: "Tags" %>
+    </div>
+    <div class="col-md-3 d-flex justify-content-between btn__action">
+      <%= f.hidden_field :image_cache %>
+      <%= f.file_field :image, id: "image_post", class: "post_image", accept: Settings.image.accept_types %><br>
+      <label for="image_post" class="btn btn-primary cover__image">Cover image</label>
+      <%= f.submit "Publish", class: "btn btn-primary", id: "post-submit" %>
+    </div>
+  </div>
+  <div class="mb-4">
+    <div class="editor-markdown">
+      <%= f.text_area :content, id: "editor", class: "form-control" %>
+    </div>
+  </div>
+<% end %>

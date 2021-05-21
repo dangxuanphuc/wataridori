@@ -3,10 +3,8 @@
     <span>Tags</span>
   </h1>
   <div class="tags__content">
-    <a href="#" class="tag__link">iOS</a>
-    <a href="#" class="tag__link">Anime</a>
-    <a href="#" class="tag__link">Nihongo</a>
-    <a href="#" class="tag__link">Jailbreak</a>
-    <a href="#" class="tag__link">Jailbreak</a>
+    <% Tag.limit(10).each do |tag| %>
+      <%= link_to tag.name, "#", class: "tag__link" %>
+    <% end %>
   </div>
 </div>

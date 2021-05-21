@@ -6,7 +6,7 @@
         <h1><%= link_to post.title, post %></h1>
         <div class="stats">
           <span class="date__author">
-            <span class="date">December 4, 2020</span> by Dang Xuan Phuc
+            <span class="date"><%= post.created_at.to_date.to_formatted_s(:long) %></span> by Dang Xuan Phuc
           </span>
           <span class="post__reaction">
             <span title="Likes"><i class="fas fa-eye"></i> <%= post.likes_count %></span>
@@ -15,9 +15,7 @@
         </div>
       </div>
       <div class="post-body contents">
-        <p class="card-text">
-          <%= markdown(truncate(post.content, length: 700)).html_safe %>
-        </p>
+        <%= markdown(truncate(post.content, length: 700)).html_safe %>
       </div>
       <div class="card__actions d-flex justify-content-between">
         <%= link_to "Read more", post, class: "read__more" %>
