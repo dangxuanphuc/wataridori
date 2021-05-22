@@ -11,8 +11,8 @@
     <span class="post__react">
       <span>10 min read</span>
       <span class="mr-3">・</span>
-      <span title="Likes"><i class="fas fa-eye"></i> <%= post.likes_count %></span>
-      <span title="Views"><i class="fas fa-heart"></i> <%= post.views_count %></span>
+      <span title="Likes: <%= post.likes_count %>"><i class="fas fa-heart"></i> <%= post.likes_count %></span>
+      <span title="Views: <%= post.views_count %>"><i class="fas fa-eye"></i> <%= post.views_count %></span>
     </span>
   </div>
 </div>
@@ -25,7 +25,13 @@
       <%= link_to tag.name, "#" %>
     <% end %>
   </div>
-  <%= link_to edit_post_path, class: "edit__post" do %>
-    <i class="fas fa-pencil-alt"></i> Edit post
-  <% end %>
+  <div class="class">
+    <%= link_to edit_post_path, class: "edit__post me-2" do %>
+      <i class="fas fa-pencil-alt"></i> Edit post
+    <% end %>
+    <%= link_to post_path, class: "delete__post", method: :delete,
+      data: { confirm: "Are you sure" } do %>
+      <i class="fas fa-trash"></i> Delete post
+    <% end %>
+  </div>
 </div>

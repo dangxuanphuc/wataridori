@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @popular_posts = Post.except_current_post(@post).likes_order.limit(3)
   end
 
   def edit
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   def update
     if @post.update post_params
       flash[:success] = "Post was updated successfully!"
-      redirect_to root_path
+      redirect_to @post
     else
       render :edit
     end

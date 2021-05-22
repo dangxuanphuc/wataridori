@@ -3,25 +3,17 @@
     <span>Popular Posts</span>
   </h1>
   <div class="posts__list">
-    <div class="article">
-      <div class="main__image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/posts%2F0.9317072468258389_b.png?alt=media&token=8d3c1f71-ed2a-485d-8bdc-acd4b6ee3791" alt="">
+    <% popular_posts.each do |post| %>
+      <div class="article">
+        <div class="main__image">
+          <%= cl_image_tag post.image.url %>
+        </div>
+        <div class="post__info">
+          <h1 class="title__post"><%= post.title %></h1>
+          <div class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></div>
+        </div>
+        <%= link_to "", post, class: "post__link" %>
       </div>
-      <div class="post__info">
-        <h1 class="title__post">Hướng dẫn Jailbreak cho người mới bắt đầu</h1>
-        <div class="post-date">Oct 15, 2020</div>
-      </div>
-      <a href="#" class="post__link"></a>
-    </div>
-    <div class="article">
-      <div class="main__image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/wataridori-blog.appspot.com/o/posts%2F0.9317072468258389_b.png?alt=media&token=8d3c1f71-ed2a-485d-8bdc-acd4b6ee3791" alt="">
-      </div>
-      <div class="post__info">
-        <h1 class="title__post">Hướng dẫn Jailbreak cho người mới bắt đầu</h1>
-        <div class="post-date">Oct 15, 2020</div>
-      </div>
-      <a href="#" class="post__link"></a>
-    </div>
+    <% end %>
   </div>
 </div>
