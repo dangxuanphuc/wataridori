@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get "about-me", to: "static_pages#about"
   get "favorite-songs", to: "static_pages#song"
+  get "emoticons", to: "static_pages#emoticon"
 
   resources :posts
 end

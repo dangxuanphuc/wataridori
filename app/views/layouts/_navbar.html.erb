@@ -20,7 +20,8 @@
             class: "d-flex align-items-center nav-link #{active_class("song")}" %>
         </li>
         <li class="nav-item">
-          <a class="d-flex align-items-center nav-link" href="#">Emoticons</a>
+          <%= link_to "Emoticons", emoticons_path,
+            class: "d-flex align-items-center nav-link #{active_class("emoticon")}" %>
         </li>
       </ul>
       <div class="d-flex">
