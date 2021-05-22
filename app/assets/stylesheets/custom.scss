@@ -130,6 +130,13 @@ nav {
         a {
           color: #000;
           text-decoration: none;
+          font-size: 28px;
+          font-weight: 400;
+          transition: .3s;
+
+          &:hover {
+            color: #00796b;
+          }
         }
       }
 
@@ -853,7 +860,7 @@ nav {
       text-align: center;
       font-size: 14px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       h1 {
         font-family: Roboto Slab,"Noto Serif",Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -861,7 +868,7 @@ nav {
         font-size: 36px;
         text-transform: none;
         line-height: 1.1;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
 
       .post__author {
@@ -890,7 +897,7 @@ nav {
         }
       }
 
-      .edit__post {
+      .edit__post, .delete__post {
         color: #1c1c1c;
         outline: none;
         border-radius: 5px;

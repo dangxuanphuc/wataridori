@@ -9,6 +9,9 @@ class Post < ApplicationRecord
   POST_ATTRS = %w(title content tag_list image image_cache).freeze
   mount_uploader :image, ImageUploader
 
+  scope :likes_order, -> { order likes_count: :desc }
+  scope :except_current_post, -> (id) { where.not(id: id)}
+
   def tag_list
     self.tags.collect do |tag|
       tag.name
