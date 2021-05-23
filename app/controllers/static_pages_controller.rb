@@ -8,4 +8,8 @@ class StaticPagesController < ApplicationController
 
   def song
   end
+
+  def emoticon
+    @emoticons = JSON.parse(File.read("public/emoticons/emoticon.json"))
+  end
 end

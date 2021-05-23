@@ -17,6 +17,8 @@
     <div class="container">
       <%= yield %>
     </div>
-    <%= render "layouts/footer" unless params[:action] == "song" %>
+    <% if params[:action] != "song" || params[:action] != "emoticons" %>
+      <%= render "layouts/footer" %>
+    <% end %>
   </body>
 </html>

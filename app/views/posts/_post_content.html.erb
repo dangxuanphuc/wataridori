@@ -17,7 +17,7 @@
   </div>
 </div>
 <div class="post__body">
-  <%= markdown(post.content).html_safe %>
+  <%= markdown(replaceToEmoticon(post.content)).html_safe %>
 </div>
 <div class="footer__post d-flex justify-content-between">
   <div class="tags-btn">

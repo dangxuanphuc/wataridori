@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="post-body contents">
-        <%= markdown(truncate(post.content, length: 700)).html_safe %>
+        <%= markdown(replaceToEmoticon(truncate(post.content, length: 700))).html_safe %>
       </div>
       <div class="card__actions d-flex justify-content-between">
         <%= link_to "Read more", post, class: "read__more" %>
