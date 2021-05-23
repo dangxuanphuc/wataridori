@@ -1,16 +1,16 @@
 require "json"
 
 module PostsHelper
-  def getKeyEmoji postContent
+  def get_key_emoji post_content
     regExp = /\(.*?\)/
-    postContent.scan(regExp)
+    post_content.scan(regExp)
   end
 
-  def replaceToEmoticon postContent
+  def replace_to_emoticon post_content
     emoticons = File.read("public/emoticons/emoticon.json")
     emojiArray = JSON.parse(emoticons)
-    newContent = postContent
-    keyArr = getKeyEmoji(postContent)
+    newContent = post_content
+    keyArr = get_key_emoji(post_content)
     arr = []
 
     emojiArray.each do |emoji|
@@ -43,5 +43,12 @@ module PostsHelper
     end
 
     newContent
+  end
+
+  def reading_time post_content
+    minutes = 0
+    words = post_content.split(' ').length
+    wordsPerMinute = 200
+    words / wordsPerMinute
   end
 end
