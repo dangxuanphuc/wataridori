@@ -18,3 +18,12 @@ $(document).on('turbolinks:load', function() {
     }
   })
 })
+
+$(document).on('click', '.js--btn-vote', function() {
+  let url = $(this).data('url-vote');
+  $.ajax({
+    url: url,
+    dataType: 'SCRIPT',
+    method: 'PUT'
+  });
+});
