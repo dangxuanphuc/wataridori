@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_151753) do
+ActiveRecord::Schema.define(version: 2021_05_23_065653) do
 
   create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2021_05_10_151753) do
     t.integer "views_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_posts_on_slug"
   end
 
   create_table "skills", charset: "utf8mb4", force: :cascade do |t|

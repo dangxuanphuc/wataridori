@@ -74,7 +74,7 @@ class PostsController < ApplicationController
   end
 
   def load_post
-    @post = Post.find_by id: params[:id]
+    @post = Post.find_by slug: params[:slug]
 
     return if @post
     redirect_to root_path
