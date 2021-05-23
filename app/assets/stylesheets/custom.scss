@@ -939,7 +939,7 @@ nav {
 
     .post__subtitle {
       text-align: center;
-      font-size: 14px;
+      font-size: 15px;
       text-transform: uppercase;
       margin-bottom: 10px;
 
@@ -1473,4 +1473,60 @@ nav {
 .emoticons {
   display: flex;
   flex-wrap: wrap;
+}
+
+.post__react {
+  display: flex;
+  align-items: center;
+
+  .dot {
+    margin-left: 15px;
+  }
+
+  .action__btn {
+    color: #777;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    transition: all .2s ease-in-out;
+
+    &.action__view {
+      margin-left: 15px;
+    }
+
+    span {
+      margin-bottom: 2px;
+    }
+
+    &__icon {
+      margin-left: 8px;
+      font-size: 18px;
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  a.action__btn {
+    text-decoration: none;
+
+    &:hover {
+      &.action__like .action__btn__icon {
+        color: #d2293c;
+        animation: heart linear 0.3s infinite alternate;
+      }
+    }
+  }
+
+  .action__like.active .action__btn__icon {
+    color: #d2293c;
+  }
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
 }
