@@ -10,6 +10,9 @@
     <%= favicon_link_tag "favicon.ico" %>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <%= tag :meta, property: "og:site_name", content: "Wataridori's Blog" %>
+    <%= tag :meta, property: "og:type", content: "wataridori" %>
+    <%= yield :head %>
   </head>
 
   <body>
