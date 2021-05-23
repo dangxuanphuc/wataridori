@@ -1,37 +1,15 @@
 <div class="skill__language d-flex justify-content-evenly">
-  <div class="progress mx-auto" data-value="100">
-    <span class="progress-left">
-      <span class="progress-bar"></span>
-    </span>
-    <span class="progress-right">
-      <span class="progress-bar"></span>
-    </span>
-    <div class="progress-title w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-      <h5>Vietnamese</h5>
+  <% @skill_language.each do |skill| %>
+    <div class="progress mx-auto" data-value="<%= skill.percent %>">
+      <span class="progress-left">
+        <span class="progress-bar"></span>
+      </span>
+      <span class="progress-right">
+        <span class="progress-bar"></span>
+      </span>
+      <div class="progress-title w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+        <h5><%= skill.name %></h5>
+      </div>
     </div>
-  </div>
-
-  <div class="progress mx-auto" data-value="40">
-    <span class="progress-left">
-      <span class="progress-bar"></span>
-    </span>
-    <span class="progress-right">
-      <span class="progress-bar"></span>
-    </span>
-    <div class="progress-title w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-      <h5>Japanese</h5>
-    </div>
-  </div>
-
-  <div class="progress mx-auto" data-value="55">
-    <span class="progress-left">
-      <span class="progress-bar"></span>
-    </span>
-    <span class="progress-right">
-      <span class="progress-bar"></span>
-    </span>
-    <div class="progress-title w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-      <h5>English</h5>
-    </div>
-  </div>
+  <% end %>
 </div>
