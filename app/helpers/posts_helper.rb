@@ -1,6 +1,8 @@
 require "json"
 
 module PostsHelper
+  include SnsShareUrl
+
   def get_key_emoji post_content
     regExp = /\(.*?\)/
     post_content.scan(regExp)
@@ -50,5 +52,9 @@ module PostsHelper
     words = post_content.split(' ').length
     wordsPerMinute = 200
     words / wordsPerMinute
+  end
+
+  def share_url post
+    sns_share_urls(post)
   end
 end

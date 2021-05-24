@@ -21,9 +21,22 @@
       </div>
       <div class="card__actions d-flex justify-content-between">
         <%= link_to "Read more", post, class: "read__more" %>
-        <%= link_to post_path(post), class: "btn delete__btn", method: :delete,
-          data: { confirm: "Are you sure" } do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if user_signed_in? %>
+          <%= link_to post_path(post), class: "btn delete__btn", method: :delete,
+            data: { confirm: "Are you sure" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        <% else %>
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="shareButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Share
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="shareButton">
+              <% share_url = share_url(post) %>
+              <li><a class="dropdown-item" href="<%= share_url[:facebook] %>" target="_blank">Facebook</a></li>
+              <li><a class="dropdown-item" href="<%= share_url[:twitter] %>" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
         <% end %>
       </div>
     </div>

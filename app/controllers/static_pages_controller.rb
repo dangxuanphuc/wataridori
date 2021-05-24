@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @skill_language = Skill.language
+    @skill_technology = Skill.technology
   end
 
   def song

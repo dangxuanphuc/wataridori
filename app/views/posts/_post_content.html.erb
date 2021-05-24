@@ -29,12 +29,25 @@
     <% end %>
   </div>
   <div class="class">
-    <%= link_to edit_post_path, class: "edit__post me-2" do %>
-      <i class="fas fa-pencil-alt"></i> Edit post
-    <% end %>
-    <%= link_to post_path, class: "delete__post", method: :delete,
-      data: { confirm: "Are you sure" } do %>
-      <i class="fas fa-trash"></i> Delete post
+    <% if user_signed_in? %>
+      <%= link_to edit_post_path, class: "edit__post me-2" do %>
+        <i class="fas fa-pencil-alt"></i> Edit post
+      <% end %>
+      <%= link_to post_path, class: "delete__post", method: :delete,
+        data: { confirm: "Are you sure" } do %>
+        <i class="fas fa-trash"></i> Delete post
+      <% end %>
+    <% else %>
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" id="shareButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Share
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="shareButton1">
+          <% share_url = share_url(post) %>
+          <li><a class="dropdown-item" href="<%= share_url[:facebook] %>" target="_blank">Facebook</a></li>
+          <li><a class="dropdown-item" href="<%= share_url[:twitter] %>" target="_blank">Twitter</a></li>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>
