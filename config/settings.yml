@@ -1,2 +1,9 @@
 image:
   accept_types: "image/jpeg,image/gif,image/png"
+share:
+  twitter:
+    text: "ワタリドリ"
+    share_url: https://twitter.com/intent/tweet?url=%<url>s&text=%<text>s
+  facebook:
+    text: "ワタリドリ"
+    share_url: "https://www.facebook.com/sharer/sharer.php?u=%<url>s"

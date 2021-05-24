@@ -32,8 +32,9 @@
               Share
             </button>
             <ul class="dropdown-menu" aria-labelledby="shareButton">
-              <li><a class="dropdown-item" href="#">Facebook</a></li>
-              <li><a class="dropdown-item" href="#">Twitter</a></li>
+              <% share_url = share_url(post) %>
+              <li><a class="dropdown-item" href="<%= share_url[:facebook] %>" target="_blank">Facebook</a></li>
+              <li><a class="dropdown-item" href="<%= share_url[:twitter] %>" target="_blank">Twitter</a></li>
             </ul>
           </div>
         <% end %>
