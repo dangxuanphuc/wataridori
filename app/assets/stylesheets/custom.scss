@@ -1016,7 +1016,7 @@ nav {
         z-index: 3;
 
         > span {
-          background: #1a171b;
+          background: #000;
           color: #fff;
           position: relative;
           display: inline-block;
@@ -1229,7 +1229,7 @@ nav {
       z-index: 3;
 
       > span {
-        background: #1a171b;
+        background: #000;
         color: #fff;
         position: relative;
         display: inline-block;
@@ -1348,6 +1348,63 @@ nav {
   }
 }
 
+.comment__post {
+  max-width: 70%;
+
+  .title__header {
+    position: relative;
+    font-size: 14px;
+    z-index: 2;
+    background: #f7f7f7;
+    padding: 30px 30px 10px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    border-radius: 3px;
+
+    .title__rightbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: -32px;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+
+      > span {
+        background: #000;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0 15px;
+        line-height: 30px;
+
+        &:before, &:after {
+          position: absolute;
+          top: 50%;
+          border: 15px solid #000;
+          content: "";
+          height: 0;
+          width: 0;
+          margin-top: -15px;
+          border-left-color: transparent;
+          border-right-color: transparent;
+        }
+
+        &:before {
+          left: -15px;
+          right: auto;
+        }
+
+        &:after {
+          right: -15px;
+        }
+      }
+    }
+  }
+}
+
 .editor-toolbar.fullscreen {
   top: 65px;
 }
@@ -1417,7 +1474,7 @@ nav {
 }
 
 .footer__card {
-  background-color: #1a171b;
+  background-color: #000;
   color: #fff;
 
   a {

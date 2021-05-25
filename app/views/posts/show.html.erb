@@ -17,6 +17,13 @@
     <%= render "rightbar", popular_posts: @popular_posts %>
   </div>
 </div>
+
 <div class="related__post">
   <%= render "related_post" %>
 </div>
+
+<% if @comments.present? %>
+  <div class="comment__post">
+    <%= render "comments/comment", comments: @comments %>
+  </div>
+<% end %>
