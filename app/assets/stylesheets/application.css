@@ -14,5 +14,6 @@
  *= require owl.carousel/dist/assets/owl.carousel.css
  *= require simplemde/dist/simplemde.min
  *= require custom
+ *= require scrollbar.css
  *= require_self
  */
