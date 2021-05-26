@@ -13,7 +13,8 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   scope :likes_order, -> { order likes_count: :desc }
-  scope :except_current_post, -> (id) { where.not(id: id)}
+  scope :except_current_post, -> (id) { where.not(id: id) }
+  scope :sort_by_created_at, -> { order :created_at }
 
   def tag_list
     self.tags.collect do |tag|
