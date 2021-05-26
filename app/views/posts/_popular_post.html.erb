@@ -1,19 +1,21 @@
-<div class="popular-post title__header">
-  <h1 class="title__rightbar">
-    <span>Popular Posts</span>
-  </h1>
-  <div class="posts__list">
-    <% popular_posts.each do |post| %>
-      <div class="article">
-        <div class="main__image">
-          <%= cl_image_tag post.image.url %>
+<% if popular_posts.present? %>
+  <div class="popular-post title__header">
+    <h1 class="title__rightbar">
+      <span>Popular Posts</span>
+    </h1>
+    <div class="posts__list">
+      <% popular_posts.each do |post| %>
+        <div class="article">
+          <div class="main__image">
+            <%= cl_image_tag post.image.url %>
+          </div>
+          <div class="post__info">
+            <h1 class="title__post"><%= post.title %></h1>
+            <div class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></div>
+          </div>
+          <%= link_to "", post, class: "post__link" %>
         </div>
-        <div class="post__info">
-          <h1 class="title__post"><%= post.title %></h1>
-          <div class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></div>
-        </div>
-        <%= link_to "", post, class: "post__link" %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

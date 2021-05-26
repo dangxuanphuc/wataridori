@@ -26,7 +26,7 @@
           </li>
         <% end %>
       </ul>
-      <div class="d-flex">
+      <div class="d-flex nav__option">
         <% if user_signed_in? %>
           <%= link_to new_post_path, class: "btn d-flex align-items-center create__post" do %>
             <i class="fas fa-pencil-alt"></i> Create Post

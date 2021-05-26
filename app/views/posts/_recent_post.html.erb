@@ -1,13 +1,15 @@
-<div class="recent-post title__header">
-  <h1 class="title__rightbar">
-    <span>Recent Posts</span>
-  </h1>
-  <ul>
-    <% recent_posts.each do |post| %>
-      <li>
-        <%= link_to post.title, post %>
-        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if recent_posts.present? %>
+  <div class="recent-post title__header">
+    <h1 class="title__rightbar">
+      <span>Recent Posts</span>
+    </h1>
+    <ul>
+      <% recent_posts.each do |post| %>
+        <li>
+          <%= link_to post.title, post %>
+          <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
