@@ -1016,7 +1016,7 @@ nav {
         z-index: 3;
 
         > span {
-          background: #1a171b;
+          background: #000;
           color: #fff;
           position: relative;
           display: inline-block;
@@ -1184,6 +1184,26 @@ nav {
       }
     }
 
+    .recent-post {
+      ul:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #26a69a;
+        transition: .3s;
+
+        &:hover {
+          color: #22776f;
+        }
+      }
+
+      .post-date {
+        font-weight: 300;
+      }
+    }
+
     .post-tag {
       .tags__content > a {
         display: inline-block;
@@ -1229,7 +1249,7 @@ nav {
       z-index: 3;
 
       > span {
-        background: #1a171b;
+        background: #000;
         color: #fff;
         position: relative;
         display: inline-block;
@@ -1417,7 +1437,7 @@ nav {
 }
 
 .footer__card {
-  background-color: #1a171b;
+  background-color: #000;
   color: #fff;
 
   a {
