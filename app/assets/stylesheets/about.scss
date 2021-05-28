@@ -1,0 +1,193 @@
+@import "color";
+
+.about__me {
+  background-color: $bg-card;
+  padding-top: 30px;
+
+  .card__infor {
+    padding-bottom: 30px;
+
+    .avatar {
+      max-width: 15%;
+    }
+
+    .infor {
+      padding-top: 3%;
+      padding-left: 3%;
+
+      .admin__name {
+        color: $primary;
+        font-size: 28px;
+        font-weight: 40;
+      }
+
+      .social__link {
+        .fab {
+          font-size: 22px;
+          margin-right: 7px;
+
+          &.fa-facebook {
+            color: $facebook;
+          }
+
+          &.fa-instagram {
+            color: $instagram;
+          }
+
+          &.fa-twitter {
+            color: $twitter;
+          }
+
+          &.fa-github {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  .about__title {
+    hr {
+      border: $hr-bg;
+      margin: 0 20px;
+    }
+
+    .title__name {
+      color: $primary;
+      text-transform: uppercase;
+      font-size: 34px;
+      font-weight: 500;
+    }
+  }
+
+  .tech__love {
+    padding: 30px;
+
+    .tech__image {
+      max-width: 15%;
+      padding: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .about__me {
+    .card__infor {
+      .avatar {
+        max-width: 20%;
+      }
+    }
+
+    .tech__love {
+      .tech__image {
+        max-width: 20%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .about__me {
+    .card__infor {
+      .avatar {
+        max-width: 25%;
+      }
+    }
+
+    .tech__love {
+      .tech__image {
+        max-width: 25%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .about__me {
+    .card__infor {
+      .card-body {
+        flex-wrap: wrap;
+
+        .avatar {
+          max-width: 35%;
+        }
+
+        .infor {
+          text-align: center;
+        }
+      }
+    }
+
+    .tech__love {
+      .tech__image {
+        max-width: 30%;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .about__me {
+    .card__infor {
+      .card-body {
+        .avatar {
+          max-width: 40%;
+        }
+      }
+    }
+
+    .about__title {
+      .title__name {
+        font-size: 27px;
+      }
+    }
+
+    .tech__love {
+      .tech__image {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .about__me {
+    .card__infor {
+      .card-body {
+        .avatar {
+          max-width: 50%;
+        }
+
+        .infor {
+          .admin__name {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .tech__love {
+      .tech__image {
+        max-width: 40%;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .about__me {
+    .card__infor {
+      .card-body {
+        .avatar {
+          max-width: 60%;
+        }
+      }
+    }
+  }
+}

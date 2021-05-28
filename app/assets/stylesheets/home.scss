@@ -1,0 +1,136 @@
+@import "color";
+
+.card__top {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+
+  .card__review {
+    background-color: $bg-card;
+    max-width: 32%;
+    height: 100%;
+    margin: 25px 24px 0 0;
+    line-height: 1.5;
+    transition: 0.3s;
+
+    &:nth-child(3n) {
+      margin-right: 0 !important;
+    }
+
+    .sub__title {
+      text-align: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 20px 20px 10px 20px;
+
+      h1 {
+        font-family: Roboto Slab, "Noto Serif", Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        text-transform: none;
+        line-height: 1.1;
+        margin-bottom: 10px;
+
+        a {
+          color: $black;
+          text-decoration: none;
+          font-size: 28px;
+          font-weight: 400;
+          transition: .3s;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+
+      .stats {
+        color: $stats-color;
+
+        .date__author {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .post-body {
+      padding: 0 20px 20px 20px;
+      font-family: "Noto Serif";
+      color: $post-color;
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    .card__actions {
+      padding: 5px 20px 20px 20px;
+
+      .read__more {
+        color: $primary;
+        border: 1px solid $primary !important;
+        transition: 0.3s;
+        text-decoration: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        padding: 4px 7px;
+        font-size: 13px;
+
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+
+      .delete__btn {
+        border: 1px solid $delete-btn !important;
+        color: $delete-btn;
+        border-radius: 5px;
+        transition: 0.3s;
+        padding: 2px 13px;
+
+        &:hover {
+          background-color: $delete-btn;
+          color: $white;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px 0 $primary-hover;
+    }
+  }
+}
+
+@media only screen and (max-width: 1225px) {
+  .card__top {
+    .card__review {
+      margin-right: 2%;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .card__top {
+    .card__review {
+      max-width: 48%;
+      margin-right: 4%;
+
+      &:nth-child(3n) {
+        margin-right: 4% !important;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card__top {
+    .card__review {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+}
