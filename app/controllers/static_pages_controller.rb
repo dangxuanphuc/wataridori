@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
   end
 
   def song
+    @song = Song.all.shuffle.first
   end
 
   def emoticon
