@@ -52,3 +52,15 @@ Favorite.create!([
   {image: "https://res.cloudinary.com/phucdx/image/upload/v1623481358/wataridori/images/novak_bsqmkl.jpg",
     name: "Novak Djokovic", favorite_type: "other"},
 ])
+
+Song.create!([
+  {name: "なごり雪", author: "Ayaka Hirahara",
+    url: "https://res.cloudinary.com/phucdx/video/upload/v1602213761/wataridori/songs/NagoriYuki.mp3",
+    cover: "https://res.cloudinary.com/phucdx/image/upload/v1602251930/wataridori/images/nagoriyuki.jpg"},
+  {name: "キセキ", author: "GReeeeN",
+    url: "https://res.cloudinary.com/phucdx/video/upload/v1602214009/wataridori/songs/Kiseki.mp3",
+    cover: "https://res.cloudinary.com/phucdx/image/upload/v1602247960/wataridori/songs/cover/kiseki-greeeen.jpg"},
+  {name: "Sparkle", author: "RADWIMPS",
+    url: "https://res.cloudinary.com/phucdx/video/upload/v1602213762/wataridori/songs/sparkle.mp3",
+    cover: "https://res.cloudinary.com/phucdx/image/upload/v1602212639/wataridori/images/your-name.jpg"}
+])
