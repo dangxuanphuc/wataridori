@@ -23,7 +23,6 @@ module ApplicationHelper
       emoji: true
     }
 
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
-      .render content
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, options).render(content).html_safe
   end
 end

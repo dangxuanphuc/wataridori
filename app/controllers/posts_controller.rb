@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     count_view
     @popular_posts = Post.except_current_post(@post).likes_order.limit(3)
     @recent_posts = Post.except_current_post(@post).sort_by_created_at.limit(5)
+    @related_posts = Post.except_current_post(@post)
   end
 
   def edit
