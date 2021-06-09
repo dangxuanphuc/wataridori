@@ -11,19 +11,19 @@
             <span class="date"><%= post.created_at.to_date.to_formatted_s(:long) %></span> by Dang Xuan Phuc
           </span>
           <span class="post__reaction">
-            <span title="Likes: <%= post.likes_count %>"><i class="fas fa-heart"></i> <%= post.likes_count %></span>
             <span title="Views: <%= post.views_count %>"><i class="fas fa-eye"></i> <%= post.views_count %></span>
+            <span title="Likes: <%= post.likes_count %>"><i class="fas fa-heart"></i> <%= post.likes_count %></span>
           </span>
         </div>
       </div>
-      <div class="post-body contents">
-        <%= markdown(replace_to_emoticon(truncate(post.content, length: 700))).html_safe %>
+      <div class="post-body salary-duong">
+        <%= markdown(replace_to_emoticon(truncate(post.content, length: 700))) %>
       </div>
       <div class="card__actions d-flex justify-content-between">
         <%= link_to "Read more", post, class: "read__more" %>
         <% if user_signed_in? %>
           <%= link_to post_path(post), class: "btn delete__btn", method: :delete,
-            data: { confirm: "Are you sure" } do %>
+            data: { confirm: "Are you sure?" } do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         <% else %>
