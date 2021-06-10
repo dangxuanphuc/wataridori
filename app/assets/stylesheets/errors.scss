@@ -1,0 +1,29 @@
+.error-404, .error-422, .error-500 {
+  padding: 40px 15px;
+  text-align: center;
+
+  h1 {
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  .back-to-home {
+    color: $primary;
+    border: 1px solid $primary!important;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: .5s;
+
+    .fa {
+      font-size: 20px;
+    }
+
+    &:hover {
+    background-color: $primary;
+    color: $white;
+    }
+  }
+}

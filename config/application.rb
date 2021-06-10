@@ -26,5 +26,7 @@ module Wataridori
     config.time_zone = "Asia/Ho_Chi_Minh"
 
     config.generators.system_tests = nil
+
+    config.exceptions_app = self.routes
   end
 end
