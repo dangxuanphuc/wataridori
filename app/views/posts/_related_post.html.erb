@@ -3,7 +3,7 @@
     <span>You might also like</span>
   </h1>
   <div class="posts__list owl-carousel owl-theme" id="js--related-post">
-    <% @related_posts.each do |post| %>
+    <% related_posts.each do |post| %>
       <div class="article">
         <div class="main__image">
           <%= cl_image_tag(post.image.url, class: "card-img-top") %>

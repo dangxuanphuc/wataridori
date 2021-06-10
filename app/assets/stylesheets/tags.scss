@@ -1,0 +1,22 @@
+@import 'color';
+
+.tag__show {
+  margin-top: 30px !important;
+
+  .post__tag {
+    margin-bottom: 20px;
+
+    .post__subtitle {
+      h1 a {
+        color: $black;
+        text-decoration: none;
+        font-weight: 400;
+        transition: .3s;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
