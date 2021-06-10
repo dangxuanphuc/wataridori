@@ -14,4 +14,5 @@ Rails.application.routes.draw do
       put :unvote
     end
   end
+  resources :tags, param: :slug, only: %i(show)
 end

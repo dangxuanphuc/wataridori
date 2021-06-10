@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
-    @posts = Post.all.lastest
+    @posts = Post.all.sort_by_created_at
   end
 
   def about

@@ -1,48 +1,98 @@
 @import "color";
 
 .salary-duong {
+  blockquote,
+  dl,
+  ol,
+  p,
+  pre,
+  table,
+  ul {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 24px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  strong {
+    display: inherit !important;
+    font-weight: 600;
+  }
+
+  h2 {
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+  }
+
   table {
     border-collapse: collapse;
+
+    tr {
+      background-color: $white;
+      border-top: 1px solid $border-tr;
+
+      &:nth-child(2n) {
+        background-color: $white;
+      }
+
+      th,
+      td {
+        border: 1px solid $border-td;
+        padding: 6px 13px;
+      }
+    }
   }
-  table,
-  th,
-  td {
-    border: 1px solid #969696;
-    padding: 4px;
-  }
+
   code {
+    display: inherit !important;
     background-color: transparent !important;
   }
+
   pre {
-    border: 1px solid #bfbfbf;
+    border: 1px solid $border-pre;
     overflow-y: hidden;
     overflow: visible;
     overflow-x: auto;
     padding: 0 10px;
     border-radius: 4px;
+
     &::-webkit-scrollbar {
       height: 7px;
     }
   }
+
   a {
-    color: #26c6da;
+    color: $color-a;
     text-decoration: none;
   }
+
   img {
     width: 100%;
+
+    &.emoticon {
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      vertical-align: middle;
+    }
   }
-  img.emoticon {
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    vertical-align: middle;
-  }
+
   blockquote {
     padding: 0 1.2em;
-    color: #4d4f50;
-    border-left: 0.4em solid #b1b2b3;
+    color: $color-blockquote;
+    border-left: 0.4em solid $border-blockquote;
   }
 }
 

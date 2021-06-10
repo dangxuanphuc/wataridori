@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <div class="card card__review">
       <%= link_to post do %>
-        <%= cl_image_tag(post.image.url, class: "card-img-top") %>
+        <%= cl_image_tag(post.image.thumb.url, class: "card-img-top") %>
       <% end %>
       <div class="sub__title">
         <h1><%= link_to post.title, post %></h1>

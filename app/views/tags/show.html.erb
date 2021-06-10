@@ -1,0 +1,14 @@
+<%= render "shared/card_title", card_title: "Tag: " + @tag.name %>
+
+<div class="post__show tag__show d-flex justify-content-between">
+  <div class="post__leftbar">
+    <% @posts.each do |post| %>
+      <div class="post__content post__tag">
+        <%= render "posts/post_content_short", post: post %>
+      </div>
+    <% end %>
+  </div>
+  <div class="post__rightbar">
+    <%= render "posts/rightbar", popular_posts: @popular_posts, recent_posts: @recent_posts %>
+  </div>
+</div>

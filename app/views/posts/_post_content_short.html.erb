@@ -1,8 +1,8 @@
 <div class="post__image">
-  <%= cl_image_tag(post.image.large.url) %>
+  <%= cl_image_tag(post.image.url) %>
 </div>
 <div class="post__subtitle">
-  <h1><%= post.title %></h1>
+  <h1><%= link_to post.title, post %></h1>
   <div class="post__author d-flex justify-content-evenly align-items-center">
     <span class="post__info">
       <span class="post__submit"><%= post.created_at.strftime("%B %d, %Y %I:%M %p") %></span>
@@ -21,7 +21,7 @@
 </div>
 <div class="post__body">
   <div class="salary-duong">
-    <%= markdown(replace_to_emoticon(post.content)) %>
+    <%= markdown(replace_to_emoticon(truncate(post.content, length: 1200))) %>
   </div>
 </div>
 <div class="footer__post d-flex justify-content-between">
