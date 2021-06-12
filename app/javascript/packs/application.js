@@ -6,7 +6,6 @@
 import "jquery"
 global.$ = require("jquery")
 import "bootstrap"
-import "@fortawesome/fontawesome-free/css/all"
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
