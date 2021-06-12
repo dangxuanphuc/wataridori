@@ -6,6 +6,9 @@ class StaticPagesController < ApplicationController
   def about
     @skill_language = Skill.language
     @skill_technology = Skill.technology
+    @favorite_songs = Favorite.song.shuffle
+    @favorite_singers = Favorite.singer.shuffle
+    @favorite_others = Favorite.other.shuffle
   end
 
   def song
