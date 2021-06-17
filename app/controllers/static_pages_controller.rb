@@ -12,7 +12,13 @@ class StaticPagesController < ApplicationController
   end
 
   def song
-    @song = Song.all.shuffle.first
+    if params[:status] == "next"
+      song_id = params[:song_id].to_i + 1
+    else
+      song_id = params[:song_id].to_i - 1 == 0 ? Song.last.id : params[:song_id].to_i - 1
+    end
+
+    @song = Song.find_by(id: song_id) || Song.first
   end
 
   def emoticon
