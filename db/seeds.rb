@@ -25,7 +25,7 @@ Favorite.create!([
     name: "Aoi Teshima", favorite_type: "singer"},
   {image: "https://res.cloudinary.com/phucdx/image/upload/v1623469284/wataridori/images/kenshi-yonezu_hlnjyy.jpg",
     name: "Kenshi Yonezu", favorite_type: "singer"},
-  {image: "https://res.cloudinary.com/phucdx/image/upload/v1623469937/wataridori/images/ikimono-gakari_edf3p8.jpg",
+  {image: "https://res.cloudinary.com/phucdx/image/upload/v1625385203/wataridori/images/ikimono-gakari_gczotc.jpg",
     name: "Ikimono Gakari", favorite_type: "singer"},
   {image: "https://res.cloudinary.com/phucdx/image/upload/v1623470806/wataridori/images/nagori-yuki_pmyodc.jpg",
     name: "なごり雪", favorite_type: "song"},
