@@ -5,8 +5,6 @@
   <%= tag :meta, property: "og:description", content: truncate(@post.content, length: 30) %>
   <%= tag :meta, property: "og:url", content: request.url %>
   <%= tag :meta, property: "og:image", content: @post.image %>
-  <%= tag :meta, property: "og:image:width", content: 1200 %>
-  <%= tag :meta, property: "og:image:height", content: 630 %>
 <% end %>
 
 <div class="post__show d-flex justify-content-between">
@@ -14,9 +12,12 @@
     <div class="post__content">
       <%= render "post_content", post: @post %>
     </div>
-    <div class="related__post">
-      <%= render "related_post", related_posts: @related_posts %>
-    </div>
+
+    <% if @related_posts.present? %>
+      <div class="related__post">
+        <%= render "related_post", related_posts: @related_posts %>
+      </div>
+    <% end %>
   </div>
   <div class="post__rightbar">
     <%= render "rightbar", popular_posts: @popular_posts, recent_posts: @recent_posts %>

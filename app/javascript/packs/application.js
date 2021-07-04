@@ -13,6 +13,7 @@ import "channels"
 import "packs/progress"
 import "packs/related_post"
 import "packs/posts"
+import "packs/custom"
 
 Rails.start()
 Turbolinks.start()

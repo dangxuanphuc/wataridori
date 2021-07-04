@@ -16,7 +16,7 @@
     <%= yield :head %>
   </head>
 
-  <body>
+  <body class="<%= 'dark-theme' if cookies[:theme] == 'dark' %>">
     <%= render "layouts/navbar" %>
     <div class="container">
       <%= yield %>
