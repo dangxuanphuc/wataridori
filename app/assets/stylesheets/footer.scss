@@ -1,17 +1,10 @@
-@import "color";
-
 .footer__card {
-  background-color: $black;
-  color: $white;
-
   a {
-    color: $white;
     text-decoration: none;
   }
 
   hr {
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.233) !important;
   }
 
   .footer__start {

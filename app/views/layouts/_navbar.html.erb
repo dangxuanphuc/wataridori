@@ -32,9 +32,9 @@
             <i class="fas fa-pencil-alt"></i> Create Post
           <% end %>
         <% end %>
-        <button class="btn btn-light rounded-circle ms-2 switch__theme">
-          <i class="fas fa-moon"></i>
-          <%# <i class="fas fa-sun"></i> %>
+        <button class="btn btn-light rounded-circle ms-2 switch__theme js--switch-theme">
+          <i class="fas fa-moon <%= 'd-none' if cookies[:theme] == 'dark' %>" id="light"></i>
+          <i class="fas fa-sun <%= 'd-none' if cookies[:theme] == 'light' || cookies[:theme].nil? %>" id="dark"></i>
         </button>
       </div>
     </div>

@@ -1,7 +1,6 @@
 @import "color";
 
 .about__me {
-  background-color: $bg-card;
   padding-top: 30px;
 
   .card__infor {
@@ -16,7 +15,6 @@
       padding-left: 3%;
 
       .admin__name {
-        color: $primary;
         font-size: 28px;
         font-weight: 40;
       }
@@ -25,22 +23,6 @@
         .fab {
           font-size: 22px;
           margin-right: 7px;
-
-          &.fa-facebook {
-            color: $facebook;
-          }
-
-          &.fa-instagram {
-            color: $instagram;
-          }
-
-          &.fa-twitter {
-            color: $twitter;
-          }
-
-          &.fa-github {
-            color: $black;
-          }
         }
       }
     }
@@ -48,12 +30,10 @@
 
   .about__title {
     hr {
-      border: $hr-bg;
       margin: 0 20px;
     }
 
     .title__name {
-      color: $primary;
       text-transform: uppercase;
       font-size: 34px;
       font-weight: 500;

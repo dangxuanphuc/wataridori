@@ -1,5 +1,3 @@
-@import "color";
-
 .post__react {
   display: flex;
   align-items: center;
@@ -9,7 +7,6 @@
   }
 
   .action__btn {
-    color: $stats-color;
     display: inline-flex;
     vertical-align: middle;
     align-items: center;
@@ -32,17 +29,6 @@
 
   a.action__btn {
     text-decoration: none;
-
-    &:hover {
-      &.action__like .action__btn__icon {
-        color: $like-color;
-        animation: heart linear 0.3s infinite alternate;
-      }
-    }
-  }
-
-  .action__like.active .action__btn__icon {
-    color: $like-color;
   }
 }
 

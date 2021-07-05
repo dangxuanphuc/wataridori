@@ -1,0 +1,708 @@
+@import "color";
+
+body {
+  --white-color: #fff;
+  --white1-color: rgba(255, 255, 255, 0.233);
+  --white2-color:rgb(219, 219, 219);
+  --black-color: #000;
+  --black1-color: rgba(0,0,0,.08);
+  --black2-color: rgba(0,0,0,.5);
+  --black3-color: rgba(0,0,0,.55);
+  --black4-color: rgba(0,0,0,.1);
+  --black5-color: rgba(0,0,0,.2);
+  --black6-color: rgba(0,0,0,.14);
+  --black7-color: rgba(0,0,0,.12);
+  --background-color: #1e1e2f;
+  --bgCard-color: #f7f7f7;
+  --date-color: #a0a5b0;
+  --titleNav-color: #00897b;
+  --btn-cover: #6d8794;
+  --btn-coverHover: #566b75;
+  --shareBtn-color: #26a69a;
+  --shareBtnHover-color: #22776f;
+  --facebook-color: #006dc0;
+  --instagram-color: #833ab4;
+  --github-color: #000;
+  --tag-color: #1c1c1c;
+  --icon-color: #303a3b;
+  --tabLink-color: #478a7c;
+  --postText-color: #333;
+  --delete-color: #d50000;
+  --postShadow-color: #9e9ea9;
+  --navBackground-color: #1e1e2f;
+  --navBrand-color: rgba(0,0,0,.87);
+  --navHover-color: #f6f6f6;
+  --navActive-color: #dcdcdc;
+  --defaultBtn-color: #f5f5f5;
+  --defaultBtnHover-color: #e5e5e5;
+  --heart-color: #d2293c;
+  --cardBorder-color: #414355;
+  --borderTr-color: #c6cbd1;
+  --borderTd-color: #dfe2e5;
+  --borderPre-color: #bfbfbf;
+  --a-color: #26c6da;
+  --blockquote-color: #4d4f50;
+  --blockquoteBorder-color: #b1b2b3;
+  --progress-color: #5f5f5f;
+  --progressActive-color: #e6615e;
+  --backgroundFooter-color: #27293d;
+  --codemirror-color: #9b9b9f;
+  --description-color: #000;
+
+  background-color: var(--white-color);
+
+  .card__title {
+    background-color: var(--bgCard-color);
+
+    h1 {
+      color: var(--titleNav-color);
+    }
+  }
+
+  .btn__action {
+    .btn {
+      &.cover__image {
+        background-color: var(--btn-cover);
+        border-color: var(--btn-cover);
+
+        &:hover {
+          background-color: var(--btn-coverHover);
+          border-color: var(--btn-coverHover);
+        }
+      }
+    }
+  }
+
+  .btn__action {
+    button {
+      &.cover__image {
+        background-color: var(--btn-cover);
+        border-color: var(--btn-cover);
+
+        &:hover {
+          background-color: var(--btn-coverHover);
+          border-color: var(--btn-coverHover);
+        }
+      }
+    }
+  }
+
+  #shareButton, #shareButton1 {
+    border: 1px solid var(--shareBtn-color);
+    color: var(--shareBtn-color);
+
+    &:hover {
+      background-color: var(--shareBtn-color);
+      color: var(--white-color);
+    }
+  }
+
+  .about__me {
+    background-color: var(--bgCard-color);
+
+    .card__infor {
+      .infor {
+        .admin__name {
+          color: var(--titleNav-color);
+        }
+
+        .social__link {
+          .fab {
+            &.fa-facebook {
+              color: var(--facebook-color);
+            }
+
+            &.fa-instagram {
+              color: var(--instagram-color);
+            }
+
+            &.fa-github {
+              color: var(--github-color);
+            }
+          }
+        }
+      }
+    }
+
+    .about__title {
+      .title__name {
+        color: var(--titleNav-color);
+      }
+    }
+  }
+
+  .education__work {
+    .main-timeline {
+      .timeline {
+        &:before {
+          background: var(--titleNav-color);
+        }
+      }
+
+      .timeline-icon {
+        background: var(--titleNav-color);
+
+        &:before {
+          background: var(--white-color);
+          border: 2px solid var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--shareBtn-color);
+        }
+
+        i {
+          color: var(--icon-color);
+        }
+      }
+
+      .year {
+        color: var(--icon-color);
+        border-bottom: 2px solid var(--icon-color);
+
+        &:before {
+          background: var(--titleNav-color);
+          border: 5px solid var(--white-color);
+          box-shadow: 0 0 0 4px var(--titleNav-color);
+        }
+
+        &:after {
+          border-left: 10px solid var(--icon-color);
+        }
+      }
+
+      .timeline-content {
+        &:after,
+        &:before {
+          background: var(--bgCard-color);
+        }
+      }
+
+      .title {
+        color: var(--titleNav-color);
+      }
+
+      .description {
+        color: var(--description-color);
+      }
+
+      .timeline:nth-child(2n) {
+        .timeline-icon,
+        &:before {
+          background: var(--titleNav-color);
+        }
+
+        .year {
+          &:after {
+            border-right: 10px solid var(--icon-color);
+          }
+        }
+
+        .timeline-icon:before {
+          border-color: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--shareBtn-color);
+        }
+
+        .year:before {
+          background: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--titleNav-color);
+        }
+
+        .title {
+          color: var(--titleNav-color);
+        }
+      }
+
+      .timeline:nth-child(3n) {
+        .timeline-icon,
+        &:before {
+          background: var(--titleNav-color);
+        }
+
+        .timeline-icon:before {
+          border-color: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--shareBtn-color);
+        }
+
+        .year:before {
+          background: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--titleNav-color);
+        }
+
+        .title {
+          color: var(--titleNav-color);
+        }
+      }
+
+      .timeline:nth-child(4n) {
+        .timeline-icon,
+        &:before {
+          background: var(--titleNav-color);
+        }
+
+        .timeline-icon:before {
+          border-color: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--shareBtn-color);
+        }
+
+        .year:before {
+          background: var(--titleNav-color);
+          box-shadow: 0 0 0 4px var(--titleNav-color);
+        }
+
+        .title {
+          color: var(--titleNav-color);
+        }
+      }
+    }
+  }
+
+  .error-404, .error-422, .error-500 {
+    .back-to-home {
+      color: var(--titleNav-color);
+      border: 1px solid var(--titleNav-color)!important;
+
+      &:hover {
+      background-color: var(--titleNav-color);
+      color: var(--white-color);
+      }
+    }
+  }
+
+  .favorites {
+    nav {
+      background-color: transparent !important;
+
+      .nav-tabs {
+        .show .tablinks, .tablinks.active {
+          background-color: transparent;
+        }
+
+        .tablinks {
+          border: 1px solid transparent;
+          color: var(--tabLink-color);
+
+          &:hover {
+            background-color: var(--black-color)1;
+          }
+        }
+      }
+    }
+
+    .tabcontent {
+      .singer__item, .song__item, .other__item {
+        .favorite__name {
+          background: var(--black2-color);
+          color: var(--white-color);
+        }
+
+        &:hover {
+          .favorite__name {
+            background-color: var(--black2-color);
+            color: var(--white-color);
+          }
+        }
+      }
+    }
+  }
+
+  .footer__card {
+    background-color: var(--black-color);
+    color: var(--white-color);
+
+    a {
+      color: var(--white-color);
+    }
+
+    hr {
+      background-color: var(--white1-color) !important;
+    }
+  }
+
+  .card__top {
+    .card__review {
+      background-color: var(--bgCard-color);
+
+      .sub__title {
+        h1 {
+          a {
+            color: var(--black-color);
+
+            &:hover {
+              color: var(--titleNav-color);
+            }
+          }
+        }
+
+        .stats {
+          color: var(--date-color);
+        }
+      }
+
+      .post-body {
+        color: var(--postText-color);
+      }
+
+      .card__actions {
+        .read__more {
+          color: var(--titleNav-color);
+          border: 1px solid var(--titleNav-color) !important;
+
+          &:hover {
+            background-color: var(--titleNav-color);
+            color: var(--white-color);
+          }
+        }
+
+        .delete__btn {
+          border: 1px solid var(--delete-color) !important;
+          color: var(--delete-color);
+
+          &:hover {
+            background-color: var(--delete-color);
+            color: var(--white-color);
+          }
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 10px 0 var(--postShadow-color);
+      }
+    }
+  }
+
+  nav {
+    background-color: var(--white-color);
+    box-shadow: 0 3px 1px -2px var(--black5-color), 0 2px 2px 0 var(--black6-color), 0 1px 5px 0 var(--black7-color) !important;
+
+    .container {
+      .navbar-brand {
+        color: var(--navBrand-color) !important;
+      }
+
+      .navbar-collapse {
+        ul {
+          li {
+            a {
+              color: var(--navBrand-color) !important;
+
+              &:hover {
+                background-color: var(--navHover-color);
+              }
+
+              &.active {
+                background-color: var(--navActive-color);
+              }
+            }
+          }
+        }
+
+        .create__post {
+          background-color: var(--defaultBtn-color);
+
+          &:hover {
+            background-color: var(--defaultBtnHover-color);
+          }
+        }
+
+        .switch__theme {
+          background-color: var(--defaultBtn-color);
+
+          &:hover {
+            background-color: var(--defaultBtnHover-color);
+          }
+        }
+      }
+    }
+  }
+
+  .salary-duong {
+    table {
+      tr {
+        background-color: var(--white-color);
+        border-top: 1px solid var(--borderTr-color);
+
+        &:nth-child(2n) {
+          background-color: var(--white-color);
+        }
+
+        th,
+        td {
+          border: 1px solid var(--borderTd-color);
+        }
+      }
+    }
+
+    code {
+      background-color: transparent !important;
+    }
+
+    pre {
+      border: 1px solid var(--borderPre-color);
+    }
+
+    a {
+      color: var(--a-color);
+    }
+
+    blockquote {
+      color: var(--blockquote-color);
+      border-left: 0.4em solid var(--blockquoteBorder-color);
+    }
+  }
+
+  .post__show {
+    .post__leftbar {
+      .post__content {
+        background: var(--bgCard-color);
+
+        .post__subtitle {
+          .post__author {
+            color: var(--date-color);
+          }
+        }
+
+        .footer__post {
+          .tags-btn > a {
+            border: 1px solid var(--tag-color);
+            color: var(--tag-color);
+            background: transparent;
+
+            &:hover {
+              background: var(--shareBtn-color);
+              color: var(--white-color);
+            }
+          }
+
+          .edit__post, .delete__post {
+            color: var(--tag-color);
+            border: 1px solid var(--tag-color);
+
+            &:hover {
+              background: var(--shareBtn-color);
+              color: var(--white-color);
+            }
+          }
+        }
+      }
+    }
+
+    .post__rightbar {
+      .title__header {
+        background: var(--bgCard-color);
+
+        .title__rightbar {
+          > span {
+            background: var(--black-color);
+            color: var(--white-color);
+
+            &:before, &:after {
+              border: 15px solid var(--black-color);
+              border-left-color: transparent;
+              border-right-color: transparent;
+            }
+          }
+        }
+      }
+
+      .about-me {
+        .read-more {
+          color: var(--titleNav-color);
+          border: 1px solid var(--titleNav-color)!important;
+
+          &:hover {
+            background-color: var(--titleNav-color);
+            color: var(--white-color);
+          }
+        }
+      }
+
+      .follow-me {
+        .social__link {
+          .fab {
+            &.fa-facebook {
+              color: var(--facebook-color);
+            }
+
+            &.fa-instagram {
+              color: var(--instagram-color);
+            }
+
+            &.fa-github {
+              color: var(--github-color);
+            }
+          }
+        }
+      }
+
+      .popular-post {
+        .posts__list > .article {
+          .post__info {
+            color: var(--white-color);
+          }
+
+          .post__link {
+            color: transparent;
+            background-color: transparent;
+          }
+
+          &::before {
+            background-color: var(--black-color);
+          }
+        }
+      }
+
+      .recent-post {
+        a {
+          color: var(--shareBtn-color);
+
+          &:hover {
+            color: var(--shareBtnHover-color);
+          }
+        }
+      }
+
+      .post-tag {
+        .tags__content > a {
+          border: 1px solid var(--tag-color);
+          color: var(--tag-color);
+          background: transparent;
+
+          &:hover {
+            background: var(--shareBtn-color);
+            color: var(--white-color);
+          }
+        }
+      }
+    }
+  }
+
+  .post__react {
+    .action__btn {
+      color: var(--date-color);
+    }
+
+    a.action__btn {
+      &:hover {
+        &.action__like .action__btn__icon {
+          color: var(--heart-color);
+          animation: heart linear 0.3s infinite alternate;
+        }
+      }
+    }
+
+    .action__like.active .action__btn__icon {
+      color: var(--heart-color);
+    }
+  }
+
+  .related__post {
+    .title__header {
+      background: var(--bgCard-color);
+
+      .title__rightbar {
+        > span {
+          background: var(--black-color);
+          color: var(--white-color);
+
+          &:before, &:after {
+            border: 15px solid var(--black-color);
+            border-left-color: transparent;
+            border-right-color: transparent;
+          }
+        }
+      }
+    }
+
+    .article {
+      .post__info {
+        color: var(--white-color);
+      }
+
+      .post__link {
+        color: transparent;
+        background-color: transparent;
+      }
+
+      &::before {
+        background-color: var(--black-color);
+      }
+    }
+  }
+
+  .skills {
+    .skill__language {
+      .progress {
+        background: transparent;
+
+        &::after {
+          border: 15px solid var(--progress-color);
+        }
+
+        .progress-bar {
+          background: transparent;
+          border-color: var(--progressActive-color);
+        }
+      }
+    }
+
+    .skill__tech {
+      .tech__skill {
+        .progress {
+          background-color: var(--progress-color);
+
+          .progress-bar {
+            background-color: var(--progressActive-color);
+          }
+        }
+      }
+    }
+  }
+
+  .tag__show {
+    .post__tag {
+      .post__subtitle {
+        h1 a {
+          color: var(--black-color);
+
+          &:hover {
+            color: var(--titleNav-color);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .education__work {
+      .main-timeline {
+        .timeline:nth-child(2n) {
+          .timeline-icon,
+          &:before {
+            background: var(--titleNav-color);
+          }
+
+          .year {
+            &:after {
+              border-left: 10px solid var(--icon-color);
+              border-top: 10px solid transparent;
+              border-bottom: 10px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    nav {
+      .container {
+        .navbar-toggler {
+          color: var(--black3-color);
+          border-color: var(--black4-color);
+        }
+
+        .navbar-collapse {
+          background: var(--white-color);
+        }
+      }
+    }
+  }
+}

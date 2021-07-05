@@ -7,7 +7,7 @@
       <% recent_posts.each do |post| %>
         <li>
           <%= link_to post.title, post %>
-          <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+          <span class="post-date"> - <%= post.created_at.strftime("%b %d, %Y") %></span>
         </li>
       <% end %>
     </ul>

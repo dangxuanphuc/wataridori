@@ -1,11 +1,8 @@
-@import "color";
-
 .favorites {
   margin: 20px;
 
   nav {
     font-family: Oswald,sans-serif;
-    background-color: transparent !important;
     box-shadow: none !important;
     height: 50px;
 
@@ -13,14 +10,11 @@
       border-bottom: none;
 
       .show .tablinks, .tablinks.active {
-        background-color: transparent;
         border-bottom: 4px solid !important;
         font-size: 17px;
       }
 
       .tablinks {
-        color: $tab-link;
-        border: 1px solid transparent;
         border-top-left-radius: .25rem;
         border-top-right-radius: .25rem;
         text-transform: uppercase;
@@ -29,10 +23,6 @@
         text-decoration: none;
         cursor: pointer;
         padding: 5px 10px;
-
-        &:hover {
-          background-color: rgba(0,0,0,.08);
-        }
       }
     }
   }
@@ -52,8 +42,6 @@
 
       .favorite__name {
         position: absolute;
-        background: rgba(0,0,0,.5);
-        color: $white;
         padding: 10px 25px;
         font-size: 24px;
         font-weight: 200;
@@ -68,8 +56,6 @@
 
       &:hover {
         .favorite__name {
-          background-color: rgba(0,0,0,.5);
-          color: $white;
           opacity: 1;
         }
       }
