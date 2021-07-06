@@ -51,6 +51,7 @@ body.dark-theme {
 
   .form-control {
     background: var(--bgCard-color);
+    color: var(--white2-color);
     border: none;
   }
 
@@ -60,14 +61,14 @@ body.dark-theme {
       border: none;
 
       a {
-        color: var(--white-color) !important;
+        color: var(--white2-color) !important;
       }
     }
 
     .CodeMirror {
       background: var(--bgCard-color);
       border: none;
-      color: var(--white-color);
+      color: var(--white2-color);
     }
   }
 
@@ -744,6 +745,15 @@ body.dark-theme {
     .card {
       background: var(--bgCard-color);
       color: var(--white-color);
+    }
+  }
+
+  .login__form {
+    background: var(--bgCard-color);
+    color: var(--white2-color);
+
+    input {
+      border: 1px solid var(--white2-color);
     }
   }
 
