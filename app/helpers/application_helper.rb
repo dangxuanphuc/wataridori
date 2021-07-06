@@ -25,4 +25,23 @@ module ApplicationHelper
 
     Redcarpet::Markdown.new(Redcarpet::Render::HTML, options).render(content).html_safe
   end
+
+  def default_meta_tags
+    {
+      site: "",
+      title: "Wataridori's Blog",
+      description: "Lorem ipsum dolor sit amet",
+      keywords: "",
+      canonical: request.original_url,
+      reverse: true,
+      og: {
+        site_name: :site,
+        title: :title,
+        description: :description,
+        type: "Personal Blog",
+        url: request.original_url,
+        image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg",
+      }
+    }
+  end
 end
