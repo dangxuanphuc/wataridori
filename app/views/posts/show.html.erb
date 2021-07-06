@@ -1,7 +1,7 @@
 <% provide :title, @post.title %>
 
 <% content_for :head do %>
-  <%= tag :meta, property: "og:title", content: @post.title %>
+  <%= tag :meta, property: "og:title", content: @post.title + " | Wataridori's Blog" %>
   <%= tag :meta, property: "og:description", content: truncate(@post.content, length: 30) %>
   <%= tag :meta, property: "og:url", content: request.url %>
   <%= tag :meta, property: "og:image", content: @post.image %>
