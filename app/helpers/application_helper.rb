@@ -28,16 +28,10 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "",
-      title: "Wataridori's Blog",
-      description: "Lorem ipsum dolor sit amet",
-      keywords: "",
       canonical: request.original_url,
       reverse: true,
       og: {
-        site_name: :site,
-        title: :title,
-        description: :description,
+        title: "Wataridori's Blog",
         type: "Personal Blog",
         url: request.original_url,
         image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg",
