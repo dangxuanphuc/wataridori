@@ -33,12 +33,15 @@
           <use xlink:href="#icon-prev"></use>
         </svg>
       <% end %>
-      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn",
-        id: "js--music", data: { url: favorite_songs_path, audio: @song.url } do %>
+      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn js--music-play",
+        data: { url: favorite_songs_path, audio: song.url } do %>
         <svg class="icon">
           <use xlink:href="#icon-pause" class="pause-song d-none"></use>
           <use xlink:href="#icon-play" class="play-song"></use>
         </svg>
+        <audio id="js--song" class="d-none" controls>
+          <source src="<%= song.url %>" type="audio/mpeg">
+        </audio>
       <% end %>
       <%= link_to "javascript:void(0)", class: "player-controls__item prevNext",
         id: "js--next-song", data: { id: song.id, url: favorite_songs_path } do %>
