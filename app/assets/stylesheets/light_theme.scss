@@ -48,6 +48,13 @@ body {
   --backgroundFooter-color: #27293d;
   --codemirror-color: #9b9b9f;
   --description-color: #000;
+  --shadowAreaControl-color: #ccc;
+  --bgAreaControl-color: #eee;
+  --artist-color: #333;
+  --timer-color: #333;
+  --shadowImg-color: #eaeaea;
+  --playBtnFilter-color: #ecdbdb;
+  --nextPrev-color: #efefef;
 
   background-color: var(--white-color);
 
@@ -666,6 +673,66 @@ body {
             color: var(--titleNav-color);
           }
         }
+      }
+    }
+  }
+
+  .playlist-frame {
+    .area-header {
+      .cover {
+        .shadow {
+          background-color: var(--shadowImg-color);
+        }
+      }
+    }
+
+    .area-control {
+      background-color: var(--bgAreaControl-color);
+
+      .control-name-artist {
+        .artist {
+          color: var(--artist-color);
+        }
+      }
+
+      .control-progress {
+        .progress__bar {
+          background-color: #d0d8e6;
+        }
+
+        .progress__current {
+          background-color: #4db6ac;
+        }
+
+        .timer {
+          .text {
+            color: var(--timer-color);
+          }
+        }
+      }
+
+      .player-controls {
+        .player-controls__item {
+          color: #4db6ac;
+
+          &.playBtn {
+            filter: drop-shadow(0 11px 6px var(--playBtnFilter-color));
+            color: #4db6ac;
+          }
+
+          &.prevNext:hover {
+            background: var(--nextPrev-color);
+            box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .playlist-frame {
+      .area-control {
+        box-shadow: 4px 24px 22px 1px var(--shadowAreaControl-color);
       }
     }
   }

@@ -33,13 +33,11 @@
         background-position: center;
         background-size: cover;
         display: none;
-        background-color: #eaeaea;
       }
     }
   }
 
   .area-control {
-    background-color: #eee;
     padding: 25px 5%;
     padding-bottom: 0;
     box-shadow: unset;
@@ -64,7 +62,6 @@
         min-height: 1.2rem;
         line-height: 1.2rem;
         font-size: 1rem;
-        color: #333;
       }
 
       .repeat {
@@ -91,7 +88,6 @@
         height: 6px;
         width: 100%;
         cursor: pointer;
-        background-color: #d0d8e6;
         display: inline-block;
         border-radius: 10px;
       }
@@ -99,7 +95,6 @@
       .progress__current {
         height: inherit;
         width: 0%;
-        background-color: #4db6ac;
         border-radius: 10px;
       }
 
@@ -110,7 +105,6 @@
         justify-content: space-between;
 
         .text {
-          color: #333;
           font-size: 0.85rem;
         }
       }
@@ -127,7 +121,6 @@
         padding: 5px;
         margin-bottom: 10px;
         cursor: pointer;
-        color: #4db6ac;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -144,8 +137,6 @@
         &.playBtn {
           margin-bottom: 0;
           font-size: 95px;
-          filter: drop-shadow(0 11px 6px #ecdbdb);
-          color: #4db6ac;
           width: 80px;
           height: 80px;
           display: inline-flex;
@@ -153,9 +144,7 @@
 
         &.prevNext:hover {
           border-radius: 50%;
-          background: #efefef;
           transform: scale(1.1);
-          box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
           transition: all 0.3s ease-in-out;
           transition: all 0.4s cubic-bezier(0.35, 0.57, 0.13, 0.88);
         }
@@ -191,7 +180,6 @@
       grid-area: 1/2/2/3;
       border-radius: 0 30px 30px 0;
       padding: 30px 7%;
-      box-shadow: 4px 24px 22px 1px #ccc;
     }
   }
 }
