@@ -18,7 +18,9 @@ class StaticPagesController < ApplicationController
       song_id = params[:song_id].to_i - 1 == 0 ? Song.last.id : params[:song_id].to_i - 1
     end
 
-    @song = Song.find_by(id: song_id) || Song.first
+    lastest_song = cookies[:song_id].present? ? Song.find_by(id: cookies[:song_id]) : Song.all.sample
+
+    @song = Song.find_by(id: song_id) || lastest_song
   end
 
   def emoticon

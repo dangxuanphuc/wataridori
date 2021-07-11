@@ -1,3 +1,5 @@
+<% cookies[:song_id] = song.id %>
+
 <div class="playlist-frame">
   <header class="area-header">
     <div class="cover">
@@ -17,38 +19,38 @@
         <span><%= song.author %></span>
       </div>
     </section>
-    <section class="control-progress" ref="progress">
-      <div class="progress__bar" @click="clickProgress">
-        <div class="progress__current" :style="{ width: barWidth }"></div>
+    <section class="control-progress js--control-progress" ref="progress">
+      <div class="progress__bar js--progress">
+        <div class="progress__current js--progress-width"></div>
       </div>
       <div class="timer">
-        <p class="text start">00:00</p>
-        <p class="text end">04:36</p>
+        <p class="text js--music-start"></p>
+        <p class="text js--music-end"></p>
       </div>
     </section>
     <section class="player-controls">
-      <%= link_to "javascript:void(0)", class: "player-controls__item prevNext",
-        id: "js--prev-song", data: { id: song.id, url: favorite_songs_path } do %>
+      <%= link_to "javascript:void(0)", class: "player-controls__item prevNext js--prev-song",
+        data: { id: song.id, url: favorite_songs_path } do %>
         <svg class="icon">
           <use xlink:href="#icon-prev"></use>
         </svg>
       <% end %>
-      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn js--music-play",
+      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn",
         data: { url: favorite_songs_path, audio: song.url } do %>
         <svg class="icon">
           <use xlink:href="#icon-pause" class="pause-song d-none"></use>
           <use xlink:href="#icon-play" class="play-song"></use>
         </svg>
-        <audio id="js--song" class="d-none" controls>
-          <source src="<%= song.url %>" type="audio/mpeg">
-        </audio>
       <% end %>
-      <%= link_to "javascript:void(0)", class: "player-controls__item prevNext",
-        id: "js--next-song", data: { id: song.id, url: favorite_songs_path } do %>
+      <%= link_to "javascript:void(0)", class: "player-controls__item prevNext js--next-song",
+        data: { id: song.id, url: favorite_songs_path } do %>
         <svg class="icon">
           <use xlink:href="#icon-next"></use>
         </svg>
       <% end %>
+      <audio id="js--song" class="d-none" preload="metadata">
+        <source src="<%= song.url %>" type="audio/mpeg">
+      </audio>
     </section>
   </main>
   <svg
@@ -58,7 +60,7 @@
   >
     <defs>
       <symbol id="icon-pause" viewBox="0 0 32 32">
-        <title>icon-pause</title>
+        <title>Pause</title>
         <path
           d="M16 0.32c-8.64 0-15.68 7.040-15.68 15.68s7.040 15.68 15.68 15.68 15.68-7.040 15.68-15.68-7.040-15.68-15.68-15.68zM16 29.216c-7.296 0-13.216-5.92-13.216-13.216s5.92-13.216 13.216-13.216 13.216 5.92 13.216 13.216-5.92 13.216-13.216 13.216z"
         ></path>
@@ -73,7 +75,7 @@
         ></path>
       </symbol>
       <symbol id="icon-play" viewBox="0 0 32 32">
-        <title>icon-play</title>
+        <title>Play</title>
         <path
           d="M21.216 15.168l-7.616-5.088c-0.672-0.416-1.504 0.032-1.504 0.832v10.176c0 0.8 0.896 1.248 1.504 0.832l7.616-5.088c0.576-0.416 0.576-1.248 0-1.664z"
         ></path>
@@ -88,7 +90,7 @@
         ></path>
       </symbol>
       <symbol id="icon-next" viewBox="0 0 32 32">
-        <title>next</title>
+        <title>Next</title>
         <path
           d="M2.304 18.304h14.688l-4.608 4.576c-0.864 0.864-0.864 2.336 0 3.232 0.864 0.864 2.336 0.864 3.232 0l8.448-8.48c0.864-0.864 0.864-2.336 0-3.232l-8.448-8.448c-0.448-0.448-1.056-0.672-1.632-0.672s-1.184 0.224-1.632 0.672c-0.864 0.864-0.864 2.336 0 3.232l4.64 4.576h-14.688c-1.248 0-2.304 0.992-2.304 2.272s1.024 2.272 2.304 2.272z"
         ></path>
@@ -97,7 +99,7 @@
         ></path>
       </symbol>
       <symbol id="icon-prev" viewBox="0 0 32 32">
-        <title>prev</title>
+        <title>Previous</title>
         <path
           d="M29.696 13.696h-14.688l4.576-4.576c0.864-0.864 0.864-2.336 0-3.232-0.864-0.864-2.336-0.864-3.232 0l-8.448 8.48c-0.864 0.864-0.864 2.336 0 3.232l8.448 8.448c0.448 0.448 1.056 0.672 1.632 0.672s1.184-0.224 1.632-0.672c0.864-0.864 0.864-2.336 0-3.232l-4.608-4.576h14.688c1.248 0 2.304-1.024 2.304-2.304s-1.024-2.24-2.304-2.24z"
         ></path>

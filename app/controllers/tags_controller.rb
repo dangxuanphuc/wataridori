@@ -12,7 +12,6 @@ class TagsController < ApplicationController
   def load_tag
     @tag = Tag.find_by slug: params[:slug]
 
-    return if @tag
-    redirect_to root_path
+    raise ActionController::RoutingError.new("Not Found") unless @tag
   end
 end
