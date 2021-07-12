@@ -1,111 +1,25 @@
-var circleLeft = null;
-var barWidth = null;
-var maxduration = null;
-var currentTime = null;
+var volume_slider = $(".volume_slider");
+var track_url = "https://res.cloudinary.com/phucdx/video/upload/v1625904346/wataridori/songs/arigatou_fkqnjw.mp3";
 var isPlaying = false;
+var updateTimer;
 
-// var audio = null;
+let curr_track = document.createElement("audio");
 
-// $(document).on("turbolinks:load", function() {
-//   audio = $("body").find("audio").get(0);
-// })
+function loadTrack(track_url) {
+  clearInterval(updateTimer);
 
+  curr_track.src = track_url;
+  curr_track.load();
 
-function getDuration(src) {
-  return new Promise(function(resolve) {
-    var audio = new Audio();
-    $(audio).on("loadedmetadata", function() {
-      resolve(audio.duration);
-    });
-    audio.src = src;
-  });
+  updateTimer = setInterval(seekUpdate, 1000);
+
+  curr_track.addEventListener("ended", nextTrack);
 }
 
-function showDuration() {
-  let song_url = $(".playBtn").data("audio")
-
-  getDuration(song_url).then(function(duration) {
-    maxduration = duration;
-    $(".js--music-end").text(formatDuration(duration))
-  });
-}
-
-function updateBar(x) {
-  let progress = $(".js--control-progress")[0];
-  let position = x - progress.offsetLeft;
-  let percentage = (100 * position) / progress.offsetWidth;
-  if (percentage > 100) {
-    percentage = 100;
-  }
-  if (percentage < 0) {
-    percentage = 0;
-  }
-  barWidth = percentage + "%";
-  circleLeft = percentage + "%";
-  currentTime = (maxduration * percentage) / 100;
-
-  var updateTime = function(){
-    $(".js--progress-width").css("width", barWidth)
-  }
-
-  $("#js--song").on("timeupdate", updateTime)
-  $("#js--song").trigger("play");
-}
-
-function clickProgress(e) {
-  isPlaying = true;
-  $("#js--song").trigger("pause");
-  updateBar(e.pageX);
-}
-
-function formatDuration(duration) {
-  let durmin = Math.floor(duration / 60);
-  let dursec = Math.floor(duration - durmin * 60);
-
-  if (durmin < 10) {
-    durmin = "0" + durmin;
-  }
-  if (dursec < 10) {
-    dursec = "0" + dursec;
-  }
-  let durationFormatted = durmin + ":" + dursec;
-
-  return durationFormatted;
-}
-
-function getCurrentTime() {
-  let curmin = Math.floor(currentTime / 60);
-  let cursec = Math.floor(currentTime - curmin * 60);
-
-  if (curmin < 10) {
-    curmin = "0" + curmin;
-  }
-  if (cursec < 10) {
-    cursec = "0" + cursec;
-  }
-  let currentTimeFormatted = curmin + ":" + cursec;
-
-  return currentTimeFormatted;
-}
-
-$(document).on("click", ".js--progress", function(e) {
-  clickProgress(e)
-})
-
-$(document).on("turbolinks:load", function() {
-  $(".playBtn").addClass("js--music-play")
-  showDuration()
-
-  let current_time = getCurrentTime();
-  $(".js--music-start").text(current_time)
-})
-
-$(document).on("click", ".js--music-play", function(e) {
-  e.preventDefault();
-  $("#js--song").trigger("play");
+function playTrack() {
+  curr_track.play();
   $(".pause-song").removeClass("d-none")
   $(".play-song").addClass("d-none")
-  $(this).removeClass("js--music-play").addClass("js--music-pause")
   isPlaying = true
 
   $("#js--song").on("ended", function() {
@@ -113,15 +27,23 @@ $(document).on("click", ".js--music-play", function(e) {
       $(".js--next-song").trigger("click");
     }, 1000);
   })
-})
+}
 
-$(document).on("click", ".js--music-pause", function(e) {
-  e.preventDefault();
-  $("#js--song").trigger("pause");
+function pauseTrack() {
+  curr_track.pause();
   $(".pause-song").addClass("d-none")
   $(".play-song").removeClass("d-none")
-  $(this).removeClass("js--music-pause").addClass("js--music-play")
   isPlaying = false
+}
+
+function playpauseTrack() {
+  if (!isPlaying) playTrack();
+  else pauseTrack();
+}
+
+$(document).on("click", ".js--playpause-track", function(e) {
+  e.preventDefault();
+  playpauseTrack();
 })
 
 $(document).on("click", ".js--next-song", function(e) {
@@ -136,17 +58,13 @@ $(document).on("click", ".js--next-song", function(e) {
     dataType: "SCRIPT",
     data: { song_id: song_id, status: "next" },
     success: function() {
-      showDuration()
-
       if(isPlaying == true) {
         setTimeout(function() {
-          $(".playBtn").addClass("js--music-play")
-          $(".js--music-play").trigger("click");
+          $(".js--playpause-track").trigger("click");
         }, 1000);
       } else {
         $(".pause-song").addClass("d-none")
         $(".play-song").removeClass("d-none")
-        $(".playBtn").addClass("js--music-play")
         isPlaying = false
       }
     }
@@ -164,19 +82,61 @@ $(document).on("click", ".js--prev-song", function(e) {
     dataType: "SCRIPT",
     data: { song_id: song_id, status: "prev" },
     success: function() {
-      showDuration()
-
       if(isPlaying == true) {
         setTimeout(function() {
-          $(".playBtn").addClass("js--music-play")
-          $(".js--music-play").trigger("click");
+          $(".js--playpause-track").trigger("click");
         }, 1000);
       } else {
         $(".pause-song").addClass("d-none")
         $(".play-song").removeClass("d-none")
-        $(".playBtn").addClass("js--music-play")
         isPlaying = false
       }
     }
   })
 })
+
+$(document).on("change", ".js--progress", function(e) {
+  e.preventDefault()
+  seekTo()
+})
+
+function nextTrack() {
+  $(".js--next-song").trigger("click")
+}
+
+function seekTo() {
+  let seek_slider = $(".js--progress").val()
+  seekto = curr_track.duration * (seek_slider / 100);
+  curr_track.currentTime = seekto;
+}
+
+function setVolume() {
+  curr_track.volume = volume_slider.value / 100;
+}
+
+function seekUpdate() {
+  let seekPosition = 0;
+
+  if (!isNaN(curr_track.duration)) {
+    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+    $(".js--progress").css("width", `${seekPosition}%`);
+
+    let currentMinutes = Math.floor(curr_track.currentTime / 60);
+    let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(curr_track.duration / 60);
+    let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+    curr_time = currentMinutes + ":" + currentSeconds;
+    total_duration = durationMinutes + ":" + durationSeconds;
+
+    $(".js--current-time").text(curr_time)
+    $(".js--total-duration").text(total_duration)
+  }
+}
+
+loadTrack(track_url);

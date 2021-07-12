@@ -20,12 +20,17 @@
       </div>
     </section>
     <section class="control-progress js--control-progress" ref="progress">
-      <div class="progress__bar js--progress">
-        <div class="progress__current js--progress-width"></div>
+      <%# <div class="slider_container">
+        <input type="range" min="1" max="100" value="0" class="seek_slider js--progress">
+      </div> %>
+
+      <div class="progress progress__bar">
+        <div class="progress-bar progress__current js--progress" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
+
       <div class="timer">
-        <p class="text js--music-start"></p>
-        <p class="text js--music-end"></p>
+        <p class="text js--current-time">00:00</p>
+        <p class="text js--total-duration">NaN</p>
       </div>
     </section>
     <section class="player-controls">
@@ -35,7 +40,7 @@
           <use xlink:href="#icon-prev"></use>
         </svg>
       <% end %>
-      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn",
+      <%= link_to "javascript:void(0)", class: "player-controls__item playBtn js--playpause-track",
         data: { url: favorite_songs_path, audio: song.url } do %>
         <svg class="icon">
           <use xlink:href="#icon-pause" class="pause-song d-none"></use>
