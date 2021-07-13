@@ -12,11 +12,14 @@ class StaticPagesController < ApplicationController
   end
 
   def song
-    if params[:status] == "next"
-      song_id = params[:song_id].to_i + 1
-    else
-      song_id = params[:song_id].to_i - 1 == 0 ? Song.last.id : params[:song_id].to_i - 1
-    end
+    song_id = if params[:song_id].to_i > Song.last.id
+                Song.first.id
+              elsif params[:song_id].to_i == 0
+                Song.last.id
+              else
+                params[:song_id].to_i
+              end
+    song_id = nil unless params[:song_id].present?
 
     lastest_song = cookies[:song_id].present? ? Song.find_by(id: cookies[:song_id]) : Song.all.sample
 

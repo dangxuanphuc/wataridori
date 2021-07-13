@@ -784,13 +784,46 @@ body.dark-theme {
       }
 
       .control-progress {
-        .progress__bar {
-          background-color: #d0d8e6;
+        .slider_container {
+          width: 100%;
+          position: relative;
+
+          .js--progress-slider {
+            background-color: #4db6ac;
+            height: 6px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+          }
         }
 
-        .progress__current {
-          background-color: #4db6ac;
+        .seek_slider,
+        .volume_slider {
+          background: #d0d8e6;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          height: 6px;
+          border-radius: 6px;
+          cursor: pointer;
         }
+
+        .seek_slider::-webkit-slider-thumb,
+        .volume_slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 0;
+          height: 0;
+        }
+
+        .seek_slider {
+          width: 100%;
+        }
+
+        // .volume_slider {
+        //   width: 30%;
+        // }
 
         .timer {
           .text {

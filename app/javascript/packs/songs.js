@@ -1,5 +1,4 @@
 var volume_slider = $(".volume_slider");
-// var track_url = "https://res.cloudinary.com/phucdx/video/upload/v1625904346/wataridori/songs/arigatou_fkqnjw.mp3";
 var isPlaying = false;
 var updateTimer;
 
@@ -60,7 +59,8 @@ function seekUpdate() {
 
   if (!isNaN(curr_track.duration)) {
     seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-    $(".js--progress").css("width", `${seekPosition}%`);
+    $(".js--progress").val(seekPosition);
+    $(".js--progress-slider").css("width", `${seekPosition}%`)
 
     let currentMinutes = Math.floor(curr_track.currentTime / 60);
     let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
@@ -80,10 +80,13 @@ function seekUpdate() {
   }
 }
 
+$(document).on("turbolinks:load", function() {
+  let track_url = $(".js--playpause-track").data("audio")
+  loadTrack(track_url)
+})
+
 $(document).on("click", ".js--playpause-track", function(e) {
   e.preventDefault();
-  let audio = $(this).data("audio")
-  loadTrack(audio)
   playpauseTrack();
 })
 
@@ -97,8 +100,11 @@ $(document).on("click", ".js--next-song", function(e) {
     url: url,
     method: "GET",
     dataType: "SCRIPT",
-    data: { song_id: song_id, status: "next" },
+    data: { song_id: song_id + 1 },
     success: function() {
+      let track_url = $(".js--playpause-track").data("audio")
+      loadTrack(track_url)
+
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
         setTimeout(() => {
@@ -122,8 +128,11 @@ $(document).on("click", ".js--prev-song", function(e) {
     url: url,
     method: "GET",
     dataType: "SCRIPT",
-    data: { song_id: song_id, status: "prev" },
+    data: { song_id: song_id - 1 },
     success: function() {
+      let track_url = $(".js--playpause-track").data("audio")
+      loadTrack(track_url)
+
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
         setTimeout(() => {
@@ -141,5 +150,4 @@ $(document).on("click", ".js--prev-song", function(e) {
 $(document).on("change", ".js--progress", function(e) {
   e.preventDefault()
   seekTo()
-  console.log("test");
 })
