@@ -23,10 +23,10 @@
     </div>
     <hr>
     <div class="footer__end">
-      <% if current_user.nil? %>
-        &copy; 2021 <%= link_to "Wataridori's Blog", new_user_session_path %>. All Rights Reserved.
-      <% else %>
+      <% if current_user.present? %>
         &copy; 2021 Wataridori's Blog. All Rights Reserved.
+      <% else %>
+        &copy; 2021 <%= link_to "Wataridori's Blog", new_user_session_path %>. All Rights Reserved.
       <% end %>
     </div>
   </div>

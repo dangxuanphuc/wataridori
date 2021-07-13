@@ -1,5 +1,5 @@
 var volume_slider = $(".volume_slider");
-var track_url = "https://res.cloudinary.com/phucdx/video/upload/v1625904346/wataridori/songs/arigatou_fkqnjw.mp3";
+// var track_url = "https://res.cloudinary.com/phucdx/video/upload/v1625904346/wataridori/songs/arigatou_fkqnjw.mp3";
 var isPlaying = false;
 var updateTimer;
 
@@ -41,65 +41,6 @@ function playpauseTrack() {
   else pauseTrack();
 }
 
-$(document).on("click", ".js--playpause-track", function(e) {
-  e.preventDefault();
-  playpauseTrack();
-})
-
-$(document).on("click", ".js--next-song", function(e) {
-  e.preventDefault();
-  let $this = $(this);
-  let url = $this.data("url");
-  let song_id = $this.data("id");
-
-  $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "SCRIPT",
-    data: { song_id: song_id, status: "next" },
-    success: function() {
-      if(isPlaying == true) {
-        setTimeout(function() {
-          $(".js--playpause-track").trigger("click");
-        }, 1000);
-      } else {
-        $(".pause-song").addClass("d-none")
-        $(".play-song").removeClass("d-none")
-        isPlaying = false
-      }
-    }
-  })
-})
-
-$(document).on("click", ".js--prev-song", function(e) {
-  e.preventDefault();
-  let url = $(this).data("url");
-  let song_id = $(this).data("id");
-
-  $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "SCRIPT",
-    data: { song_id: song_id, status: "prev" },
-    success: function() {
-      if(isPlaying == true) {
-        setTimeout(function() {
-          $(".js--playpause-track").trigger("click");
-        }, 1000);
-      } else {
-        $(".pause-song").addClass("d-none")
-        $(".play-song").removeClass("d-none")
-        isPlaying = false
-      }
-    }
-  })
-})
-
-$(document).on("change", ".js--progress", function(e) {
-  e.preventDefault()
-  seekTo()
-})
-
 function nextTrack() {
   $(".js--next-song").trigger("click")
 }
@@ -139,4 +80,66 @@ function seekUpdate() {
   }
 }
 
-loadTrack(track_url);
+$(document).on("click", ".js--playpause-track", function(e) {
+  e.preventDefault();
+  let audio = $(this).data("audio")
+  loadTrack(audio)
+  playpauseTrack();
+})
+
+$(document).on("click", ".js--next-song", function(e) {
+  e.preventDefault();
+  let $this = $(this);
+  let url = $this.data("url");
+  let song_id = $this.data("id");
+
+  $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "SCRIPT",
+    data: { song_id: song_id, status: "next" },
+    success: function() {
+      if(isPlaying == true) {
+        $(".js--playpause-track").trigger("click")
+        setTimeout(() => {
+          $(".js--playpause-track").trigger("click")
+        }, 1000);
+      } else {
+        $(".pause-song").addClass("d-none")
+        $(".play-song").removeClass("d-none")
+        isPlaying = false
+      }
+    }
+  })
+})
+
+$(document).on("click", ".js--prev-song", function(e) {
+  e.preventDefault();
+  let url = $(this).data("url");
+  let song_id = $(this).data("id");
+
+  $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "SCRIPT",
+    data: { song_id: song_id, status: "prev" },
+    success: function() {
+      if(isPlaying == true) {
+        $(".js--playpause-track").trigger("click")
+        setTimeout(() => {
+          $(".js--playpause-track").trigger("click")
+        }, 1000);
+      } else {
+        $(".pause-song").addClass("d-none")
+        $(".play-song").removeClass("d-none")
+        isPlaying = false
+      }
+    }
+  })
+})
+
+$(document).on("change", ".js--progress", function(e) {
+  e.preventDefault()
+  seekTo()
+  console.log("test");
+})
