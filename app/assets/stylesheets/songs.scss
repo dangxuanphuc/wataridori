@@ -65,7 +65,14 @@
       }
 
       .repeat {
-        grid-area: 1/2/3/3;
+        grid-area: 1/2/3/2;
+        align-self: center;
+        outline: none;
+        margin-bottom: 25px;
+      }
+
+      .sound {
+        grid-area: 2/2/3/2;
         align-self: center;
         outline: none;
       }
