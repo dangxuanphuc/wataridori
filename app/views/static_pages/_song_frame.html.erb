@@ -19,7 +19,14 @@
         <span><%= song.author %></span>
       </div>
       <img src="https://res.cloudinary.com/phucdx/image/upload/v1626244657/wataridori/songs/repeat-button_1_scz737.png" alt="" class="repeat">
-      <i class="fa fa-volume-up sound" aria-hidden="true"></i>
+      <div class="sound d-flex justify-content-around">
+        <i class="fa fa-volume-down" aria-hidden="true"></i>
+        <div class="volume-slider">
+          <input type="range" orient="vertical" min="1" max="100" value="50" class="volume_slider js--volume">
+          <div class="js--volume-slider"></div>
+        </div>
+        <i class="fa fa-volume-up js--volume-up" aria-hidden="true"></i>
+      </div>
     </section>
     <section class="control-progress js--control-progress" ref="progress">
       <div class="slider_container">

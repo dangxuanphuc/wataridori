@@ -1,4 +1,3 @@
-var volume_slider = $(".volume_slider");
 var isPlaying = false;
 var updateTimer;
 
@@ -51,7 +50,9 @@ function seekTo() {
 }
 
 function setVolume() {
-  curr_track.volume = volume_slider.value / 100;
+  let volume_slider = $(".js--volume").val()
+  curr_track.volume = volume_slider / 100;
+  $(".js--volume-slider").css("width", `${curr_track.volume * 100}%`)
 }
 
 function seekUpdate() {
@@ -83,6 +84,7 @@ function seekUpdate() {
 $(document).on("turbolinks:load", function() {
   let track_url = $(".js--playpause-track").data("audio")
   loadTrack(track_url)
+  setVolume()
 })
 
 $(document).on("click", ".js--playpause-track", function(e) {
@@ -104,6 +106,7 @@ $(document).on("click", ".js--next-song", function(e) {
     success: function() {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
+      setVolume()
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
@@ -132,6 +135,7 @@ $(document).on("click", ".js--prev-song", function(e) {
     success: function() {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
+      setVolume()
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
@@ -151,3 +155,13 @@ $(document).on("change", ".js--progress", function(e) {
   e.preventDefault()
   seekTo()
 })
+
+$(document).on("change", ".js--volume", function(e) {
+  e.preventDefault()
+  setVolume()
+})
+
+// $(document).on("click", ".js--volume-up", function(e) {
+//   e.preventDefault()
+
+// })
