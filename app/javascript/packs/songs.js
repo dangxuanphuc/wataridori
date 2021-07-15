@@ -1,6 +1,6 @@
 var isPlaying = false;
 var updateTimer;
-
+var currentVolumn = 50;
 let curr_track = document.createElement("audio");
 
 function loadTrack(track_url) {
@@ -49,10 +49,9 @@ function seekTo() {
   curr_track.currentTime = seekto;
 }
 
-function setVolume() {
-  let volume_slider = $(".js--volume").val()
-  curr_track.volume = volume_slider / 100;
-  $(".js--volume-slider").css("width", `${curr_track.volume * 100}%`)
+function setVolume(volume) {
+  curr_track.volume = volume / 100;
+  $(".js--volume-slider").css("width", `${volume}%`)
 }
 
 function seekUpdate() {
@@ -84,7 +83,7 @@ function seekUpdate() {
 $(document).on("turbolinks:load", function() {
   let track_url = $(".js--playpause-track").data("audio")
   loadTrack(track_url)
-  setVolume()
+  setVolume(currentVolumn)
 })
 
 $(document).on("click", ".js--playpause-track", function(e) {
@@ -106,7 +105,7 @@ $(document).on("click", ".js--next-song", function(e) {
     success: function() {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
-      setVolume()
+      setVolume(currentVolumn)
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
@@ -135,7 +134,7 @@ $(document).on("click", ".js--prev-song", function(e) {
     success: function() {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
-      setVolume()
+      setVolume(currentVolumn)
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
@@ -158,7 +157,8 @@ $(document).on("change", ".js--progress", function(e) {
 
 $(document).on("change", ".js--volume", function(e) {
   e.preventDefault()
-  setVolume()
+  currentVolumn = $(".js--volume").val()
+  setVolume(currentVolumn)
 })
 
 // $(document).on("click", ".js--volume-up", function(e) {
