@@ -3,6 +3,10 @@ var updateTimer;
 var currentVolumn = 50;
 let curr_track = document.createElement("audio");
 
+var icon_active = "https://res.cloudinary.com/phucdx/image/upload/v1626365205/wataridori/songs/ideal_e8ofhg.png"
+var icon_black = "https://res.cloudinary.com/phucdx/image/upload/v1626365020/wataridori/songs/black_newld4.png"
+var icon_white = "https://res.cloudinary.com/phucdx/image/upload/v1626365020/wataridori/songs/white_hjd775.png"
+
 function loadTrack(track_url) {
   clearInterval(updateTimer);
 
@@ -11,7 +15,11 @@ function loadTrack(track_url) {
 
   updateTimer = setInterval(seekUpdate, 1000);
 
-  curr_track.addEventListener("ended", nextTrack);
+  if(curr_track.loop === true) {
+    curr_track.addEventListener("ended", playTrack);
+  } else {
+    curr_track.addEventListener("ended", nextTrack);
+  }
 }
 
 function playTrack() {
@@ -19,12 +27,6 @@ function playTrack() {
   $(".pause-song").removeClass("d-none")
   $(".play-song").addClass("d-none")
   isPlaying = true
-
-  $("#js--song").on("ended", function() {
-    setTimeout(function() {
-      $(".js--next-song").trigger("click");
-    }, 1000);
-  })
 }
 
 function pauseTrack() {
@@ -80,10 +82,38 @@ function seekUpdate() {
   }
 }
 
+
+function changeRepeatIcon() {
+  if($(".dark-theme").length == 0) {
+    $(".js--repeat").attr("src", icon_black)
+  } else {
+    $(".js--repeat").attr("src", icon_white)
+  }
+}
+
 $(document).on("turbolinks:load", function() {
   let track_url = $(".js--playpause-track").data("audio")
   loadTrack(track_url)
   setVolume(currentVolumn)
+})
+
+
+$(document).on('click', '.js--switch-theme', function() {
+  if(curr_track.loop === true) {
+    $(".js--repeat").attr("src", icon_active)
+  } else {
+    changeRepeatIcon()
+  }
+})
+
+$(document).on("click", ".js--repeat", function() {
+  curr_track.loop = !curr_track.loop;
+
+  if(curr_track.loop === true) {
+    $(".js--repeat").attr("src", icon_active)
+  } else {
+    changeRepeatIcon()
+  }
 })
 
 $(document).on("click", ".js--playpause-track", function(e) {
@@ -106,6 +136,7 @@ $(document).on("click", ".js--next-song", function(e) {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
       setVolume(currentVolumn)
+      changeRepeatIcon()
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
@@ -135,6 +166,7 @@ $(document).on("click", ".js--prev-song", function(e) {
       let track_url = $(".js--playpause-track").data("audio")
       loadTrack(track_url)
       setVolume(currentVolumn)
+      changeRepeatIcon()
 
       if(isPlaying == true) {
         $(".js--playpause-track").trigger("click")
