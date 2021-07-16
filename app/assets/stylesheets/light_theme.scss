@@ -689,6 +689,10 @@ body {
     .area-control {
       background-color: var(--bgAreaControl-color);
 
+      .progress-bar {
+        transition: none;
+      }
+
       .control-name-artist {
         .artist {
           color: var(--artist-color);
@@ -697,73 +701,43 @@ body {
         .sound {
           min-width: 120px;
 
-          .volume-slider {
+          .fa-volume-up {
+            cursor: pointer;
+            margin: 0 3px;
+          }
+
+          .fa-volume-down {
+            cursor: pointer;
+            margin: 0 9px 0 4px;
+          }
+
+          .volume-progress {
+            background-color: #d0d8e6;
             width: 75px;
-            position: relative;
+            height: 6px;
+            cursor: pointer;
 
-            .volume_slider {
-              background: #d0d8e6;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-              width: 100%;
-              height: 6px;
-              border-radius: 6px;
-              cursor: pointer;
-              position: absolute;
-              top: 6px;
-
-              &::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                width: 0;
-                height: 0;
-              }
-            }
-
-            .js--volume-slider {
+            .volume-slider {
               background-color: #4db6ac;
               height: 6px;
               border-radius: 5px;
-              position: absolute;
-              top: 6px;
-              z-index: 999;
+              animation-duration: .1s
             }
           }
         }
       }
 
       .control-progress {
-        .slider_container {
+        .seek-progress {
+          background-color: #d0d8e6;
           width: 100%;
-          position: relative;
+          height: 6px;
+          cursor: pointer;
 
-          .js--progress-slider {
+          .progress-slider {
             background-color: #4db6ac;
             height: 6px;
             border-radius: 5px;
-            position: absolute;
-            top: 50%;
-          }
-        }
-
-        .seek_slider {
-          background: #d0d8e6;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          width: 100%;
-          height: 6px;
-          border-radius: 6px;
-          cursor: pointer;
-
-          &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 0;
-            height: 0;
           }
         }
 

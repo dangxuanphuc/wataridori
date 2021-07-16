@@ -45,9 +45,8 @@ function nextTrack() {
   $(".js--next-song").trigger("click")
 }
 
-function seekTo() {
-  let seek_slider = $(".js--progress").val()
-  seekto = curr_track.duration * (seek_slider / 100);
+function seekTo(seek_slider) {
+  let seekto = curr_track.duration * (seek_slider / 100);
   curr_track.currentTime = seekto;
 }
 
@@ -61,7 +60,6 @@ function seekUpdate() {
 
   if (!isNaN(curr_track.duration)) {
     seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-    $(".js--progress").val(seekPosition);
     $(".js--progress-slider").css("width", `${seekPosition}%`)
 
     let currentMinutes = Math.floor(curr_track.currentTime / 60);
@@ -182,18 +180,40 @@ $(document).on("click", ".js--prev-song", function(e) {
   })
 })
 
-$(document).on("change", ".js--progress", function(e) {
+$(document).on("click", ".js--progress-seek", function(e) {
   e.preventDefault()
-  seekTo()
+  $this = $(this)
+  var maxWidth = $this.width()
+  var pos = e.pageX - $this.offset().left
+  var position = Math.round(pos / maxWidth * 100)
+
+  if (position > 100) {
+    position = 100;
+  }
+
+  seekTo(position)
 })
 
-$(document).on("change", ".js--volume", function(e) {
+$(document).on("click", ".js--progress-volume", function(e) {
   e.preventDefault()
-  currentVolumn = $(".js--volume").val()
+  $this = $(this)
+  var maxWidth = $this.width()
+  var pos = e.pageX - $this.offset().left
+  currentVolumn = Math.round(pos / maxWidth * 100)
+
+  if (currentVolumn > 100) {
+    currentVolumn = 100;
+  }
+
+  if (currentVolumn < 50) {
+    $(".js--volume").removeClass("fa-volume-up").addClass("fa-volume-down")
+  } else {
+    $(".js--volume").removeClass("fa-volume-down").addClass("fa-volume-up")
+  }
   setVolume(currentVolumn)
 })
 
-// $(document).on("click", ".js--volume-up", function(e) {
-//   e.preventDefault()
-
-// })
+$(document).on("click", ".js--volume", function(e) {
+  e.preventDefault()
+  $(".js--progress-volume").toggleClass("d-none")
+})

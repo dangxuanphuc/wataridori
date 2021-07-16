@@ -10,30 +10,33 @@
       ></div>
     </div>
   </header>
+
   <main class="area-control">
     <section class="control-name-artist">
       <div class="item name rows">
         <span><%= song.name %></span>
       </div>
+
       <div class="item artist">
         <span><%= song.author %></span>
       </div>
+
       <div class="repeat">
         <img src="https://res.cloudinary.com/phucdx/image/upload/v1626365020/wataridori/songs/white_hjd775.png" alt="" title="Repeat" class="repeat-btn js--repeat">
       </div>
-      <div class="sound d-flex justify-content-around">
-        <i class="fa fa-volume-down" aria-hidden="true"></i>
-        <div class="volume-slider">
-          <input type="range" min="1" max="100" class="volume_slider js--volume">
-          <div class="js--volume-slider"></div>
+
+      <div class="sound d-flex justify-content-end align-items-center">
+        <div class="progress volume-progress js--progress-volume d-none">
+          <div class="progress-bar volume-slider js--volume-slider" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <i class="fa fa-volume-up js--volume-up" aria-hidden="true"></i>
+
+        <i class="fa fa-volume-up js--volume" aria-hidden="true" title="Sound"></i>
       </div>
     </section>
+
     <section class="control-progress js--control-progress" ref="progress">
-      <div class="slider_container">
-        <input type="range" min="1" max="100" value="0" class="seek_slider js--progress">
-        <div class="js--progress-slider"></div>
+      <div class="progress seek-progress js--progress-seek">
+        <div class="progress-bar progress-slider js--progress-slider" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
 
       <div class="timer">
@@ -41,6 +44,7 @@
         <p class="text js--total-duration">NaN</p>
       </div>
     </section>
+
     <section class="player-controls">
       <%= link_to "javascript:void(0)", class: "player-controls__item prevNext js--prev-song",
         data: { id: song.id, url: favorite_songs_path } do %>
@@ -48,6 +52,7 @@
           <use xlink:href="#icon-prev"></use>
         </svg>
       <% end %>
+
       <%= link_to "javascript:void(0)", class: "player-controls__item playBtn js--playpause-track",
         data: { url: favorite_songs_path, audio: song.url } do %>
         <svg class="icon">
@@ -55,6 +60,7 @@
           <use xlink:href="#icon-play" class="play-song"></use>
         </svg>
       <% end %>
+
       <%= link_to "javascript:void(0)", class: "player-controls__item prevNext js--next-song",
         data: { id: song.id, url: favorite_songs_path } do %>
         <svg class="icon">
