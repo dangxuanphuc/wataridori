@@ -776,6 +776,7 @@ body.dark-theme {
 
     .area-control {
       background-color: var(--bgAreaControl-color);
+      box-shadow: 4px 24px 22px 1px var(--shadowAreaControl-color);
 
       .control-name-artist {
         .artist {
@@ -880,10 +881,11 @@ body.dark-theme {
     }
   }
 
-  @media screen and (min-width: 769px) {
+  @media screen and (max-width: 769px) {
     .playlist-frame {
       .area-control {
-        box-shadow: 4px 24px 22px 1px var(--shadowAreaControl-color);
+        box-shadow: none;
+        background-color: var(--background-color);
       }
     }
   }
@@ -913,12 +915,13 @@ body.dark-theme {
     nav {
       .container {
         .navbar-toggler {
-          color: var(--black3-color);
-          border-color: var(--black4-color);
+          background-color: var(--white2-color);
+          border-color: var(--white2-color);
         }
 
         .navbar-collapse {
-          background: var(--white-color);
+          background-color: var(--background-color);
+          color: var(--white2-color);
         }
       }
     }
