@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_141046) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "cover"
   end
 
   create_table "tags", charset: "utf8mb4", force: :cascade do |t|

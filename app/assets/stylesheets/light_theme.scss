@@ -48,6 +48,13 @@ body {
   --backgroundFooter-color: #27293d;
   --codemirror-color: #9b9b9f;
   --description-color: #000;
+  --shadowAreaControl-color: #ccc;
+  --bgAreaControl-color: #eee;
+  --artist-color: #333;
+  --timer-color: #333;
+  --shadowImg-color: #eaeaea;
+  --playBtnFilter-color: #ecdbdb;
+  --nextPrev-color: #efefef;
 
   background-color: var(--white-color);
 
@@ -670,6 +677,105 @@ body {
     }
   }
 
+  .playlist-frame {
+    .area-header {
+      .cover {
+        .shadow {
+          background-color: var(--shadowImg-color);
+        }
+      }
+    }
+
+    .area-control {
+      background-color: var(--bgAreaControl-color);
+      box-shadow: 4px 24px 22px 1px var(--shadowAreaControl-color);
+
+      .progress-bar {
+        transition: none;
+      }
+
+      .control-name-artist {
+        .artist {
+          color: var(--artist-color);
+        }
+
+        .sound {
+          min-width: 120px;
+
+          .fa-volume-up {
+            cursor: pointer;
+            margin: 0 3px;
+          }
+
+          .fa-volume-down {
+            cursor: pointer;
+            margin: 0 9px 0 4px;
+          }
+
+          .volume-progress {
+            background-color: #d0d8e6;
+            width: 75px;
+            height: 6px;
+            cursor: pointer;
+
+            .volume-slider {
+              background-color: #4db6ac;
+              height: 6px;
+              border-radius: 5px;
+              animation-duration: .1s
+            }
+          }
+        }
+      }
+
+      .control-progress {
+        .seek-progress {
+          background-color: #d0d8e6;
+          width: 100%;
+          height: 6px;
+          cursor: pointer;
+
+          .progress-slider {
+            background-color: #4db6ac;
+            height: 6px;
+            border-radius: 5px;
+          }
+        }
+
+        .timer {
+          .text {
+            color: var(--timer-color);
+          }
+        }
+      }
+
+      .player-controls {
+        .player-controls__item {
+          color: #4db6ac;
+
+          &.playBtn {
+            filter: drop-shadow(0 11px 6px var(--playBtnFilter-color));
+            color: #4db6ac;
+          }
+
+          &.prevNext:hover {
+            background: var(--nextPrev-color);
+            box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+    .playlist-frame {
+      .area-control {
+        box-shadow: none;
+        background-color: var(--white-color);
+      }
+    }
+  }
+
   @media only screen and (max-width: 800px) {
     .education__work {
       .main-timeline {
@@ -695,8 +801,8 @@ body {
     nav {
       .container {
         .navbar-toggler {
-          color: var(--black3-color);
           border-color: var(--black4-color);
+          outline: none;
         }
 
         .navbar-collapse {

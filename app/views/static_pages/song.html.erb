@@ -1,2 +1,4 @@
-<% provide :title, "Favorite songs" %>
-<%= render "shared/card_title", card_title: "Favorite songs" %>
+<% provide :title, "My Playlist" %>
+<div id="song-frame">
+  <%= render "song_frame", song: @song %>
+</div>

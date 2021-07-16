@@ -16,7 +16,7 @@
             class: "d-flex align-items-center nav-link #{active_class("about")}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favorite songs", favorite_songs_path,
+          <%= link_to "My Playlist", favorite_songs_path,
             class: "d-flex align-items-center nav-link #{active_class("song")}" %>
         </li>
         <% if user_signed_in? %>

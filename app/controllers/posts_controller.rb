@@ -78,8 +78,7 @@ class PostsController < ApplicationController
   def load_post
     @post = Post.find_by slug: params[:slug]
 
-    return if @post
-    redirect_to root_path
+    raise ActionController::RoutingError.new("Not Found") unless @post
   end
 
   def count_view
