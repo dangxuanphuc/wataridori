@@ -8,4 +8,8 @@ class Tag < ApplicationRecord
   def to_s
     name
   end
+
+  def tag_show?
+    posts.published.exists?
+  end
 end

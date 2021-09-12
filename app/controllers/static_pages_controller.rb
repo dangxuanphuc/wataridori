@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
   def index
-    @posts = Post.all.sort_by_created_at
+    if current_user
+      @posts = Post.sort_by_created_at
+    else
+      @posts = Post.published.sort_by_created_at
+    end
   end
 
   def about

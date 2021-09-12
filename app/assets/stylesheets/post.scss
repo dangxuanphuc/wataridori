@@ -119,6 +119,17 @@
           text-transform: none;
           line-height: 1.1;
           margin-bottom: 10px;
+          position: relative;
+
+          .private__label {
+            position: absolute;
+            background-color: #6c757d;
+            text-transform: capitalize;
+            padding: 7px;
+            font-size: 12px;
+            top: 7px;
+            right: -18px;
+          }
         }
 
         .post__author {

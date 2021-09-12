@@ -20,7 +20,12 @@
         <%= markdown(replace_to_emoticon(truncate(post.content, length: 700))) %>
       </div>
       <div class="card__actions d-flex justify-content-between">
-        <%= link_to "Read more", post, class: "read__more" %>
+        <div class="first__action">
+          <%= link_to "Read more", post, class: "read__more" %>
+          <% if post.privated? %>
+            <span class="badge badge-secondary private__label">Private</span>
+          <% end %>
+        </div>
         <% if user_signed_in? %>
           <%= link_to post_path(post), class: "btn delete__btn", method: :delete,
             data: { confirm: "Are you sure?" } do %>

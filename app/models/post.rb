@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: %i(slugged finders)
 
+  enum status: [:privated, :published]
+
   has_many :post_categories, dependent: :destroy
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
@@ -9,11 +11,11 @@ class Post < ApplicationRecord
   has_many :post_likes, dependent: :destroy
   has_many :post_views, dependent: :destroy
 
-  POST_ATTRS = %w(title content tag_list image image_cache).freeze
+  POST_ATTRS = %w(title content tag_list image image_cache status).freeze
   mount_uploader :image, ImageUploader
 
   scope :likes_order, -> { order likes_count: :desc }
-  scope :except_current_post, -> (id) { where.not(id: id) }
+  scope :except_current, -> (id) { where.not(id: id) }
   scope :sort_by_created_at, -> { order created_at: :desc }
 
   def tag_list

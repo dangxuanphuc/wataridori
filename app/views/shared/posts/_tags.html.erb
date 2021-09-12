@@ -4,7 +4,9 @@
   </h1>
   <div class="tags__content">
     <% Tag.limit(10).each do |tag| %>
-      <%= link_to tag.name, tag, class: "tag__link" %>
+      <% if tag.tag_show? || current_user %>
+        <%= link_to tag.name, tag, class: "tag__link" %>
+      <% end %>
     <% end %>
   </div>
 </div>
