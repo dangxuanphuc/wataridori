@@ -20,9 +20,7 @@ class PostsController < ApplicationController
 
   def show
     count_view
-    @popular_posts = Post.except_current_post(@post).likes_order.limit(3)
-    @recent_posts = Post.except_current_post(@post).sort_by_created_at.limit(5)
-    @related_posts = Post.except_current_post(@post)
+    load_data
   end
 
   def edit
@@ -78,7 +76,7 @@ class PostsController < ApplicationController
   def load_post
     @post = Post.find_by slug: params[:slug]
 
-    raise ActionController::RoutingError.new("Not Found") unless @post
+    raise ActionController::RoutingError.new("Not Found") if post_privated?
   end
 
   def count_view
@@ -106,5 +104,21 @@ class PostsController < ApplicationController
       user_agent: user_agent,
       ip_address: ip_address,
     }
+  end
+
+  def post_privated?
+    @post.privated? && !current_user
+  end
+
+  def load_data
+    if current_user
+      @popular_posts = Post.except_current(@post).likes_order.limit(3)
+      @recent_posts = Post.except_current(@post).sort_by_created_at.limit(5)
+      @related_posts = Post.except_current(@post)
+    else
+      @popular_posts = Post.published.except_current(@post).likes_order.limit(3)
+      @recent_posts = Post.published.except_current(@post).sort_by_created_at.limit(5)
+      @related_posts = Post.published.except_current(@post)
+    end
   end
 end

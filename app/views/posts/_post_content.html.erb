@@ -2,7 +2,12 @@
   <%= cl_image_tag(post.image.large.url) %>
 </div>
 <div class="post__subtitle">
-  <h1><%= post.title %></h1>
+  <h1>
+    <%= post.title %>
+    <% if post.privated? %>
+      <span class="badge badge-secondary private__label">Private</span>
+    <% end %>
+  </h1>
   <div class="post__author">
     <span class="post__info">
       <span class="post__submit"><%= post.created_at.strftime("%B %d, %Y %I:%M %p") %></span>
