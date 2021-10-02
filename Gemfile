@@ -35,6 +35,10 @@ group :development do
   gem "web-console", ">= 4.1.0"
 end
 
+group :test do
+  gem "rspec_junit_formatter"
+end
+
 group :production do
   gem "pg"
 end

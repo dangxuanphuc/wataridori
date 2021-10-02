@@ -14,6 +14,7 @@ development:
   database: wataridori_development
 test:
   <<: *mysql
+  host: 127.0.0.1
   database: wataridori_test
 production:
   <<: *postgres
