@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.0.0"
 
@@ -23,7 +23,10 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: %i(mri mingw x64_mingw)
+  gem "rubocop", "~> 0.74.0", require: false
+  gem "rubocop-checkstyle_formatter", require: false
+  gem "rubocop-rails", "~> 2.3.2", require: false
 end
 
 group :development do
@@ -35,12 +38,8 @@ group :development do
   gem "web-console", ">= 4.1.0"
 end
 
-group :test do
-  gem "rspec_junit_formatter"
-end
-
 group :production do
   gem "pg"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)

@@ -1,10 +1,7 @@
 class ErrorsController < ApplicationController
-  def error_404
-  end
+  def not_found; end
 
-  def error_422
-  end
+  def unprocessable_entity; end
 
-  def error_500
-  end
+  def internal_server; end
 end

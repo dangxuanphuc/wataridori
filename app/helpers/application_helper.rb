@@ -1,13 +1,14 @@
 module ApplicationHelper
   def full_title page_title = ""
     base_title = "Wataridori's Blog"
-    page_title.empty? ? base_title : page_title + " | " + base_title
+    page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
   def active_class action
     params[:action] == action ? "active" : nil
   end
 
+  # rubocop:disable Rails/OutputSafety
   def markdown content
     options = {
       autolink: true,
@@ -23,8 +24,10 @@ module ApplicationHelper
       emoji: true
     }
 
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, options).render(content).html_safe
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                            options).render(content).html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   def default_meta_tags
     {
@@ -34,7 +37,7 @@ module ApplicationHelper
         title: "Wataridori's Blog",
         type: "Personal Blog",
         url: request.original_url,
-        image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg",
+        image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg"
       }
     }
   end

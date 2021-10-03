@@ -3,17 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:3.0.0-node-browsers
-        environment:
-          DB_HOST: 127.0.0.1
-          RAILS_ENV: test
-          BUNDLER_VERSION: 2.2.16
-          TZ: "Japan"
-      - image: circleci/mysql:5.7.25
-        command: [--default-authentication-plugin=mysql_native_password]
-        environment:
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 123456
-          MYSQL_DB: wataridori_test
     working_directory: ~/wataridori
     steps:
       - checkout
@@ -22,7 +11,7 @@ jobs:
             - rails-demo-{{ checksum "Gemfile.lock" }}
             - rails-demo-
       - run:
-          name: setup bundler
+          name: Setup bundler
           command: |
             sudo gem update --system
             sudo gem uninstall bundler
@@ -32,25 +21,18 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - run:
-          name: bundle install
+          name: Bundle install
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      # - run: mysql_config --socket
-      # - run: RAILS_ENV=test bundle exec rails db:create
-      # - run: RAILS_ENV=test bundle exec rails db:schema:load
 
-      # - run:
-      #   name: rubocop
-      #   context: [
-      #     GITHUB_ACCESS_TOKEN,
-      #     CIRCLE_BUILD_URL,
-      #     CI_PULL_REQUEST
-      #   ]
-      #   command: sh run_with_rubocop.sh
+      - run:
+          name: Run rubocop
+          command: |
+            bash bin/rubocop.sh
 
       # collect reports
       - store_test_results:

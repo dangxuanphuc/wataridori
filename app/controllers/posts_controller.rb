@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show vote unvote]
-  before_action :load_post, only: %i[show edit update destroy vote unvote]
-  before_action :set_browser_uid, only: %i[show vote unvote]
+  before_action :authenticate_user!, except: %i(show vote unvote)
+  before_action :load_post, only: %i(show edit update destroy vote unvote)
+  before_action :set_browser_uid, only: %i(show vote unvote)
 
   def new
     @post = Post.new
@@ -23,8 +23,7 @@ class PostsController < ApplicationController
     load_data
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update post_params
@@ -36,10 +35,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.destroy
-      flash[:success] = "Post was destroyed successfully!"
-      redirect_to root_path
-    end
+    @post.destroy
+    flash[:success] = "Post was destroyed successfully!"
+    redirect_to root_path
   end
 
   def vote
@@ -47,22 +45,18 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.js do
-        if post_like.save
-          @post = @post.reload
-        end
+        @post = @post.reload if post_like.save
       end
     end
   end
 
   def unvote
     post_like = @post.post_likes
-      .find_by(browser_uid: cookies[:browser_uid])
+                     .find_by(browser_uid: cookies[:browser_uid])
 
     respond_to do |format|
       format.js do
-        if post_like&.destroy
-          @post = @post.reload
-        end
+        @post = @post.reload if post_like&.destroy
       end
     end
   end
@@ -76,7 +70,7 @@ class PostsController < ApplicationController
   def load_post
     @post = Post.find_by slug: params[:slug]
 
-    raise ActionController::RoutingError.new("Not Found") if post_privated?
+    raise ActionController::RoutingError, "Not Found" if post_privated?
   end
 
   def count_view
@@ -102,7 +96,7 @@ class PostsController < ApplicationController
       post_id: @post.id,
       browser_uid: browser_uid,
       user_agent: user_agent,
-      ip_address: ip_address,
+      ip_address: ip_address
     }
   end
 
@@ -117,7 +111,8 @@ class PostsController < ApplicationController
       @related_posts = Post.except_current(@post)
     else
       @popular_posts = Post.published.except_current(@post).likes_order.limit(3)
-      @recent_posts = Post.published.except_current(@post).sort_by_created_at.limit(5)
+      @recent_posts = Post.published.except_current(@post)
+                          .sort_by_created_at.limit(5)
       @related_posts = Post.published.except_current(@post)
     end
   end

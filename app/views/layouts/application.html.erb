@@ -27,7 +27,7 @@
     <div class="container">
       <%= yield %>
     </div>
-    <% if params[:action] != "song" && params[:action] != "emoticon" && params[:action] != "error_404" && params[:action] != "error_422" && params[:action] != "error_500" %>
+    <% if params[:action] != "song" && params[:action] != "emoticon" && params[:action] != "not_found" && params[:action] != "unprocessable_entity" && params[:action] != "internal_server" %>
       <%= render "layouts/footer" %>
     <% end %>
   </body>

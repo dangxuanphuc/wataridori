@@ -1,10 +1,10 @@
 class StaticPagesController < ApplicationController
   def index
-    if current_user
-      @posts = Post.sort_by_created_at
-    else
-      @posts = Post.published.sort_by_created_at
-    end
+    @posts = if current_user
+               Post.sort_by_created_at
+             else
+               Post.published.sort_by_created_at
+             end
   end
 
   def about
@@ -18,12 +18,12 @@ class StaticPagesController < ApplicationController
   def song
     song_id = if params[:song_id].to_i > Song.last.id
                 Song.first.id
-              elsif params[:song_id].to_i == 0
+              elsif params[:song_id].to_i.zero?
                 Song.last.id
               else
                 params[:song_id].to_i
               end
-    song_id = nil unless params[:song_id].present?
+    song_id = nil if params[:song_id].blank?
 
     lastest_song = cookies[:song_id].present? ? Song.find_by(id: cookies[:song_id]) : Song.all.sample
 

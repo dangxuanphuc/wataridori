@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="post-body salary-duong">
-        <%= markdown(replace_to_emoticon(truncate(post.content, length: 700))) %>
+        <%= markdown(replace_emoticon(truncate(post.content, length: 700))) %>
       </div>
       <div class="card__actions d-flex justify-content-between">
         <div class="first__action">

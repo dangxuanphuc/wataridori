@@ -10,7 +10,7 @@ class TagsController < ApplicationController
   def load_tag
     @tag = Tag.find_by slug: params[:slug]
 
-    raise ActionController::RoutingError.new("Not Found") unless has_published?
+    raise ActionController::RoutingError, "Not Found" unless has_published?
   end
 
   def load_data
