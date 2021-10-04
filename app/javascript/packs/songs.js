@@ -90,11 +90,12 @@ function changeRepeatIcon() {
 }
 
 $(document).on("turbolinks:load", function() {
-  let track_url = $(".js--playpause-track").data("audio")
-  loadTrack(track_url)
-  setVolume(currentVolumn)
+  if ($("#song-frame").length > 0) {
+    let track_url = $(".js--playpause-track").data("audio")
+    loadTrack(track_url)
+    setVolume(currentVolumn)
+  }
 })
-
 
 $(document).on('click', '.js--switch-theme', function() {
   if(curr_track.loop === true) {
