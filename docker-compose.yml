@@ -1,6 +1,6 @@
 version: "3"
 services:
-  db:
+  localhost:
     image: mysql:5.7.25
     environment:
       - MYSQL_ROOT_PASSWORD=123456
@@ -14,10 +14,10 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - localhost
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
-      - db:mysql
+      - localhost:mysql
     ports:
       - 8080:80
