@@ -15,6 +15,7 @@ import "packs/related_post"
 import "packs/posts"
 import "packs/custom"
 import "packs/songs"
+import "packs/scroll"
 
 Rails.start()
 Turbolinks.start()
