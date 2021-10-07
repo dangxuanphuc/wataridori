@@ -1,4 +1,4 @@
-FROM ruby:3.0.0
+FROM ruby:3.0.2
 RUN apt-get update && apt-get install -y build-essential
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
   && apt-get install -y nodejs
