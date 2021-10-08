@@ -1,17 +1,18 @@
 .card__top {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
-
   .card__review {
     max-width: 32%;
-    height: 100%;
-    margin: 25px 24px 0 0;
+    margin: 25px 16px 0 0;
     line-height: 1.5;
     transition: 0.3s;
 
+    &:nth-child(3n - 1) {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+
     &:nth-child(3n) {
-      margin-right: 0 !important;
+      margin-left: 16px;
+      margin-right: 0;
     }
 
     .sub__title {
@@ -83,36 +84,181 @@
   }
 }
 
-@media only screen and (max-width: 1225px) {
+@media only screen and (max-width: 1200px) {
   .card__top {
     .card__review {
-      margin-right: 2%;
+      max-width: 31.99%;
     }
   }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1191px) {
   .card__top {
     .card__review {
-      max-width: 48%;
-      margin-right: 4%;
+      max-width: 31.97%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1172px) {
+  .card__top {
+    .card__review {
+      max-width: 31.95%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1156px) {
+  .card__top {
+    .card__review {
+      max-width: 31.93%;
+
+      &:nth-child(3n - 1) {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
 
       &:nth-child(3n) {
-        margin-right: 4% !important;
-      }
-
-      &:nth-child(2n) {
-        margin-right: 0 !important;
+        margin-left: 13px;
+        margin-right: 0;
       }
     }
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1140px) {
   .card__top {
     .card__review {
-      max-width: 100%;
-      margin-right: 0;
+      max-width: 31.9%;
     }
   }
 }
+
+@media only screen and (max-width: 1116px) {
+  .card__top {
+    .card__review {
+      max-width: 31.88%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1101px) {
+  .card__top {
+    .card__review {
+      max-width: 31.86%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1086px) {
+  .card__top {
+    .card__review {
+      max-width: 31.84%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1073px) {
+  .card__top {
+    .card__review {
+      max-width: 31.82%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1058px) {
+  .card__top {
+    .card__review {
+      max-width: 31.8%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1045px) {
+  .card__top {
+    .card__review {
+      max-width: 31.78%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1031px) {
+  .card__top {
+    .card__review {
+      max-width: 31.76%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1019px) {
+  .card__top {
+    .card__review {
+      max-width: 31.74%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1008px) {
+  .card__top {
+    .card__review {
+      max-width: 32%;
+      margin: 25px 13px 0 0;
+
+      &:nth-child(3n - 1) {
+        margin-left: 6px;
+        margin-right: 6px;
+      }
+
+      &:nth-child(3n) {
+        margin-left: 13px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 974px) {
+//   .card__top {
+//     .card__review {
+//       max-width: 100%;
+//       // margin: 25px 13px 0 0;
+
+//       &:nth-child(3n - 1) {
+//         max-width: 100%;
+//         // margin-left: 6px;
+//         // margin-right: 6px;
+//       }
+
+//       // &:nth-child(3n) {
+//       //   margin-left: 13px;
+//       //   margin-right: 0;
+//       // }
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 960px) {
+//   .card__top {
+//     .card__review {
+//       max-width: 48%;
+//       margin-right: 4%;
+
+//       &:nth-child(3n) {
+//         margin-right: 4% !important;
+//       }
+
+//       &:nth-child(2n) {
+//         margin-right: 0 !important;
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 600px) {
+//   .card__top {
+//     .card__review {
+//       max-width: 100%;
+//       margin-right: 0;
+//     }
+//   }
+// }

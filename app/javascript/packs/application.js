@@ -16,6 +16,7 @@ import "packs/posts"
 import "packs/custom"
 import "packs/songs"
 import "packs/scroll"
+import "packs/masonry"
 
 Rails.start()
 Turbolinks.start()
