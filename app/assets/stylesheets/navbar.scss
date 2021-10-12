@@ -133,3 +133,15 @@ nav {
     }
   }
 }
+
+@media only screen and (max-width: 329px) {
+  a.d-flex.navbar-brand {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  a.d-flex.navbar-brand {
+    font-size: 1.3rem !important;
+  }
+}
