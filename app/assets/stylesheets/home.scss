@@ -1,12 +1,12 @@
 .card__top {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
+  column-count: 3;
+  margin: 20px 0;
 
   .card__review {
-    max-width: 32%;
-    height: 100%;
-    margin: 25px 24px 0 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
+    margin-bottom: 20px;
     line-height: 1.5;
     transition: 0.3s;
 
@@ -55,14 +55,12 @@
       position: relative;
 
       .private__label {
-        position: absolute;
         background-color: #6c757d;
         text-transform: capitalize;
         font-weight: 100;
         padding: 8px;
         font-size: 12px;
-        top: 4px;
-        margin-left: 5px;
+        vertical-align: middle;
       }
 
       .read__more {
@@ -83,36 +81,14 @@
   }
 }
 
-@media only screen and (max-width: 1225px) {
+@media only screen and (max-width: 900px) {
   .card__top {
-    .card__review {
-      margin-right: 2%;
-    }
+    column-count: 2;
   }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 590px) {
   .card__top {
-    .card__review {
-      max-width: 48%;
-      margin-right: 4%;
-
-      &:nth-child(3n) {
-        margin-right: 4% !important;
-      }
-
-      &:nth-child(2n) {
-        margin-right: 0 !important;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .card__top {
-    .card__review {
-      max-width: 100%;
-      margin-right: 0;
-    }
+    column-count: 1;
   }
 }
