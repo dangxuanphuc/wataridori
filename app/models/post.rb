@@ -18,6 +18,8 @@ class Post < ApplicationRecord
   scope :except_current, -> (id) { where.not(id: id) }
   scope :sort_by_created_at, -> { order created_at: :desc }
 
+  before_validation :convert_slug
+
   def tag_list
     self.tags.collect do |tag|
       tag.name
@@ -28,5 +30,15 @@ class Post < ApplicationRecord
     tag_names = tags_string.split(",").collect{ |s| s.strip.downcase }.uniq
     new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
     self.tags = new_or_found_tags
+  end
+
+  private
+
+  def convert_slug
+    self.slug = uniq_slug.parameterize.dasherize
+  end
+
+  def uniq_slug
+    "#{Vietnameses.convert_unicode(title)} #{SecureRandom.alphanumeric(10)}"
   end
 end

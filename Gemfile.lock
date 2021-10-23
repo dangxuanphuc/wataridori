@@ -173,6 +173,9 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.0.3)
     minitest (5.14.4)
+    moji (1.6)
+    mojinizer (0.2.2)
+      moji (~> 1.6)
     msgpack (1.4.2)
     mysql2 (0.5.3)
     netrc (0.11.0)
@@ -270,6 +273,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    vietnameses (1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -306,6 +310,7 @@ DEPENDENCIES
   listen (~> 3.3)
   meta-tags
   mini_magick
+  mojinizer
   mysql2
   pg
   pry-rails
@@ -317,6 +322,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
+  vietnameses
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
 
