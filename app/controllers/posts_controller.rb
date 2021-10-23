@@ -74,7 +74,7 @@ class PostsController < ApplicationController
   end
 
   def load_post
-    @post = Post.find_by slug: params[:slug]
+    @post = Post.find_by! slug: params[:slug]
 
     raise ActionController::RoutingError.new("Not Found") if post_privated?
   end
