@@ -1,5 +1,5 @@
 <div class="post__image">
-  <%= cl_image_tag(post.image.url) %>
+  <%= cl_image_tag "", data: { src: post.image.url }, class: "lazy" %>
 </div>
 <div class="post__subtitle">
   <h1>

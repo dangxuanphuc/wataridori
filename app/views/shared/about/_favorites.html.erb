@@ -10,7 +10,7 @@
   <div id="singers" class="tabcontent">
     <% @favorite_singers.each do |singer| %>
       <div class="singer__item">
-        <%= image_tag singer.image %>
+        <%= image_tag "", data: { src: singer.image }, class: "lazy" %>
         <div class="favorite__name">
           <div class="text"><%= singer.name %></div>
         </div>
@@ -21,7 +21,7 @@
   <div id="songs" class="tabcontent">
     <% @favorite_songs.each do |song| %>
       <div class="song__item">
-        <%= image_tag song.image %>
+        <%= image_tag "", data: { src: song.image }, class: "lazy" %>
         <div class="favorite__name">
           <div class="text"><%= song.name %></div>
         </div>
@@ -32,7 +32,7 @@
   <div id="other" class="tabcontent">
     <% @favorite_others.each do |other| %>
       <div class="other__item">
-        <%= image_tag other.image %>
+        <%= image_tag "", data: { src: other.image }, class: "lazy" %>
         <div class="favorite__name">
           <div class="text"><%= other.name %></div>
         </div>

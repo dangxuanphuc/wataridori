@@ -23,6 +23,14 @@ $(document).on("turbolinks:load", function() {
   changeRepeatIcon()
 })
 
+$(document).on("turbolinks:load", function() {
+  $("img.lazy").Lazy({
+    threshold : 500,
+    effect : "fadeIn",
+    defaultImage: "https://res.cloudinary.com/phucdx/image/upload/v1635479043/wataridori/images/loading_osm83c.gif"
+  });
+})
+
 $(document).on('click', '.js--switch-theme', function() {
   let $this = $(this);
   $('body').toggleClass('dark-theme');
