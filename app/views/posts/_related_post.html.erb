@@ -6,7 +6,7 @@
     <% related_posts.each do |post| %>
       <div class="article">
         <div class="main__image">
-          <%= cl_image_tag(post.image.url, class: "card-img-top") %>
+          <%= cl_image_tag "", class: "card-img-top lazy", data: { src: post.image.url } %>
         </div>
         <div class="post__info">
           <h1 class="title__post"><%= post.title %></h1>

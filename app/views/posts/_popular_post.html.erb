@@ -7,7 +7,7 @@
       <% popular_posts.each do |post| %>
         <div class="article">
           <div class="main__image">
-            <%= cl_image_tag post.image.url %>
+            <%= cl_image_tag "", data: { src: post.image.url }, class: "lazy" %>
           </div>
           <div class="post__info">
             <h1 class="title__post"><%= post.title %></h1>
