@@ -251,4 +251,5 @@ Song.create!([
   {name: "ブルーバード", author: "いきものがかり",
     url: "https://res.cloudinary.com/phucdx/video/upload/v1634181099/wataridori/songs/blue-bird_hz38c3.mp3",
     cover: "https://res.cloudinary.com/phucdx/image/upload/v1634181094/wataridori/songs/cover/blue-bird_okjecc.jpg"},
+  {name: "Bài Ka Tuổi Trẻ", author: "Da LAB", url: "https://res.cloudinary.com/phucdx/video/upload/v1635925086/wataridori/songs/bai-ca-tuoi-tre_aenx2m.mp3", cover: "https://res.cloudinary.com/phucdx/image/upload/v1635925156/wataridori/songs/cover/dalab_nmwibb.jpg"},
 ])
