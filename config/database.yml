@@ -15,6 +15,9 @@ development:
 test:
   <<: *mysql
   database: wataridori_test
+staging:
+  <<: *mysql
+  database: wataridori_test
 production:
   <<: *postgres
   database: wataridori_production
