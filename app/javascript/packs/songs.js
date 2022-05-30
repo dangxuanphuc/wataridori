@@ -120,6 +120,13 @@ $(document).on("click", ".js--playpause-track", function(e) {
   playpauseTrack();
 })
 
+$(document).on("keypress", function(e) {
+  e.preventDefault();
+  if (e.keyCode === 32) {
+    playpauseTrack();
+  }
+})
+
 $(document).on("click", ".js--next-song", function(e) {
   e.preventDefault();
   let $this = $(this);
