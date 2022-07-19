@@ -121,8 +121,7 @@ $(document).on("click", ".js--playpause-track", function(e) {
 })
 
 $(document).on("keypress", function(e) {
-  e.preventDefault();
-  if (e.keyCode === 32) {
+  if ($("#song-frame").length !== 0 && e.keyCode === 32) {
     playpauseTrack();
   }
 })

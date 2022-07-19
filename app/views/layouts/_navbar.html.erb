@@ -9,20 +9,24 @@
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
           <%= link_to "Home", root_path,
-            class: "d-flex align-items-center nav-link #{active_class("index")}" %>
+            class: "d-flex align-items-center nav-link #{active_class("static_pages", "index")}" %>
         </li>
         <li class="nav-item">
           <%= link_to "About me", about_me_path,
-            class: "d-flex align-items-center nav-link #{active_class("about")}" %>
+            class: "d-flex align-items-center nav-link #{active_class("static_pages", "about")}" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Playlist", favorite_songs_path,
-            class: "d-flex align-items-center nav-link #{active_class("song")}" %>
+            class: "d-flex align-items-center nav-link #{active_class("songs", "songs")}" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
+            <%= link_to "Songs", songs_path,
+              class: "d-flex align-items-center nav-link #{active_class("songs", "index")}" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Emoticons", emoticons_path,
-              class: "d-flex align-items-center nav-link #{active_class("emoticon")}" %>
+              class: "d-flex align-items-center nav-link #{active_class("static_pages", "emoticon")}" %>
           </li>
         <% end %>
       </ul>

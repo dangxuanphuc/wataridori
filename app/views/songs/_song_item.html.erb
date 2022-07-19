@@ -1,0 +1,12 @@
+<tr id="song-<%= song.id %>">
+  <td><%= song.id %></td>
+  <td><%= song.name %></td>
+  <td><%= song.author %></td>
+  <td><%= audio_tag song.url, controls: true %></td>
+  <td><%= image_tag song.cover, width: 100 %></td>
+  <td><%= link_to "Edit", edit_song_path(song),
+    class: "text-decoration-none", remote: true %></td>
+  <td><%= link_to "Delete", song_path(song),
+    data: { confirm: "Are you sure?" }, method: :delete,
+    class: "text-decoration-none", remote: true %></td>
+</tr>

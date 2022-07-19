@@ -4,8 +4,8 @@ module ApplicationHelper
     page_title.empty? ? base_title : page_title + " | " + base_title
   end
 
-  def active_class action
-    params[:action] == action ? "active" : nil
+  def active_class controller, action
+    params[:action] == action && params[:controller] == controller ? "active" : nil
   end
 
   def markdown content
