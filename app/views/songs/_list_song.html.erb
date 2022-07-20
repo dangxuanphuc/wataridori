@@ -1,4 +1,4 @@
-<table class="table table-bordered text-center align-middle">
+<table class="table table-bordered text-center align-middle" id="datatables">
   <thead>
     <tr>
       <th scope="col">No.</th>
@@ -6,7 +6,8 @@
       <th scope="col">Author</th>
       <th scope="col">Song URL</th>
       <th scope="col">Cover URL</th>
-      <th scope="col" colspan="2">Action</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody id="list-song">
@@ -15,3 +16,13 @@
     <% end %>
   </tbody>
 </table>
+
+<script>
+  $("#datatables").DataTable({
+    pageLength: 10,
+    columnDefs: [
+      { orderable: true, targets: [0, 1, 2] },
+      { orderable: false, targets: "_all" }
+    ]
+  });
+</script>

@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :load_song, only: %i(edit update destroy)
 
   def index
-    @songs = Song.all.order_by_created_at_desc
+    @songs = Song.all
   end
 
   def new
