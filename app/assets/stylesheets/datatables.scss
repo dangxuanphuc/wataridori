@@ -33,6 +33,19 @@
 
   .pagination {
     margin-bottom: 0;
+
+    .paginate_button.active .page-link {
+      border-color: #00897b;
+      background-color: #00897b;
+    }
+
+    .paginate_button:not(.active) .page-link {
+      color: #00897b;
+    }
+
+    .paginate_button.disabled .page-link {
+      color: #bbb;
+    }
   }
 }
 
