@@ -38,4 +38,10 @@ module ApplicationHelper
       }
     }
   end
+
+  def show_footer params
+    params[:controller] != "songs" && params[:action] != "emoticon" &&
+      params[:action] != "error_404" && params[:action] != "error_422" &&
+      params[:action] != "error_500"
+  end
 end
