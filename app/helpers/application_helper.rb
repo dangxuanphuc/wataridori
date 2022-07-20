@@ -4,8 +4,8 @@ module ApplicationHelper
     page_title.empty? ? base_title : page_title + " | " + base_title
   end
 
-  def active_class action
-    params[:action] == action ? "active" : nil
+  def active_class controller, action
+    params[:action] == action && params[:controller] == controller ? "active" : nil
   end
 
   def markdown content
@@ -37,5 +37,11 @@ module ApplicationHelper
         image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg",
       }
     }
+  end
+
+  def show_footer params
+    params[:controller] != "songs" && params[:action] != "emoticon" &&
+      params[:action] != "error_404" && params[:action] != "error_422" &&
+      params[:action] != "error_500"
   end
 end

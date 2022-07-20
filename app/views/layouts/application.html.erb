@@ -28,9 +28,7 @@
     <div class="container">
       <%= yield %>
     </div>
-    <% if params[:action] != "song" && params[:action] != "emoticon" && params[:action] != "error_404" && params[:action] != "error_422" && params[:action] != "error_500" %>
-      <%= render "layouts/footer" %>
-    <% end %>
+    <%= render "layouts/footer" if show_footer(params) %>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <%= javascript_pack_tag "particles" %>
   </body>

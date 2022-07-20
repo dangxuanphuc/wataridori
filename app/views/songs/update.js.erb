@@ -1,0 +1,2 @@
+$("#song-modal").modal("hide");
+$("#song-<%= @song.id %>").replaceWith("<%= j render 'song_item', song: @song %>");

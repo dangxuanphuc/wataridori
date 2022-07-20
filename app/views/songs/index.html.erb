@@ -1,0 +1,4 @@
+<% provide :title, "My Playlist" %>
+<%= link_to "Add new song", new_song_path, class: "btn btn-primary mb-3 float-end", remote: true %>
+<%= render "list_song", songs: @songs %>
+<%= render "song_modal" %>
