@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :raise_not_found, except: %i(show vote unvote)
   before_action :authenticate_user!, except: %i(show vote unvote)
   before_action :load_post, only: %i(show edit update destroy vote unvote)
   before_action :set_browser_uid, only: %i(show vote unvote)

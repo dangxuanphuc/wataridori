@@ -8,6 +8,8 @@ global.$ = require("jquery")
 import "bootstrap"
 import "jquery-lazy"
 import "datatables.net-bs5"
+import Swal from "sweetalert2"
+global.Swal = Swal
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -18,6 +20,7 @@ import "packs/posts"
 import "packs/custom"
 import "packs/songs"
 import "packs/scroll"
+import "packs/toast"
 
 Rails.start()
 Turbolinks.start()

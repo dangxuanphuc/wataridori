@@ -1,2 +1,7 @@
 $("#song-modal").modal("hide");
 $("#list-song").prepend("<%= j render 'song_item', song: @song %>");
+
+Toast.fire({
+  icon: "success",
+  title: "Song was created successfully!"
+});
