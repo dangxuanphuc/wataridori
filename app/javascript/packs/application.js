@@ -7,6 +7,7 @@ import "jquery"
 global.$ = require("jquery")
 import "bootstrap"
 import "jquery-lazy"
+import "datatables.net-bs5"
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"

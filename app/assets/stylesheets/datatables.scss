@@ -1,0 +1,51 @@
+#datatables_wrapper {
+  margin-bottom: 1rem;
+}
+
+#datatables_length {
+  margin-bottom: 1rem;
+
+  label {
+    display: -webkit-inline-box;
+    margin-bottom: 0;
+
+    select {
+      max-width: 70px;
+      margin: -3px 5px 0;
+    }
+  }
+}
+
+#datatables_filter {
+  float: right;
+
+  label {
+    display: inline-flex;
+
+    input {
+      margin: -3px 0 0 5px;
+    }
+  }
+}
+
+#datatables_paginate {
+  float: right;
+
+  .pagination {
+    margin-bottom: 0;
+  }
+}
+
+#datatables {
+  .sorting {
+    cursor: pointer;
+  }
+
+  .sorting_disabled {
+    cursor: auto;
+
+    &::after, &::before {
+      display: none;
+    }
+  }
+}
