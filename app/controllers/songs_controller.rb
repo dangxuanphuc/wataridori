@@ -15,13 +15,8 @@ class SongsController < ApplicationController
     @song = Song.new song_params
 
     respond_to do |format|
+      @song.save
       format.js
-
-      if @song.save
-        flash.now[:success] = "Create song successfully!"
-      else
-        flash.now[:danger] = "Create song failed!"
-      end
     end
   end
 
@@ -29,25 +24,15 @@ class SongsController < ApplicationController
 
   def update
     respond_to do |format|
+      @song.update song_params
       format.js
-
-      if @song.update song_params
-        flash.now[:success] = "Update song successfully!"
-      else
-        flash.now[:danger] = "Update song failed!"
-      end
     end
   end
 
   def destroy
     respond_to do |format|
+      @song.destroy
       format.js
-
-      if @song.destroy
-        flash.now[:success] = "Destroy song successfully!"
-      else
-        flash.now[:danger] = "Destroy song failed!"
-      end
     end
   end
 

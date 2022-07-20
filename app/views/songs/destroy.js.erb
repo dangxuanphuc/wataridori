@@ -1,1 +1,6 @@
 $("#song-<%= @song.id %>").remove();
+
+Toast.fire({
+  icon: "success",
+  title: "Song was destroyed successfully!"
+});

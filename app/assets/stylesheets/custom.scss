@@ -113,6 +113,14 @@ body {
   padding: 30px;
 }
 
+.swal2-cancel {
+  margin-right: 0.5rem;
+}
+
+.swal2-confirm {
+  margin-left: 0.5rem;
+}
+
 @media only screen and (max-width: 500px) {
   .card__title {
     h1 {
