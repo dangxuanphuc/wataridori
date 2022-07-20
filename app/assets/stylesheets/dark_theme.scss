@@ -52,9 +52,42 @@ body.dark-theme {
   --shadowImg-color: #181717;
   --playBtnFilter-color: #1e1e2f;
   --nextPrev-color: #1e1e2f;
+  --songBtnLink-color: #00897b;
 
   background-color: var(--background-color);
   color: var(--white2-color);
+
+  .songs {
+    .add-new-song-button {
+      background-color: var(--songBtnLink-color);
+      color: var(--white-color);
+    }
+
+    .list-song-table {
+      color: var(--white-color);
+
+      a {
+        color: var(--songBtnLink-color);
+      }
+    }
+
+    .song-modal {
+      .modal-content {
+        background-color: var(--backgroundFooter-color);
+        color: var(--white-color);
+
+        .form-control {
+          background-color: var(--white-color);
+          color: var(--black-color);
+        }
+
+        .save-song-btn {
+          background-color: var(--songBtnLink-color);
+          color: var(--white-color);
+        }
+      }
+    }
+  }
 
   .form-control {
     background: var(--bgCard-color);
@@ -763,7 +796,6 @@ body.dark-theme {
       border: 1px solid var(--white2-color);
     }
   }
-
 
   .playlist-frame {
     .area-header {

@@ -55,8 +55,29 @@ body {
   --shadowImg-color: #eaeaea;
   --playBtnFilter-color: #ecdbdb;
   --nextPrev-color: #efefef;
+  --songBtnLink-color: #00897b;
 
   background-color: var(--white-color);
+
+  .songs {
+    .add-new-song-button {
+      background-color: var(--songBtnLink-color);
+      color: var(--white-color);
+    }
+
+    .list-song-table {
+      color: var(--black-color);
+
+      a {
+        color: var(--songBtnLink-color);
+      }
+    }
+
+    .save-song-btn {
+      background-color: var(--songBtnLink-color);
+      color: var(--white-color);
+    }
+  }
 
   .card__title {
     background-color: var(--bgCard-color);
