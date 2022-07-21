@@ -1,0 +1,20 @@
+check_name: "RuboCop Results"
+
+versions:
+  - rubocop
+  - rubocop-rails
+
+rubocop_config_path: ".rubocop.yml"
+
+rubocop_excluded_cops:
+  - "Style/FrozenStringLiteralComment"
+
+rubocop_fail_level: "warning"
+
+rubocop_force_exclusion: true
+
+bundle: false
+
+check_scope: "modified"
+
+base_branch: "origin/master"

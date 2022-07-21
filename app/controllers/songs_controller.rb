@@ -39,14 +39,15 @@ class SongsController < ApplicationController
   def songs
     song_id = if params[:song_id].to_i > Song.last.id
                 Song.first.id
-              elsif params[:song_id].to_i == 0
+              elsif params[:song_id].to_i.zero?
                 Song.last.id
               else
                 params[:song_id].to_i
               end
-    song_id = nil unless params[:song_id].present?
+    song_id = nil if params[:song_id].blank?
 
-    lastest_song = cookies[:song_id].present? ? Song.find_by(id: cookies[:song_id]) : Song.all.sample
+    current_song = Song.find_by(id: cookies[:song_id])
+    lastest_song = cookies[:song_id].present? ? current_song : Song.all.sample
 
     @song = Song.find_by(id: song_id) || lastest_song
   end

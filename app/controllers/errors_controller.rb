@@ -1,10 +1,7 @@
 class ErrorsController < ApplicationController
-  def error_404
-  end
+  def render404; end
 
-  def error_422
-  end
+  def render422; end
 
-  def error_500
-  end
+  def render500; end
 end

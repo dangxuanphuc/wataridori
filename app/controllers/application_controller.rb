@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   def raise_not_found
-    raise ActionController::RoutingError.new("Not Found") unless current_user
+    raise ActionController::RoutingError, "Not Found" unless current_user
   end
 end

@@ -1,13 +1,14 @@
 module ApplicationHelper
   def full_title page_title = ""
     base_title = "Wataridori's Blog"
-    page_title.empty? ? base_title : page_title + " | " + base_title
+    page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
   def active_class controller, action
-    params[:action] == action && params[:controller] == controller ? "active" : nil
+    "active" if params[:action] == action && params[:controller] == controller
   end
 
+  # rubocop:disable Rails/OutputSafety
   def markdown content
     options = {
       autolink: true,
@@ -23,8 +24,10 @@ module ApplicationHelper
       emoji: true
     }
 
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, options).render(content).html_safe
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                            options).render(content).html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   def default_meta_tags
     {
@@ -34,14 +37,16 @@ module ApplicationHelper
         title: "Wataridori's Blog",
         type: "Personal Blog",
         url: request.original_url,
-        image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg",
+        image: "https://res.cloudinary.com/phucdx/image/upload/v1625500651/wataridori/images/cover_aulkea.jpg"
       }
     }
   end
 
   def show_footer params
+    return false if params[:action] == "songs" && params[:controller] == "songs"
+
     params[:action] != "emoticon" && params[:controller] != "devise/sessions" &&
-      params[:action] != "error_404" && params[:action] != "error_422" &&
-      params[:action] != "error_500"
+      params[:action] != "render404" && params[:action] != "render422" &&
+      params[:action] != "render500"
   end
 end
