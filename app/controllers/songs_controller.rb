@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   before_action :raise_not_found, except: %i(songs)
   before_action :authenticate_user!, except: %i(songs)
-  before_action :load_song, only: %i(edit update destroy)
+  before_action :load_song, only: %i(edit update)
 
   def index
     @songs = Song.all
@@ -25,13 +25,6 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       @song.update song_params
-      format.js
-    end
-  end
-
-  def destroy
-    respond_to do |format|
-      @song.destroy
       format.js
     end
   end

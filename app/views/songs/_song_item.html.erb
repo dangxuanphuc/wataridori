@@ -6,7 +6,4 @@
   <td><%= image_tag song.cover, width: 100 %></td>
   <td><%= link_to "Edit", edit_song_path(song),
     class: "text-decoration-none", remote: true %></td>
-  <td><%= link_to "Delete", "javascript:void(0)",
-    class: "text-decoration-none", id: "delete-song-#{song.id}",
-    url: song_path(song) %></td>
 </tr>
