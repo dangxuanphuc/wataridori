@@ -2,8 +2,8 @@
 # in separate files. This file adds all other parameters apart from Enabled.
 
 # Add this to load Rails extension for rubocop
-require:
-  - rubocop-rails
+# require:
+#   - rubocop-rails
 
 # Put the following files into the same directory as this file.
 inherit_from:
