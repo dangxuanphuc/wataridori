@@ -403,24 +403,24 @@ Layout/SpaceAroundEqualsInParameterDefault:
     - no_space
 
 Layout/SpaceBeforeBlockBraces:
-  EnforcedStyle: no_space
+  EnforcedStyle: space
   SupportedStyles:
     - space
     - no_space
 
 Layout/SpaceInsideBlockBraces:
-  EnforcedStyle: no_space
+  EnforcedStyle: space
   SupportedStyles:
     - space
     - no_space
   # Valid values are: space, no_space
-  EnforcedStyleForEmptyBraces: no_space
+  EnforcedStyleForEmptyBraces: space
   # Space between { and |. Overrides EnforcedStyle if there is a conflict.
-  SpaceBeforeBlockParameters: false
+  SpaceBeforeBlockParameters: true
 
 Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-  EnforcedStyleForEmptyBraces: no_space
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: space
   SupportedStyles:
     - space
     - no_space
