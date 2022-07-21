@@ -1,1 +1,2 @@
-rubocop_extensions: "rubocop-rails"
+rubocop_extensions:
+  - "rubocop-rails"
