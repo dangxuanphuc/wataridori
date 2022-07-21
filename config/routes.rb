@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :tags, param: :slug, only: %i(show)
   resources :songs
 
-  match "/404", to: "errors#error_404", via: :all
-  match "/422", to: "errors#error_422", via: :all
-  match "/500", to: "errors#error_500", via: :all
+  match "/404", to: "errors#render404", via: :all
+  match "/422", to: "errors#render422", via: :all
+  match "/500", to: "errors#render500", via: :all
 end

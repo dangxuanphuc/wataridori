@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: %i(slugged finders)
 
-  enum status: [:privated, :published]
+  enum status: {privated: 0, published: 1}
 
   has_many :post_categories, dependent: :destroy
   has_many :post_tags, dependent: :destroy
@@ -14,21 +14,21 @@ class Post < ApplicationRecord
   POST_ATTRS = %w(title content tag_list image image_cache status).freeze
   mount_uploader :image, ImageUploader
 
-  scope :likes_order, -> { order likes_count: :desc }
-  scope :except_current, -> (id) { where.not(id: id) }
-  scope :sort_by_created_at, -> { order created_at: :desc }
+  scope :likes_order, ->{order likes_count: :desc}
+  scope :except_current, ->(id){where.not(id: id)}
+  scope :sort_by_created_at, ->{order created_at: :desc}
 
   before_validation :convert_slug
 
   def tag_list
-    self.tags.collect do |tag|
-      tag.name
-    end.join(", ")
+    tags.map(&:name).join(", ")
   end
 
-  def tag_list=(tags_string)
-    tag_names = tags_string.split(",").collect{ |s| s.strip.downcase }.uniq
-    new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
+  def tag_list= tags_string
+    tag_names = tags_string.split(",").map{|s| s.strip.downcase}.uniq
+    new_or_found_tags = tag_names.map do |name|
+      Tag.find_or_create_by(name: name)
+    end
     self.tags = new_or_found_tags
   end
 

@@ -2,11 +2,11 @@ class StaticPagesController < ApplicationController
   before_action :raise_not_found, only: %i(emoticon)
 
   def index
-    if current_user
-      @posts = Post.sort_by_created_at
-    else
-      @posts = Post.published.sort_by_created_at
-    end
+    @posts = if current_user
+               Post.sort_by_created_at
+             else
+               Post.published.sort_by_created_at
+             end
   end
 
   def about

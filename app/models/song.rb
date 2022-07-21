@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  validates_presence_of :name, :author, :url, :cover
+  validates :name, :author, :url, :cover, presence: true
 
   def previous
     Song.where(["id < ?", id]).order(:id).last
