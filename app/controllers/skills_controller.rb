@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :raise_not_found
   before_action :load_skill, only: %i(edit update destroy)
 
   def index
