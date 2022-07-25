@@ -56,6 +56,7 @@ body {
   --playBtnFilter-color: #ecdbdb;
   --nextPrev-color: #efefef;
   --songBtnLink-color: #00897b;
+  --skillBtnLink-color: #00897b;
 
   background-color: var(--white-color);
 
@@ -656,6 +657,15 @@ body {
   }
 
   .skills {
+    &__edit_btn {
+      color: var(--a-color);
+    }
+
+    .new-skill-btn, .skill-action-btn {
+      background-color: var(--skillBtnLink-color);
+      color: var(--white-color);
+    }
+
     .skill__language {
       .progress {
         background: transparent;

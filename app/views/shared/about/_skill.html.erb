@@ -1,4 +1,11 @@
 <div class="skills">
-  <%= render "shared/about/skill_language" %>
-  <%= render "shared/about/skill_tech" %>
+  <% if current_user %>
+    <%= link_to "Skills list", skills_path, class: "skills__edit_btn", remote: true %>
+  <% end %>
+  <%= render "shared/about/skill_language", skill_language: skill_language %>
+  <div id="skill-tech-box">
+    <%= render "shared/about/skill_tech", skill_technology: skill_technology %>
+  </div>
+  <%= render "skills/skill_modal" %>
+  <%= render "skills/skill_item_modal" %>
 </div>
