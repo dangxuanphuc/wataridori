@@ -1,5 +1,5 @@
 <div class="card__top">
-  <% @posts.each do |post| %>
+  <% posts.each do |post| %>
     <div class="card card__review">
       <%= link_to post do %>
         <%= cl_image_tag "", class: "card-img-top lazy", data: { src: post.image.thumb.url } %>

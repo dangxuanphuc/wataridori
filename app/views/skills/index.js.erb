@@ -1,2 +1,2 @@
 $("#skills-list").modal("show");
-$("#skills-list-body").html("<%= j render "skills/list_skill" %>")
+$("#skills-list-body").html("<%= j render "skills/list_skill", skills: @skills %>")
