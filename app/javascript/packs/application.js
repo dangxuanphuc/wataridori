@@ -21,6 +21,7 @@ import "packs/custom"
 import "packs/songs"
 import "packs/scroll"
 import "packs/toast"
+import "packs/skills"
 
 Rails.start()
 Turbolinks.start()

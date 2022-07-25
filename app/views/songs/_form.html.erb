@@ -7,19 +7,23 @@
   <% end %>
   <div class="form-group mt-3">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control", required: true %>
+    <%= f.text_field :name, class: "form-control", required: true, 
+      autocomplete: "off" %>
   </div>
   <div class="form-group mt-3">
     <%= f.label :author %>
-    <%= f.text_field :author, class: "form-control", required: true %>
+    <%= f.text_field :author, class: "form-control", required: true,
+      autocomplete: "off" %>
   </div>
   <div class="form-group mt-3">
     <%= f.label :url, "Audio URL" %>
-    <%= f.text_field :url, class: "form-control", required: true %>
+    <%= f.text_field :url, class: "form-control", required: true,
+      autocomplete: "off" %>
   </div>
   <div class="form-group mt-3">
     <%= f.label :cover, "Cover URL" %>
-    <%= f.text_field :cover, class: "form-control", required: true %>
+    <%= f.text_field :cover, class: "form-control", required: true,
+      autocomplete: "off" %>
   </div>
   <%= f.submit "Save", class: "btn mt-3 save-song-btn" %>
 <% end %>

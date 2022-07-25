@@ -1,15 +1,15 @@
 Skill.create!([
-  {name: "Vietnamese", percent: 100, skill_type: "language"},
-  {name: "Japanese", percent: 40, skill_type: "language"},
-  {name: "English", percent: 55, skill_type: "language"},
-  {name: "Ruby", percent: 75, skill_type: "technology"},
-  {name: "Javascript", percent: 64, skill_type: "technology"},
-  {name: "VueJS", percent: 45, skill_type: "technology"},
-  {name: "ReactJS", percent: 30, skill_type: "technology"},
-  {name: "MySQL", percent: 70, skill_type: "technology"},
-  {name: "UI/UX", percent: 68, skill_type: "technology"},
-  {name: "Git", percent: 85, skill_type: "technology"},
-  {name: "Docker", percent: 65, skill_type: "technology"},
+  {name: "Vietnamese", percent: 100, skill_type: 0},
+  {name: "Japanese", percent: 40, skill_type: 0},
+  {name: "English", percent: 55, skill_type: 0},
+  {name: "Ruby", percent: 75, skill_type: 1},
+  {name: "Javascript", percent: 64, skill_type: 1},
+  {name: "VueJS", percent: 45, skill_type: 1},
+  {name: "ReactJS", percent: 30, skill_type: 1},
+  {name: "MySQL", percent: 70, skill_type: 1},
+  {name: "UI/UX", percent: 68, skill_type: 1},
+  {name: "Git", percent: 85, skill_type: 1},
+  {name: "Docker", percent: 65, skill_type: 1},
 ])
 
 Favorite.create!([

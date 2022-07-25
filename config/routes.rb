@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :tags, param: :slug, only: %i(show)
   resources :songs, except: :destroy
+  resources :skills
 
   match "/404", to: "errors#render404", via: :all
   match "/422", to: "errors#render422", via: :all

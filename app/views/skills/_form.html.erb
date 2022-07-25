@@ -1,0 +1,19 @@
+<%= form_for skill, remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", required: true,
+      autocomplete: "off" %>
+  </div>
+  <div class="form-group mt-3">
+    <%= f.label :percent %>
+    <%= f.number_field :percent, class: "form-control",
+      max: 100, min: 0, required: true, autocomplete: "off" %>
+  </div>
+  <div class="form-group mt-3">
+    <%= f.label :skill_type %>
+    <%= f.select :skill_type,
+      options_for_select(Skill.skill_types.map { |k, _| [k.capitalize, k] }, skill.skill_type),
+      {}, { class: "form-control" } %>
+  </div>
+  <%= f.submit "Save", class: "btn mt-3 skill-action-btn" %>
+<% end %>

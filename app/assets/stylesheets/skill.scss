@@ -1,4 +1,17 @@
 .skills {
+  position: relative;
+
+  &__delete_btn {
+    cursor: not-allowed;
+  }
+
+  &__edit_btn {
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+  }
+
   .skill__language {
     padding: 30px;
 

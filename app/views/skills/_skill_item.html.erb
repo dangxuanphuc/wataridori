@@ -1,0 +1,14 @@
+<tr id="skill-<%= skill.id %>">
+  <td><%= skill.name %></td>
+  <td><%= skill.percent %></td>
+  <td><%= skill.skill_type.capitalize %></td>
+  <td><%= link_to "Edit", edit_skill_path(skill),
+    class: "text-decoration-none", remote: true %></td>
+  <% if skill.technology? %>
+    <td><%= link_to "Delete", "javascript:void(0)",
+      class: "text-decoration-none", id: "delete-skill-#{skill.id}",
+      url: skill_path(skill) %></td>
+  <% else %>
+    <td><span class="text-secondary skills__delete_btn">Delete</span></td>
+  <% end %>
+</tr>
