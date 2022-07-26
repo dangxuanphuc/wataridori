@@ -28,8 +28,8 @@
       = link_to edit_post_path(post), class: "edit__post me-2" do
         i.fas.fa-pencil-alt
         | &nbsp;Edit post
-      = link_to post_path(post), class: "delete__post", method: :delete,
-        data: { confirm: "Are you sure?" } do
+      = link_to "javascript:void(0)", class: "delete__post", id: "delete-post-#{post.id}",
+        url: post_path(post) do
         i.fas.fa-trash
         | &nbsp;Delete post
     - else

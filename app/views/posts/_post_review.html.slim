@@ -27,8 +27,8 @@
           - if post.privated?
             span.badge.badge-secondary.private__label.ms-2 Private
         - if user_signed_in?
-          = link_to post_path(post), class: "btn delete__btn", method: :delete,
-            data: { confirm: "Are you sure?" } do
+          = link_to "javascript:void(0)", class: "btn delete__btn", id: "delete-post-#{post.id}",
+            url: post_path(post) do
             i.fas.fa-trash-alt
         - else
           .dropdown
