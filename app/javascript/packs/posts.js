@@ -1,5 +1,13 @@
 import SimpleMDE from 'simplemde';
 
+function togglePublish() {
+  if($('#title-post').val() != '' && $('#tags-post').val() != '' && $(".CodeMirror-empty").length == 0) {
+    $('#post-submit').attr('disabled', false);
+  } else {
+    $('#post-submit').attr('disabled', true);
+  }
+}
+
 $(document).on('turbolinks:load', function() {
   if($('textarea').length > 0) {
     var editorOptions = {
@@ -14,12 +22,10 @@ $(document).on('turbolinks:load', function() {
   }
 
   $(document).on('keyup', '#form-new-post', function() {
-    if($('#title-post').val() != '' && $('#tags-post').val() != '') {
-      $('#post-submit').attr('disabled', false);
-    } else {
-      $('#post-submit').attr('disabled', true);
-    }
+    togglePublish();
   })
+
+  togglePublish();
 })
 
 $(document).on('click', '.js--btn-vote', function() {
