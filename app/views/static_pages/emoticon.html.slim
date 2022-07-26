@@ -1,0 +1,5 @@
+.emoticons
+  - @emoticons.each do |emoji|
+    .card.m-2.p-2
+      img.card-img-top src="#{emoji['src']}"
+      p.text-center.mt-2 = emoji["key"]

@@ -1,6 +1,0 @@
-<% provide :title, "My Playlist" %>
-<div class="songs">
-  <%= link_to "Add new song", new_song_path, class: "btn mb-3 add-new-song-button", remote: true %>
-  <%= render "list_song", songs: @songs %>
-  <%= render "song_modal" %>
-</div>

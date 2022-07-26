@@ -1,0 +1,8 @@
+tr id="song-#{song.id}"
+  td = song.id
+  td = song.name
+  td = song.author
+  td = audio_tag song.url, controls: true
+  td = image_tag song.cover, width: 100
+  td = link_to "Edit", edit_song_path(song),
+    class: "text-decoration-none", remote: true

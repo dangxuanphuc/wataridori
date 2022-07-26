@@ -1,0 +1,9 @@
+- if recent_posts.present?
+  .recent-post.title__header
+    h1.title__rightbar
+      span Recent Posts
+    ul
+      - recent_posts.each do |post|
+        li
+          = link_to post.title, post
+          span.post-date  - #{post.created_at.strftime("%b %d, %Y")}

@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12
+      .error-404
+        h1 Oops!
+        h2 404 Not Found
+        .error-details
+          | Sorry, an error has occured, requested page not found!
+        .mt-3
+          = link_to root_path, class: "btn back-to-home" do
+            span.fa.fa-home
+            | Back to Homepage

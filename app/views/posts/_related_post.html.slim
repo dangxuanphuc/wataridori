@@ -1,0 +1,12 @@
+.related-post.title__header
+  h1.title__rightbar
+    span You might also like
+  #js--related-post.posts__list.owl-carousel.owl-theme
+    - related_posts.each do |post|
+      .article
+        .main__image
+          = cl_image_tag "", class: "card-img-top lazy", data: { src: post.image.url }
+        .post__info
+          h1.title__post = post.title
+          .post-date = post.created_at.strftime("%B %d, %Y")
+        = link_to "", post, class: "post__link"

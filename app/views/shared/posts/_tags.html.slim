@@ -1,0 +1,7 @@
+.post-tag.title__header
+  h1.title__rightbar
+    span Tags
+  .tags__content
+    - Tag.limit(10).each do |tag|
+      - if tag.tag_show? || current_user
+        = link_to tag.name, tag, class: "tag__link"

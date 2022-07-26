@@ -1,0 +1,9 @@
+.skill__language.d-flex.justify-content-evenly
+  - skill_language.each do |skill|
+    .progress.mx-auto data-value="#{skill.percent}"
+      span.progress-left
+        span.progress-bar
+      span.progress-right
+        span.progress-bar
+      .progress-title.w-100.h-100.rounded-circle.d-flex.align-items-center.justify-content-center
+        h5 = skill.name

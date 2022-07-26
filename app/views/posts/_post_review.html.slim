@@ -1,0 +1,43 @@
+.card__top
+  - posts.each do |post|
+    .card.card__review
+      = link_to post do
+        = cl_image_tag "", class: "card-img-top lazy", data: { src: post.image.thumb.url }
+      .sub__title
+        h1 = link_to post.title, post
+        .stats
+          span.date__author
+            span.date = post.created_at.to_date.to_formatted_s(:long)
+            | &nbsp;by Dang Xuan Phuc&nbsp;
+          span.post__reaction
+            span title="Views: #{post.views_count}"
+              i.fas.fa-eye
+              | &nbsp;
+              = post.views_count
+            | &nbsp;
+            span title="Likes: #{post.likes_count}"
+              i.fas.fa-heart
+              | &nbsp;
+              = post.likes_count
+      .post-body.salary-duong
+        = markdown(replace_to_emoticon(truncate(post.content, length: 700)))
+      .card__actions.d-flex.justify-content-between
+        .first__action
+          = link_to "Read more", post, class: "read__more"
+          - if post.privated?
+            span.badge.badge-secondary.private__label.ms-2 Private
+        - if user_signed_in?
+          = link_to post_path(post), class: "btn delete__btn", method: :delete,
+            data: { confirm: "Are you sure?" } do
+            i.fas.fa-trash-alt
+        - else
+          .dropdown
+            button#shareButton.dropdown-toggle type="button" data-bs-toggle="dropdown" aria-expanded="false"
+              i.fas.fa-share-alt
+              | &nbsp;Share
+            ul.dropdown-menu aria-labelledby="shareButton"
+              - share_url = share_url(post)
+              li
+                a.dropdown-item href="#{share_url[:facebook]}" target="_blank" Facebook
+              li
+                a.dropdown-item href="#{share_url[:twitter]}" target="_blank" Twitter
