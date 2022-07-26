@@ -1,7 +1,6 @@
 import SimpleMDE from 'simplemde';
 
 function togglePublish() {
-  console.log("CodeMirror-empty - ", $(".CodeMirror-empty").length);
   if($('#title-post').val() != '' && $('#tags-post').val() != '' && $(".CodeMirror-empty").length == 0) {
     $('#post-submit').attr('disabled', false);
   } else {
