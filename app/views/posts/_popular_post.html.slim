@@ -1,0 +1,13 @@
+- if popular_posts.present?
+  .popular-post.title__header
+    h1.title__rightbar
+      span Popular Posts
+    .posts__list
+      - popular_posts.each do |post|
+        .article
+          .main__image
+            = cl_image_tag "", data: { src: post.image.url }, class: "lazy"
+          .post__info
+            h1.title__post = post.title
+            .post-date = post.created_at.strftime("%b %d, %Y")
+          = link_to "", post, class: "post__link"

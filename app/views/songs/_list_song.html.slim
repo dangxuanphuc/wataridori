@@ -1,0 +1,21 @@
+table#datatables.table.table-bordered.text-center.align-middle.list-song-table
+  thead
+    tr
+      th scope="col" No.
+      th scope="col" Name
+      th scope="col" Author
+      th scope="col" Audio
+      th scope="col" Cover
+      th scope="col" Action
+  tbody#list-song
+    - songs.each do |song|
+      = render "song_item", song: song
+
+javascript:
+  $("#datatables").DataTable({
+    pageLength: 10,
+    columnDefs: [
+      { orderable: true, targets: [0, 1, 2] },
+      { orderable: false, targets: "_all" }
+    ]
+  });

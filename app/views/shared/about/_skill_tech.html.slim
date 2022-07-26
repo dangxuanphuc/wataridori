@@ -1,0 +1,6 @@
+.skill__tech.d-flex.justify-content-between
+  - skill_technology.each do |skill|
+    .tech__skill
+      .skill__name = skill.name
+      .progress
+        .progress-bar role="progressbar" style="width: #{skill.percent}%" aria-valuenow="#{skill.percent}" aria-valuemin="0" aria-valuemax="100"

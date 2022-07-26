@@ -1,0 +1,11 @@
+tr id="skill-#{skill.id}"
+  td = skill.name
+  td = skill.percent
+  td = skill.skill_type.capitalize
+  td = link_to "Edit", edit_skill_path(skill), class: "text-decoration-none", remote: true
+  - if skill.technology?
+    td = link_to "Delete", "javascript:void(0)",
+      class: "text-decoration-none", id: "delete-skill-#{skill.id}", url: skill_path(skill)
+  - else
+    td.text-secondary.skills__delete_btn
+      span Delete

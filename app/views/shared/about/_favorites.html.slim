@@ -1,0 +1,44 @@
+.favorites
+  nav
+    #nav-tab.nav-tabs.d-flex.justify-content-center role="tablist"
+      a.tablinks#single-tab onclick="openTab(event, 'singers')" Singer
+      a.tablinks onclick="openTab(event, 'songs')" Music
+      a.tablinks onclick="openTab(event, 'other')" Other
+
+  #singers.tabcontent
+    - favorite_singers.each do |singer|
+      .singer__item
+        = image_tag "", data: { src: singer.image }, class: "lazy"
+        .favorite__name
+          .text = singer.name
+
+  #songs.tabcontent
+    - favorite_songs.each do |song|
+      .song__item
+        = image_tag "", data: { src: song.image }, class: "lazy"
+        .favorite__name
+          .text = song.name
+
+  #other.tabcontent
+    - favorite_others.each do |other|
+      .other__item
+        = image_tag "", data: { src: other.image }, class: "lazy"
+        .favorite__name
+          .text = other.name
+
+javascript:
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  document.getElementById("single-tab").click();

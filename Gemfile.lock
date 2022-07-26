@@ -279,6 +279,9 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
     spring (4.0.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -288,6 +291,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -348,6 +352,7 @@ DEPENDENCIES
   rubocop-checkstyle_formatter
   rubocop-rails
   sass-rails (>= 6)
+  slim
   spring
   turbolinks (~> 5)
   tzinfo-data

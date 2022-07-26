@@ -1,0 +1,44 @@
+.post__image
+  = cl_image_tag "", data: { src: post.image.url }, class: "lazy"
+.post__subtitle
+  h1
+    = link_to post.title, post
+    - if post.privated?
+      span.badge.badge-secondary.private__label Private
+  .post__author.d-flex.justify-content-evenly.align-items-center
+    span.post__info
+      span.post__submit = post.created_at.strftime("%B %d, %Y %I:%M %p")
+      span.author ・ by Dang Xuan Phuc
+    span.post__react
+      span #{reading_time(post.content)} mins read
+      span.dot ・
+      span.action__btn.action__view.me-2 title="Views: #{post.views_count}"
+        span = post.views_count
+        i.action__btn__icon.fas.fa-eye
+      = render "posts/link_to_vote", post: post
+.post__body
+  .salary-duong
+    = markdown(replace_to_emoticon(truncate(post.content, length: 1200)))
+.footer__post.d-flex.justify-content-between
+  .tags-btn
+    - post.tags.each do |tag|
+      = link_to tag.name, tag
+  .class
+    - if user_signed_in?
+      = link_to edit_post_path(post), class: "edit__post me-2" do
+        i.fas.fa-pencil-alt
+        | &nbsp;Edit post
+      = link_to post_path(post), class: "delete__post", method: :delete,
+        data: { confirm: "Are you sure?" } do
+        i.fas.fa-trash
+        | &nbsp;Delete post
+    - else
+      .dropdown
+        button#shareButton1.dropdown-toggle type="button" data-bs-toggle="dropdown" aria-expanded="false"
+          | &nbsp;Share
+        ul.dropdown-menu aria-labelledby="shareButton1"
+          - share_url = share_url(post)
+          li
+            a.dropdown-item href="#{share_url[:facebook]}" target="_blank" Facebook
+          li
+            a.dropdown-item href="#{share_url[:twitter]}" target="_blank" Twitter

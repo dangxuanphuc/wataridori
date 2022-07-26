@@ -1,0 +1,20 @@
+.card.login__form
+  h2.text-center Log in
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .mb-3
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: "form-control", autocomplete: "off"
+
+    .mb-3
+      = f.label :password
+      = f.password_field :password, class: "form-control", autocomplete: "off"
+
+    - if devise_mapping.rememberable?
+      .mb-3
+        = f.check_box :remember_me
+        | &nbsp;
+        = f.label :remember_me
+
+    .mb-3
+      = f.submit "Log in", class: "btn btn-primary"

@@ -1,0 +1,9 @@
+= render "shared/card_title", card_title: "Tag: #{@tag.name}"
+
+.post__show.tag__show.d-flex.justify-content-between
+  .post__leftbar
+    - @posts.each do |post|
+      .post__content.post__tag
+        = render "posts/post_content_short", post: post
+  .post__rightbar
+    = render "posts/rightbar", popular_posts: @popular_posts, recent_posts: @recent_posts

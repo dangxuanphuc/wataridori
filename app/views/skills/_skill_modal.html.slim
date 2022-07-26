@@ -1,0 +1,9 @@
+#skills-list.modal.fade.skill-modal tabindex="-1" aria-labelledby="skills-list-label" aria-hidden="true"
+  .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+    .modal-content
+      .modal-header
+        h5#skills-list-label.modal-title Skills list
+        button.btn-close type="button" data-bs-dismiss="modal" aria-label="Close"
+      .modal-body
+        = link_to "New skill", new_skill_path, class: "btn float-end new-skill-btn", remote: true
+        #skills-list-body

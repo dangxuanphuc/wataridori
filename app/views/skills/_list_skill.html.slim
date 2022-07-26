@@ -1,0 +1,10 @@
+table.table.text-center.skill-table
+  thead
+    tr
+      th scope="col" Name
+      th scope="col" Percent
+      th scope="col" Type
+      th scope="col" colspan="2" Action
+  tbody#list-skills
+    - skills.each do |skill|
+      = render "skill_item", skill: skill

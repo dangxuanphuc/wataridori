@@ -1,8 +1,0 @@
-$("#skill-item").modal("hide");
-$("#skill-tech-box").html("<%= j render 'shared/about/skill_tech', skill_technology: @skill_technology %>")
-$("#skill-<%= @skill.id %>").replaceWith("<%= j render 'skill_item', skill: @skill %>");
-
-Toast.fire({
-  icon: "success",
-  title: "Skill <%= @skill.name %> was updated successfully!"
-});

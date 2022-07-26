@@ -1,0 +1,11 @@
+span class="vote-post-#{ post.id }"
+  - if cookies[:browser_uid].in?(post.post_likes.collect(&:browser_uid))
+    = link_to "javascript:void(0)", class: "action__btn action__like js--btn-vote active",
+      data: { post_id: post.id, url_vote: unvote_post_path(post) } do
+      span = post.likes_count
+      i.action__btn__icon.fa.fa-heart
+  - else
+    = link_to "javascript:void(0)", class: "action__btn action__like js--btn-vote",
+      data: { post_id: post.id, url_vote: vote_post_path(post) } do
+      span = post.likes_count
+      i.action__btn__icon.far.fa-heart
