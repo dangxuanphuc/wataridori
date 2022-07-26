@@ -1,4 +1,3 @@
-
 function sweet_confirm_dialog(url) {
   swalConfirmButtons.fire({
     title: "Are you sure?",
