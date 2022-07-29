@@ -1,7 +1,7 @@
 tr id="skill-#{skill.id}"
   td = skill.name
   td = skill.percent
-  td = skill.skill_type.capitalize
+  td = skill.skill_type&.capitalize
   td = link_to "Edit", edit_skill_path(skill), class: "text-decoration-none", remote: true
   - if skill.technology?
     td = link_to "Delete", "javascript:void(0)",
