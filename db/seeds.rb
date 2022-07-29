@@ -7,9 +7,9 @@ Skill.create!([
   {name: "VueJS", percent: 45, skill_type: 1},
   {name: "ReactJS", percent: 30, skill_type: 1},
   {name: "MySQL", percent: 70, skill_type: 1},
-  {name: "UI/UX", percent: 68, skill_type: 1},
-  {name: "Git", percent: 85, skill_type: 1},
-  {name: "Docker", percent: 65, skill_type: 1},
+  {name: "PostgreSQL", percent: 45, skill_type: 1},
+  {name: "Git", percent: 90, skill_type: 1},
+  {name: "Docker", percent: 50, skill_type: 1},
 ])
 
 Favorite.create!([
