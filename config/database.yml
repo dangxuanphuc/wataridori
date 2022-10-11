@@ -1,22 +1,21 @@
-mysql: &mysql
-  adapter: mysql2
-  encoding: utf8mb4
-  host: localhost
-  username: root
-  password: 123456
-  pool: 5
-postgres: &postgres
+default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
+  username: postgres
+  password:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
 development:
-  <<: *mysql
+  <<: *default
   database: wataridori_development
+
 test:
-  <<: *mysql
+  <<: *default
   database: wataridori_test
+
 production:
-  <<: *postgres
+  <<: *default
   database: wataridori_production
   username: wataridori
-  password: <%= ENV['WATARIDORI_PASSWORD'] %>
+  password: <%= ENV["WATARIDORI_DATABASE_PASSWORD"] %>

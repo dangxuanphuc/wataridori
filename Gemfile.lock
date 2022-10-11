@@ -177,7 +177,6 @@ GEM
     mojinizer (0.2.2)
       moji (~> 1.6)
     msgpack (1.5.3)
-    mysql2 (0.5.4)
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.7-arm64-darwin)
@@ -341,7 +340,6 @@ DEPENDENCIES
   meta-tags
   mini_magick
   mojinizer
-  mysql2
   pg
   pry-rails
   puma

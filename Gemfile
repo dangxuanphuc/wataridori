@@ -16,6 +16,7 @@ gem "jbuilder", "~> 2.7"
 gem "meta-tags"
 gem "mini_magick"
 gem "mojinizer"
+gem "pg"
 gem "puma"
 gem "rails", "~> 6.1.1"
 gem "redcarpet"
@@ -34,15 +35,10 @@ end
 
 group :development do
   gem "listen", "~> 3.3"
-  gem "mysql2"
   gem "pry-rails"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
   gem "web-console", ">= 4.1.0"
-end
-
-group :production do
-  gem "pg"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
