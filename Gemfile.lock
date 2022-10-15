@@ -177,8 +177,11 @@ GEM
     mojinizer (0.2.2)
       moji (~> 1.6)
     msgpack (1.5.3)
+    mysql2 (0.5.4)
     netrc (0.11.0)
     nio4r (2.5.8)
+    nokogiri (1.13.7-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.13.7-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.7-x86_64-linux)
@@ -187,7 +190,6 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
-    pg (1.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -321,6 +323,7 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-21
   x86_64-linux
 
@@ -340,7 +343,7 @@ DEPENDENCIES
   meta-tags
   mini_magick
   mojinizer
-  pg
+  mysql2
   pry-rails
   puma
   rack-mini-profiler (~> 2.0)

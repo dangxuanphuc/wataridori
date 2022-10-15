@@ -1,20 +1,21 @@
 version: "3"
 services:
   db:
-    image: postgres:14.1
-    ports:
-      - "5433:5432"
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES UTF8; SET CHARACTER SET utf8mb4;'
+    container_name: wataridori_db
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    command: postgres -c stats_temp_directory=/tmp
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "6305:3306"
   api:
     build: .
     tty: true
-    stdin_open: true
+    container_name: wataridori_web
     ports:
-      - "4000:3000"
+      - "3002:3000"
     volumes:
       - ".:/wataridori"
       - bundle:/usr/local/bundle

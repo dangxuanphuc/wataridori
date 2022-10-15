@@ -1,10 +1,10 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   host: db
-  username: postgres
-  password:
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+  pool: 5
 
 development:
   <<: *default
@@ -18,4 +18,4 @@ production:
   <<: *default
   database: wataridori_production
   username: wataridori
-  password: <%= ENV["WATARIDORI_DATABASE_PASSWORD"] %>
+  password: <%= ENV['WATARIDORI_PASSWORD'] %>

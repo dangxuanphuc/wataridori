@@ -12,16 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2022_07_25_043446) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
     t.text "content"
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
     t.string "image"
     t.string "name"
     t.string "favorite_type"
@@ -39,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "post_categories", force: :cascade do |t|
+  create_table "post_categories", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -48,10 +45,10 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["post_id"], name: "index_post_categories_on_post_id"
   end
 
-  create_table "post_likes", force: :cascade do |t|
+  create_table "post_likes", charset: "utf8mb4", force: :cascade do |t|
     t.string "browser_uid", null: false
     t.string "ip_address"
-    t.text "user_agent"
+    t.text "user_agent", size: :long
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -59,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["post_id"], name: "index_post_likes_on_post_id"
   end
 
-  create_table "post_tags", force: :cascade do |t|
+  create_table "post_tags", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -68,10 +65,10 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["tag_id"], name: "index_post_tags_on_tag_id"
   end
 
-  create_table "post_views", force: :cascade do |t|
+  create_table "post_views", charset: "utf8mb4", force: :cascade do |t|
     t.string "browser_uid", null: false
     t.string "ip_address"
-    t.text "user_agent"
+    t.text "user_agent", size: :long
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -79,7 +76,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["post_id"], name: "index_post_views_on_post_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.text "content"
@@ -92,7 +89,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["slug"], name: "index_posts_on_slug"
   end
 
-  create_table "skills", force: :cascade do |t|
+  create_table "skills", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "percent"
     t.integer "skill_type"
@@ -100,7 +97,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "songs", force: :cascade do |t|
+  create_table "songs", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "author"
     t.string "url"
@@ -109,7 +106,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.string "cover"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -117,7 +114,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_043446) do
     t.index ["slug"], name: "index_tags_on_slug"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
