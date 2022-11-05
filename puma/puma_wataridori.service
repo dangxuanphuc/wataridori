@@ -1,0 +1,18 @@
+[Unit]
+Description=Puma Rails Server
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+Environment=RAILS_ENV=production
+EnvironmentFile=/etc/environment
+WorkingDirectory=/var/www/wataridori/current
+ExecStart=/home/deploy/.rbenv/bin/rbenv exec bundle exec puma -C /var/www/wataridori/shared/puma.rb
+ExecStop=/home/deploy/.rbenv/bin/rbenv exec bundle exec pumactl -F /var/www/wataridori/shared/puma.rb stop
+ExecReload=/home/deploy/.rbenv/bin/rbenv exec bundle exec pumactl -F /var/www/wataridori/shared/puma.rb phased-restart
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

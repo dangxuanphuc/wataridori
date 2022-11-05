@@ -3,13 +3,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+gem "bcrypt_pbkdf"
 gem "bcrypt"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rails", require: false
+gem "capistrano-rbenv", require: false
+gem "capistrano"
+gem "capistrano3-puma"
 gem "carrierwave"
 gem "cloudinary"
 gem "config"
 gem "counter_culture"
 gem "devise", git: "https://github.com/heartcombo/devise"
+gem "ed25519"
 gem "figaro"
 gem "friendly_id"
 gem "jbuilder", "~> 2.7"
