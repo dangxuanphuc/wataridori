@@ -11,6 +11,8 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def edit; end
+
   def create
     @song = Song.new song_params
 
@@ -19,8 +21,6 @@ class SongsController < ApplicationController
       format.js
     end
   end
-
-  def edit; end
 
   def update
     respond_to do |format|

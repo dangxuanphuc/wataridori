@@ -4,12 +4,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.2"
 
 gem "bcrypt"
+gem "bcrypt_pbkdf", "~> 1.1"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "capistrano", "~> 3.11"
+gem "capistrano-passenger", "~> 0.2.0"
+gem "capistrano-rails", "~> 1.4"
+gem "capistrano-rbenv", "~> 2.1", ">= 2.1.4"
 gem "carrierwave"
 gem "cloudinary"
 gem "config"
 gem "counter_culture"
 gem "devise", git: "https://github.com/heartcombo/devise"
+gem "ed25519", "~> 1.2", ">= 1.2.4"
 gem "figaro"
 gem "friendly_id"
 gem "jbuilder", "~> 2.7"

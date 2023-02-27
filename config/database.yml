@@ -16,6 +16,7 @@ test:
 
 production:
   <<: *default
+  host: localhost
   database: wataridori_production
   username: wataridori
   password: <%= ENV['WATARIDORI_PASSWORD'] %>

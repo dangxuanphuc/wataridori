@@ -45,3 +45,5 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 
 vendor/cache
+
+/config/credentials/production.key

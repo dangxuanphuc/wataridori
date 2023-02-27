@@ -4,9 +4,16 @@ class PostsController < ApplicationController
   before_action :load_post, only: %i(show edit update destroy vote unvote)
   before_action :set_browser_uid, only: %i(show vote unvote)
 
+  def show
+    count_view
+    load_data
+  end
+
   def new
     @post = Post.new
   end
+
+  def edit; end
 
   def create
     @post = Post.new post_params
@@ -17,13 +24,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def show
-    count_view
-    load_data
-  end
-
-  def edit; end
 
   def update
     if @post.update post_params
