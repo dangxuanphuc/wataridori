@@ -63,5 +63,11 @@
 set :state, :production
 set :rails_env, :production
 set :deploy_to, "/var/www/wataridori"
-server "18.207.210.48", user: "deploy", roles: %w[web app db]
 set :branch, "master"
+server "54.169.205.46", user: "deploy", roles: %w[web app db],
+  ssh_options: {
+    user: "deploy",
+    keys: %w[~/.ssh/id_rsa_wataridori],
+    forward_agent: false,
+    auth_methods: %w[publickey]
+  }

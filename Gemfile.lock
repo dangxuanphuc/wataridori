@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/heartcombo/devise
-  revision: 6d32d2447cc0f3739d9732246b5a5bde98d9e032
-  specs:
-    devise (4.8.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,6 +111,12 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     deep_merge (1.2.2)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dry-configurable (1.0.1)
@@ -376,7 +371,7 @@ DEPENDENCIES
   cloudinary
   config
   counter_culture
-  devise!
+  devise
   ed25519
   figaro
   friendly_id

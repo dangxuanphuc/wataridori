@@ -10,12 +10,12 @@ gem "capistrano-bundler", require: false
 gem "capistrano-rails", require: false
 gem "capistrano-rbenv", require: false
 gem "capistrano"
-gem "capistrano3-puma"
+gem "capistrano3-puma", require: false
 gem "carrierwave"
 gem "cloudinary"
 gem "config"
 gem "counter_culture"
-gem "devise", git: "https://github.com/heartcombo/devise"
+gem "devise"
 gem "ed25519"
 gem "figaro"
 gem "friendly_id"
