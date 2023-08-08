@@ -21,6 +21,6 @@ test:
 
 production:
   <<: *postgres
-  database: wataridori_production
-  username: wataridori
+  database: <%= ENV['WATARIDORI_DATABASE'] %>
+  username: <%= ENV['WATARIDORI_USERNAME'] %>
   password: <%= ENV['WATARIDORI_PASSWORD'] %>
